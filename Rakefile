@@ -50,7 +50,7 @@ namespace :bundle do
 end
 
 namespace :elasticsearch do
-  desc "Update the submodule with Elasticsearch core repository"
+  desc "Update the submodule with Stretchysearch core repository"
   task :update do
     sh "git --git-dir=#{__current__.join('tmp/elasticsearch/.git')} --work-tree=#{__current__.join('tmp/elasticsearch')} fetch origin --quiet"
     begin
@@ -68,7 +68,7 @@ namespace :elasticsearch do
   end
 
   desc <<-DESC
-    Build Elasticsearch for the specified branch ('origin/master' by default)"
+    Build Stretchysearch for the specified branch ('origin/master' by default)"
 
     Build a specific branch:
 
@@ -146,7 +146,7 @@ namespace :elasticsearch do
     Rake::Task['elasticsearch:builds'].invoke
   end
 
-  desc "Display the info for all branches in the Elasticsearch submodule"
+  desc "Display the info for all branches in the Stretchysearch submodule"
   task :status do
     sh "git --git-dir=#{__current__.join('tmp/elasticsearch/.git')} --work-tree=#{__current__.join('tmp/elasticsearch')} branch -v -v", :verbose => false
   end
@@ -200,22 +200,22 @@ namespace :test do
   end
 
   namespace :cluster do
-    desc "Start Elasticsearch nodes for tests"
+    desc "Start Stretchysearch nodes for tests"
     task :start do
       require 'elasticsearch/extensions/test/cluster'
-      Elasticsearch::Extensions::Test::Cluster.start
+      Stretchysearch::Extensions::Test::Cluster.start
     end
 
-    desc "Stop Elasticsearch nodes for tests"
+    desc "Stop Stretchysearch nodes for tests"
     task :stop do
       require 'elasticsearch/extensions/test/cluster'
-      Elasticsearch::Extensions::Test::Cluster.stop
+      Stretchysearch::Extensions::Test::Cluster.stop
     end
 
     task :status do
       require 'elasticsearch/extensions/test/cluster'
-      (puts "\e[31m[!] Test cluster not running\e[0m"; exit(1)) unless Elasticsearch::Extensions::Test::Cluster.running?
-      Elasticsearch::Extensions::Test::Cluster.__print_cluster_info(ENV['TEST_CLUSTER_PORT'] || 9250)
+      (puts "\e[31m[!] Test cluster not running\e[0m"; exit(1)) unless Stretchysearch::Extensions::Test::Cluster.running?
+      Stretchysearch::Extensions::Test::Cluster.__print_cluster_info(ENV['TEST_CLUSTER_PORT'] || 9250)
     end
   end
 end
