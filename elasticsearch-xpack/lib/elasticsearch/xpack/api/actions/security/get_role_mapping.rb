@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module Security
@@ -11,7 +11,7 @@ module Elasticsearch
           # @see https://www.elastic.co/guide/en/x-pack/master/security-api-role-mapping.html#security-api-get-role-mapping
           #
           def get_role_mapping(arguments={})
-            method = Elasticsearch::API::HTTP_GET
+            method = Stretchysearch::API::HTTP_GET
             path   = "_xpack/security/role_mapping/#{arguments[:name]}"
             params = {}
             body   = nil

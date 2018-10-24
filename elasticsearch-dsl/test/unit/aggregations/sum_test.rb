@@ -1,10 +1,10 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     module Aggregations
-      class SumTest < ::Elasticsearch::Test::UnitTestCase
-        include Elasticsearch::DSL::Search::Aggregations
+      class SumTest < ::Stretchysearch::Test::UnitTestCase
+        include Stretchysearch::DSL::Search::Aggregations
 
         context "Sum agg" do
           subject { Sum.new }

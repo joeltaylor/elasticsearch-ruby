@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module DSL
 
     # Generic utility methods

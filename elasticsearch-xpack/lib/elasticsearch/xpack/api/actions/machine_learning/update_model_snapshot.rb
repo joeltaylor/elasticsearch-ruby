@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module MachineLearning
@@ -17,7 +17,7 @@ module Elasticsearch
             raise ArgumentError, "Required argument 'snapshot_id' missing" unless arguments[:snapshot_id]
             raise ArgumentError, "Required argument 'body' missing" unless arguments[:body]
 
-            method = Elasticsearch::API::HTTP_POST
+            method = Stretchysearch::API::HTTP_POST
             path   = "_xpack/ml/anomaly_detectors/#{arguments[:job_id]}/model_snapshots/#{arguments[:snapshot_id]}/_update"
             params = {}
             body   = arguments[:body]

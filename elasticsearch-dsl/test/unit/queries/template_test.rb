@@ -1,10 +1,10 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     module Queries
-      class TemplateTest < ::Elasticsearch::Test::UnitTestCase
-        include Elasticsearch::DSL::Search::Queries
+      class TemplateTest < ::Stretchysearch::Test::UnitTestCase
+        include Stretchysearch::DSL::Search::Queries
 
         context "Template query" do
           subject { Template.new }

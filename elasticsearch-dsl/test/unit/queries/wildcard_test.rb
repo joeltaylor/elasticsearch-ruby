@@ -1,10 +1,10 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     module Queries
-      class WildcardTest < ::Elasticsearch::Test::UnitTestCase
-        include Elasticsearch::DSL::Search::Queries
+      class WildcardTest < ::Stretchysearch::Test::UnitTestCase
+        include Stretchysearch::DSL::Search::Queries
 
         context "Wildcard query" do
           subject { Wildcard.new }

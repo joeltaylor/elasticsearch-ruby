@@ -1,9 +1,9 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
-    class AggregationsIntegrationTest < ::Elasticsearch::Test::IntegrationTestCase
-      include Elasticsearch::DSL::Search
+    class AggregationsIntegrationTest < ::Stretchysearch::Test::IntegrationTestCase
+      include Stretchysearch::DSL::Search
 
       context "Aggregations integration" do
         setup do

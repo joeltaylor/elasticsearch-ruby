@@ -1,9 +1,9 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
-    class SearchOptionsTest < ::Elasticsearch::Test::UnitTestCase
-      subject { Elasticsearch::DSL::Search::Options.new }
+    class SearchOptionsTest < ::Stretchysearch::Test::UnitTestCase
+      subject { Stretchysearch::DSL::Search::Options.new }
 
       context "Search options" do
         should "combine different options" do

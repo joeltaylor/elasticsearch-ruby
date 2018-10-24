@@ -1,10 +1,10 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     module Aggregations
-      class PercentilesTest < ::Elasticsearch::Test::UnitTestCase
-        include Elasticsearch::DSL::Search::Aggregations
+      class PercentilesTest < ::Stretchysearch::Test::UnitTestCase
+        include Stretchysearch::DSL::Search::Aggregations
 
         context "Percentiles agg" do
           subject { Percentiles.new }

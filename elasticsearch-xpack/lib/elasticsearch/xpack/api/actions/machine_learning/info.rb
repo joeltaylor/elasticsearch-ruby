@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module MachineLearning
@@ -10,7 +10,7 @@ module Elasticsearch
           # @see [TODO]
           #
           def info(arguments={})
-            method = Elasticsearch::API::HTTP_GET
+            method = Stretchysearch::API::HTTP_GET
             path   = "_xpack/ml/info"
             params = {}
             body   = nil

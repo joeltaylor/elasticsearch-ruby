@@ -1,9 +1,9 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
-    class SizeIntegrationTest < ::Elasticsearch::Test::IntegrationTestCase
-      include Elasticsearch::DSL::Search
+    class SizeIntegrationTest < ::Stretchysearch::Test::IntegrationTestCase
+      include Stretchysearch::DSL::Search
 
         context "Search results pagination" do
           setup do

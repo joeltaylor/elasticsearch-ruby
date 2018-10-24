@@ -1,10 +1,10 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     module Filters
-      class IndicesTest < ::Elasticsearch::Test::UnitTestCase
-        include Elasticsearch::DSL::Search::Filters
+      class IndicesTest < ::Stretchysearch::Test::UnitTestCase
+        include Stretchysearch::DSL::Search::Filters
 
         context "Indices filter" do
           subject { Indices.new }

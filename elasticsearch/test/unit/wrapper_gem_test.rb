@@ -1,18 +1,18 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     class WrapperGemTest < ::Test::Unit::TestCase
 
       context "Wrapper gem" do
 
         should "require all neccessary subgems" do
-          assert defined? Elasticsearch::Client
-          assert defined? Elasticsearch::API
+          assert defined? Stretchysearch::Client
+          assert defined? Stretchysearch::API
         end
 
         should "mix the API into the client" do
-          client = Elasticsearch::Client.new
+          client = Stretchysearch::Client.new
 
           assert_respond_to client, :search
           assert_respond_to client, :cluster

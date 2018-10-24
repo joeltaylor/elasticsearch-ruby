@@ -1,30 +1,30 @@
 require 'test_helper'
 require 'elasticsearch/extensions/reindex'
 
-class Elasticsearch::Extensions::ReindexTest < Elasticsearch::Test::UnitTestCase
+class Stretchysearch::Extensions::ReindexTest < Stretchysearch::Test::UnitTestCase
   context "The Reindex extension module" do
     DEFAULT_OPTIONS = { source: { index: 'foo', client: Object.new }, target: { index: 'bar' } }
 
     should "require options" do
       assert_raise ArgumentError do
-        Elasticsearch::Extensions::Reindex.new
+        Stretchysearch::Extensions::Reindex.new
       end
     end
 
     should "allow to initialize the class" do
-      assert_instance_of Elasticsearch::Extensions::Reindex::Reindex,
-                         Elasticsearch::Extensions::Reindex.new(DEFAULT_OPTIONS)
+      assert_instance_of Stretchysearch::Extensions::Reindex::Reindex,
+                         Stretchysearch::Extensions::Reindex.new(DEFAULT_OPTIONS)
     end
 
     should "add the reindex to the API and client" do
-      assert_includes Elasticsearch::API::Actions.public_instance_methods.sort, :reindex
-      assert_respond_to Elasticsearch::Client.new, :reindex
+      assert_includes Stretchysearch::API::Actions.public_instance_methods.sort, :reindex
+      assert_respond_to Stretchysearch::Client.new, :reindex
     end
 
     should "pass the client when used in API mode" do
-      client = Elasticsearch::Client.new
+      client = Stretchysearch::Client.new
 
-      Elasticsearch::Extensions::Reindex::Reindex
+      Stretchysearch::Extensions::Reindex::Reindex
         .expects(:new)
         .with({source: { client: client }})
         .returns(stub perform: {})
@@ -49,7 +49,7 @@ class Elasticsearch::Extensions::ReindexTest < Elasticsearch::Test::UnitTestCase
 
       should "scroll through the index and save batches in bulk" do
         client  = mock()
-        subject = Elasticsearch::Extensions::Reindex.new source: { index: 'foo', client: client },
+        subject = Stretchysearch::Extensions::Reindex.new source: { index: 'foo', client: client },
                                                          target: { index: 'bar' }
 
         client.expects(:search)
@@ -69,7 +69,7 @@ class Elasticsearch::Extensions::ReindexTest < Elasticsearch::Test::UnitTestCase
 
       should "return the number of errors" do
         client  = mock()
-        subject = Elasticsearch::Extensions::Reindex.new source: { index: 'foo', client: client },
+        subject = Stretchysearch::Extensions::Reindex.new source: { index: 'foo', client: client },
                                                          target: { index: 'bar' }
 
         client.expects(:search).returns({ '_scroll_id' => 'scroll_id_1' }.merge(@default_response))
@@ -83,7 +83,7 @@ class Elasticsearch::Extensions::ReindexTest < Elasticsearch::Test::UnitTestCase
 
       should "transform the documents with a lambda" do
         client  = mock()
-        subject = Elasticsearch::Extensions::Reindex.new \
+        subject = Stretchysearch::Extensions::Reindex.new \
           source: { index: 'foo', client: client },
           target: { index: 'bar' },
           transform: lambda { |d| d['_source']['foo'].upcase!; d }

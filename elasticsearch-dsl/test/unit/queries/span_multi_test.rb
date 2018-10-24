@@ -1,10 +1,10 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     module Queries
-      class SpanMultiTest < ::Elasticsearch::Test::UnitTestCase
-        include Elasticsearch::DSL::Search::Queries
+      class SpanMultiTest < ::Stretchysearch::Test::UnitTestCase
+        include Stretchysearch::DSL::Search::Queries
 
         context "SpanMulti query" do
           subject { SpanMulti.new }

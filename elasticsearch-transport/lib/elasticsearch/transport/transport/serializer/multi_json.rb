@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module Transport
     module Transport
       module Serializer

@@ -1,10 +1,10 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     module Aggregations
-      class NestedTest < ::Elasticsearch::Test::UnitTestCase
-        include Elasticsearch::DSL::Search::Aggregations
+      class NestedTest < ::Stretchysearch::Test::UnitTestCase
+        include Stretchysearch::DSL::Search::Aggregations
 
         context "Nested aggregation" do
           subject { Nested.new }

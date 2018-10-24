@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module MachineLearning
@@ -9,7 +9,7 @@ module Elasticsearch
           def validate(arguments={})
             raise ArgumentError, "Required argument 'body' missing" unless arguments[:body]
 
-            method = Elasticsearch::API::HTTP_POST
+            method = Stretchysearch::API::HTTP_POST
             path   = "_xpack/ml/anomaly_detectors/_validate"
             params = {}
             body   = arguments[:body]

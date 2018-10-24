@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'elasticsearch/xpack/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "elasticsearch-xpack"
-  spec.version       = Elasticsearch::XPack::VERSION
+  spec.name          = "stretchysearch-xpack"
+  spec.version       = Stretchysearch::XPack::VERSION
   spec.authors       = ["Karel Minarik"]
   spec.email         = ["karel@elastic.co"]
 
-  spec.summary       = "Ruby integrations for the X-Pack extensions for Elasticsearch"
-  spec.description   = "Ruby integrations for the X-Pack extensions for Elasticsearch"
+  spec.summary       = "Ruby integrations for the X-Pack extensions for Stretchysearch"
+  spec.description   = "Ruby integrations for the X-Pack extensions for Stretchysearch"
   spec.homepage      = "https://github.com/elastic/elasticsearch-xpack-ruby"
   spec.license       = "Apache 2"
 
@@ -21,11 +21,11 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 11.1"
 
-  spec.add_dependency "elasticsearch-api", '~> 6'
+  spec.add_dependency "stretchysearch-api", '~> 6'
 
-  spec.add_development_dependency "elasticsearch", '~> 6'
-  spec.add_development_dependency "elasticsearch-transport", '~> 6'
-  spec.add_development_dependency "elasticsearch-extensions"
+  spec.add_development_dependency "stretchysearch", '~> 6'
+  spec.add_development_dependency "stretchysearch-transport", '~> 6'
+  spec.add_development_dependency "stretchysearch-extensions"
 
   spec.add_development_dependency "activesupport"
   spec.add_development_dependency "ansi"

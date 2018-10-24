@@ -1,10 +1,10 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     module Queries
-      class SpanFirstTest < ::Elasticsearch::Test::UnitTestCase
-        include Elasticsearch::DSL::Search::Queries
+      class SpanFirstTest < ::Stretchysearch::Test::UnitTestCase
+        include Stretchysearch::DSL::Search::Queries
 
         context "SpanFirst query" do
           subject { SpanFirst.new }

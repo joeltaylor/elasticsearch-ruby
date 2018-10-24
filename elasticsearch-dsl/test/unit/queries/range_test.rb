@@ -1,10 +1,10 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     module Queries
-      class RangeTest < ::Elasticsearch::Test::UnitTestCase
-        include Elasticsearch::DSL::Search::Queries
+      class RangeTest < ::Stretchysearch::Test::UnitTestCase
+        include Stretchysearch::DSL::Search::Queries
 
         context "Range Query" do
 

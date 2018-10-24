@@ -1,10 +1,10 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     module Filters
-      class RangeTest < ::Elasticsearch::Test::UnitTestCase
-        include Elasticsearch::DSL::Search::Filters
+      class RangeTest < ::Stretchysearch::Test::UnitTestCase
+        include Stretchysearch::DSL::Search::Filters
 
         context "Range filter" do
           subject { Range.new }

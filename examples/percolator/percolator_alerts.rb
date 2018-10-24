@@ -1,4 +1,4 @@
-# An example of using the percolator with Elasticsearch 5.x and higher
+# An example of using the percolator with Stretchysearch 5.x and higher
 # ====================================================================
 #
 # See:
@@ -9,7 +9,7 @@
 require 'ansi'
 require 'elasticsearch'
 
-client = Elasticsearch::Client.new log: true
+client = Stretchysearch::Client.new log: true
 client.transport.logger.formatter = proc do |severity, datetime, progname, msg| "\e[2m#{msg}\e[0m\n" end
 
 # Delete the indices used for the example

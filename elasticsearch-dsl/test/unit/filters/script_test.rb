@@ -1,10 +1,10 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     module Filters
-      class ScriptTest < ::Elasticsearch::Test::UnitTestCase
-        include Elasticsearch::DSL::Search::Filters
+      class ScriptTest < ::Stretchysearch::Test::UnitTestCase
+        include Stretchysearch::DSL::Search::Filters
 
         context "Script filter" do
           subject { Script.new }

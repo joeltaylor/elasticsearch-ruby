@@ -1,8 +1,8 @@
-module Elasticsearch
+module Stretchysearch
   module DSL
     module Search
 
-      # Contains the classes for Elasticsearch queries
+      # Contains the classes for Stretchysearch queries
       #
       module Queries;end
 

@@ -1,10 +1,10 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     module Aggregations
-      class CardinalityTest < ::Elasticsearch::Test::UnitTestCase
-        include Elasticsearch::DSL::Search::Aggregations
+      class CardinalityTest < ::Stretchysearch::Test::UnitTestCase
+        include Stretchysearch::DSL::Search::Aggregations
 
         context "Cardinality agg" do
           subject { Cardinality.new }

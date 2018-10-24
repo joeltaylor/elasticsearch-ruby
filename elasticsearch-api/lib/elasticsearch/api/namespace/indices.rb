@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module API
     module Indices
       module Actions; end

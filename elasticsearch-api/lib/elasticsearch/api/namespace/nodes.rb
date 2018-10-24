@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module API
     module Nodes
       module Actions; end

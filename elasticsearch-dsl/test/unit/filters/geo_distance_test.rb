@@ -1,10 +1,10 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     module Filters
-      class GeoDistanceTest < ::Elasticsearch::Test::UnitTestCase
-        include Elasticsearch::DSL::Search::Filters
+      class GeoDistanceTest < ::Stretchysearch::Test::UnitTestCase
+        include Stretchysearch::DSL::Search::Filters
 
         context "GeoDistance filter" do
           subject { GeoDistance.new }

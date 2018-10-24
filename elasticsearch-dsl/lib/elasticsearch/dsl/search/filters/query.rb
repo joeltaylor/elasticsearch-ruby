@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module DSL
     module Search
       module Filters
@@ -29,7 +29,7 @@ module Elasticsearch
           def initialize(*args, &block)
             super
             if block
-              @query = Elasticsearch::DSL::Search::Query.new(*args, &block)
+              @query = Stretchysearch::DSL::Search::Query.new(*args, &block)
               @block = nil
             end
           end

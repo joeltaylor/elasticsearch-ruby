@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module Rollup
@@ -15,7 +15,7 @@ module Elasticsearch
           def rollup_search(arguments={})
             raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]
             raise ArgumentError, "Required argument 'body' missing" unless arguments[:body]
-            method = Elasticsearch::API::HTTP_GET
+            method = Stretchysearch::API::HTTP_GET
             path   = "#{arguments[:index]}/_rollup_search"
             params = {}
             body   = arguments[:body]

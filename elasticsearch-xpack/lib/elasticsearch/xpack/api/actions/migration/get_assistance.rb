@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module Migration
@@ -19,9 +19,9 @@ module Elasticsearch
               :expand_wildcards,
               :ignore_unavailable ]
 
-            method = Elasticsearch::API::HTTP_GET
+            method = Stretchysearch::API::HTTP_GET
             path   = "_xpack/migration/assistance"
-            params = Elasticsearch::API::Utils.__validate_and_extract_params arguments, valid_params
+            params = Stretchysearch::API::Utils.__validate_and_extract_params arguments, valid_params
             body   = nil
 
             perform_request(method, path, params, body).body

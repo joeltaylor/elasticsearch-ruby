@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module MachineLearning
@@ -19,9 +19,9 @@ module Elasticsearch
             valid_params = [
               :reset_start,
               :reset_end ]
-            method = Elasticsearch::API::HTTP_POST
+            method = Stretchysearch::API::HTTP_POST
             path   = "_xpack/ml/anomaly_detectors/#{arguments[:job_id]}/_data"
-            params = Elasticsearch::API::Utils.__validate_and_extract_params arguments, valid_params
+            params = Stretchysearch::API::Utils.__validate_and_extract_params arguments, valid_params
             body   = arguments[:body]
 
             perform_request(method, path, params, body).body

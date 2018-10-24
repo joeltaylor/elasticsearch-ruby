@@ -1,11 +1,11 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module SSL
         module Actions
 
           def certificates(arguments={})
-            method = Elasticsearch::API::HTTP_GET
+            method = Stretchysearch::API::HTTP_GET
             path   = "_xpack/ssl/certificates"
             params = {}
             body   = nil

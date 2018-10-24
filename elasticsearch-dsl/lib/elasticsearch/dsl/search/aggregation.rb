@@ -1,8 +1,8 @@
-module Elasticsearch
+module Stretchysearch
   module DSL
     module Search
 
-      # Contains the classes for Elasticsearch aggregations
+      # Contains the classes for Stretchysearch aggregations
       #
       module Aggregations;end
 

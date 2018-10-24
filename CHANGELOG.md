@@ -36,8 +36,8 @@
 ### API
 
 * Added the "Cluster Remote Info" API
-* Speed up `Elasticsearch::API::Utils.__listify`
-* Speed up `Elasticsearch::API::Utils.__pathify`
+* Speed up `Stretchysearch::API::Utils.__listify`
+* Speed up `Stretchysearch::API::Utils.__pathify`
 * Use "String#strip" and "String.empty?" in `Utils.__pathify`
 * Updated the inline documentation for using scripts in the "Update" API
 * Updated the "Scroll" API inline example with passing the scroll ID in the body
@@ -52,7 +52,7 @@
 
 ## 6.0.0
 
-Elasticsearch 6.0 compatibility.
+Stretchysearch 6.0 compatibility.
 
 ### API
 
@@ -95,12 +95,12 @@ Elasticsearch 6.0 compatibility.
 
 ## EXT:0.0.27
 
-* Allow passing the Elasticsearch version to the Test::Cluster extension
+* Allow passing the Stretchysearch version to the Test::Cluster extension
 * Improved the profiling extension
 * Added that the timeout in `__determine_version` is configurable and increased the default value
 * Improved the integration test for the `Test::Cluster` extension
 * Improved the test infrastructure
-* Added the Elasticsearch start command for the 6.x version to the test/cluster extension
+* Added the Stretchysearch start command for the 6.x version to the test/cluster extension
 * Added the "oj" and "patron" Rubygem to the list of runtime dependencies
 
 ## DSL:0.1.5
@@ -116,12 +116,12 @@ Elasticsearch 6.0 compatibility.
 
 ## EXT:0.0.23
 
-* Fixed removing the data directory for Elasticsearch 5 and 6 in the test cluster
-* Added, that Elasticsearch process is properly killed when determining version
-* Updated the test cluster class to be compatible Elasticsearch 6.x
-* Added `the max_local_storage_nodes` setting to the start command arguments for Elasticsearch 5.x
+* Fixed removing the data directory for Stretchysearch 5 and 6 in the test cluster
+* Added, that Stretchysearch process is properly killed when determining version
+* Updated the test cluster class to be compatible Stretchysearch 6.x
+* Added `the max_local_storage_nodes` setting to the start command arguments for Stretchysearch 5.x
 * Improved the documentation and error messsages for the test cluster
-* Updated the "Reindex" extension for Elasticsearch 5.x
+* Updated the "Reindex" extension for Stretchysearch 5.x
 
 ## DSL:0.1.4
 
@@ -174,7 +174,7 @@ Elasticsearch 6.0 compatibility.
 * Improved the documentation for the "Backup" extension and added it to the main README
 * Added the information about the "Reindex" extension to the README
 * Added a reindex extension
-* Improved the `Elasticsearch::Extensions::Test::Cluster` extension
+* Improved the `Stretchysearch::Extensions::Test::Cluster` extension
 
 ## 1.0.17
 
@@ -209,7 +209,7 @@ Elasticsearch 6.0 compatibility.
 ## DSL:0.1.3
 
 * Changed, that `global` aggregation takes a block
-* Updated the README example to work with Elasticsearch 2.x
+* Updated the README example to work with Stretchysearch 2.x
 * Improved the documentation and integration tests for inner (nested) aggregaation
 * Added the option method `field` and `script` to the "stats" aggregation
 
@@ -232,14 +232,14 @@ Elasticsearch 6.0 compatibility.
 ### Client
 
 * Added the option to configure the Faraday adapter using a block and the relevant documentation
-* Added information about configuring the client for the Amazon Elasticsearch Service
+* Added information about configuring the client for the Amazon Stretchysearch Service
 * Added the `retry_on_status` option to retry on specific HTTP response statuses
 * Changed, that transports can close connections during `__rebuild_connections`
 * Added, that the Manticore adapter closes connections during reload ("sniffing")
 
 ## 1.0.14
 
-* Clarified version support of Elasticsearch
+* Clarified version support of Stretchysearch
 * Improved the `elasticsearch:build` Rake task to work with branch names
 
 ### API
@@ -252,7 +252,7 @@ Elasticsearch 6.0 compatibility.
 * Added the "Shard Stores" API
 * Added, that document ID is URL-escaped when percolating an existing document
 * Allow passing TEST_CLUSTER_PARAMS to the test cluster
-* Define the path to core REST tests dynamically based on Elasticsearch version
+* Define the path to core REST tests dynamically based on Stretchysearch version
 * Fixed example in "Get Warmer" API
 * Fixed incorrect documentation and link in the "Clear Cache" API
 * Fixed integration tests for the "Snapshot and Restore" API
@@ -283,7 +283,7 @@ Elasticsearch 6.0 compatibility.
 
 ### Client
 
-* Added, that connection reloading supports Elasticsearch 2.0 output
+* Added, that connection reloading supports Stretchysearch 2.0 output
 * Improved thread safety in parts of connection handling code
 
 ## DSL:1.0.1
@@ -316,7 +316,7 @@ Elasticsearch 6.0 compatibility.
 
 ### Watcher
 
-* Added the integration with Elasticsearch Watcher plugin
+* Added the integration with Stretchysearch Watcher plugin
 
 ## 1.0.9
 
@@ -332,7 +332,7 @@ Elasticsearch 6.0 compatibility.
 * Prevent mutating the parameter passed to __extract_hosts() method
 * Removed the `ipv4` resolve mode setting in the Curb adapter
 * Update Manticore to utilize new SSL settings
-* Updated the Curb integration test to not fail on older Elasticsearch versions
+* Updated the Curb integration test to not fail on older Stretchysearch versions
 
 ### API
 
@@ -382,8 +382,8 @@ Elasticsearch 6.0 compatibility.
 * Added the "Cat Segments" API
 * Updated the code and documentation for the "Cluster State" API
 * Fixed incorrect examples for the "Percolate" API
-* Added a `Elasticsearch::API.settings` method for accessing module settings
-* Added a `Elasticsearch::API.settings[:skip_parameter_validation]` setting support into `__validate_and_extract_params`
+* Added a `Stretchysearch::API.settings` method for accessing module settings
+* Added a `Stretchysearch::API.settings[:skip_parameter_validation]` setting support into `__validate_and_extract_params`
 * Added `master_timeout` parameters to the "Template Exists" and "Get Template" APIs
 * Fixed incorrect encoding of Array parameters
 * Added support for the `metric` parameter in the "Nodes Info" API
@@ -515,4 +515,4 @@ Elasticsearch 6.0 compatibility.
 
 ### Extensions
 
-* Improved the documentation for `Elasticsearch::Extensions::Test::Cluster`
+* Improved the documentation for `Stretchysearch::Extensions::Test::Cluster`

@@ -3,7 +3,7 @@ require 'test_helper'
 require 'jbuilder' if defined?(RUBY_VERSION) && RUBY_VERSION > '1.9'
 require 'jsonify'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     class JsonBuildersTest < ::Test::Unit::TestCase
 

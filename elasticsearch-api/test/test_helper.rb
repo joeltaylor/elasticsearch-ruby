@@ -41,10 +41,10 @@ if defined?(RUBY_VERSION) && RUBY_VERSION > '1.9'
   require 'elasticsearch/extensions/test/profiling' unless JRUBY
 end
 
-module Elasticsearch
+module Stretchysearch
   module Test
     class FakeClient
-      include Elasticsearch::API
+      include Stretchysearch::API
 
       def perform_request(method, path, params, body, headers={"Content-Type" => "application/json"})
         puts "PERFORMING REQUEST:", "--> #{method.to_s.upcase} #{path} #{params} #{body} #{headers}"

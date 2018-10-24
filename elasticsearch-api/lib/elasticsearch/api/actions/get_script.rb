@@ -1,8 +1,8 @@
-module Elasticsearch
+module Stretchysearch
   module API
     module Actions
 
-      # Retrieve an indexed script from Elasticsearch
+      # Retrieve an indexed script from Stretchysearch
       #
       # @option arguments [String] :id Script ID (*Required*)
       # @option arguments [String] :lang Script language (*Required*)

@@ -17,13 +17,13 @@ require "elasticsearch/transport/client"
 
 require "elasticsearch/transport/version"
 
-module Elasticsearch
+module Stretchysearch
   module Client
 
-    # A convenience wrapper for {::Elasticsearch::Transport::Client#initialize}.
+    # A convenience wrapper for {::Stretchysearch::Transport::Client#initialize}.
     #
     def new(arguments={}, &block)
-      Elasticsearch::Transport::Client.new(arguments, &block)
+      Stretchysearch::Transport::Client.new(arguments, &block)
     end
     extend self
   end

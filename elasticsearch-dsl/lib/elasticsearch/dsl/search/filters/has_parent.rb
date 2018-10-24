@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module DSL
     module Search
       module Filters
@@ -35,7 +35,7 @@ module Elasticsearch
           # @return [self]
           #
           def query(*args, &block)
-            @query = block ? @query = Elasticsearch::DSL::Search::Query.new(*args, &block) : args.first
+            @query = block ? @query = Stretchysearch::DSL::Search::Query.new(*args, &block) : args.first
             self
           end
 
@@ -44,7 +44,7 @@ module Elasticsearch
           # @return [self]
           #
           def filter(*args, &block)
-            @filter = block ? Elasticsearch::DSL::Search::Filter.new(*args, &block) : args.first
+            @filter = block ? Stretchysearch::DSL::Search::Filter.new(*args, &block) : args.first
             self
           end
 

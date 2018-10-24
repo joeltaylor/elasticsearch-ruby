@@ -1,8 +1,8 @@
-module Elasticsearch
+module Stretchysearch
   module API
     module Actions
 
-      # Retrieve an indexed template from Elasticsearch
+      # Retrieve an indexed template from Stretchysearch
       #
       # @option arguments [String] :id Template ID
       #

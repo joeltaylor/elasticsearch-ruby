@@ -1,11 +1,11 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module Watcher
         module Actions; end
 
         class WatcherClient
-          include Elasticsearch::API::Common::Client, Elasticsearch::API::Common::Client::Base, Watcher::Actions
+          include Stretchysearch::API::Common::Client, Stretchysearch::API::Common::Client::Base, Watcher::Actions
         end
 
         def watcher

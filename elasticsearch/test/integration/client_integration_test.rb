@@ -1,18 +1,18 @@
 require 'test_helper'
 require 'logger'
 
-module Elasticsearch
+module Stretchysearch
   module Test
-    class ClientIntegrationTest < Elasticsearch::Test::IntegrationTestCase
+    class ClientIntegrationTest < Stretchysearch::Test::IntegrationTestCase
       startup do
-        Elasticsearch::Extensions::Test::Cluster.start(number_of_nodes: 2) if ENV['SERVER'] and not Elasticsearch::Extensions::Test::Cluster.running?(number_of_nodes: 2)
+        Stretchysearch::Extensions::Test::Cluster.start(number_of_nodes: 2) if ENV['SERVER'] and not Stretchysearch::Extensions::Test::Cluster.running?(number_of_nodes: 2)
       end
 
       shutdown do
-        Elasticsearch::Extensions::Test::Cluster.stop(number_of_nodes: 2) if ENV['SERVER'] and Elasticsearch::Extensions::Test::Cluster.running?(number_of_nodes: 2)
+        Stretchysearch::Extensions::Test::Cluster.stop(number_of_nodes: 2) if ENV['SERVER'] and Stretchysearch::Extensions::Test::Cluster.running?(number_of_nodes: 2)
       end
 
-      context "Elasticsearch client" do
+      context "Stretchysearch client" do
         setup do
           @port  = (ENV['TEST_CLUSTER_PORT'] || 9250).to_i
           system "curl -X DELETE http://localhost:#{@port}/_all > /dev/null 2>&1"
@@ -28,7 +28,7 @@ module Elasticsearch
             ANSI.ansi(severity[0] + ' ', color, :faint) + ANSI.ansi(msg, :white, :faint) + "\n"
           end
 
-          @client = Elasticsearch::Client.new host: "localhost:#{@port}", logger: (ENV['QUIET'] ? nil : @logger)
+          @client = Stretchysearch::Client.new host: "localhost:#{@port}", logger: (ENV['QUIET'] ? nil : @logger)
         end
 
         should "perform the API methods" do

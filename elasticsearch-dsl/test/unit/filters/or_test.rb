@@ -1,10 +1,10 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     module Filters
-      class OrTest < ::Elasticsearch::Test::UnitTestCase
-        include Elasticsearch::DSL::Search::Filters
+      class OrTest < ::Stretchysearch::Test::UnitTestCase
+        include Stretchysearch::DSL::Search::Filters
 
         context "Or filter" do
           subject { Or.new }

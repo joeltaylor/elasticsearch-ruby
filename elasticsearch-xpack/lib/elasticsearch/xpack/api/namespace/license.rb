@@ -1,11 +1,11 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module License
         module Actions; end
 
         class LicenseClient
-          include Elasticsearch::API::Common::Client, Elasticsearch::API::Common::Client::Base, License::Actions
+          include Stretchysearch::API::Common::Client, Stretchysearch::API::Common::Client::Base, License::Actions
         end
 
         def license

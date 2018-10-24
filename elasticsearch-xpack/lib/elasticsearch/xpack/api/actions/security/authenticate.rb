@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module Security
@@ -10,7 +10,7 @@ module Elasticsearch
           #
           def authenticate(arguments={})
             valid_params = []
-            method = Elasticsearch::API::HTTP_GET
+            method = Stretchysearch::API::HTTP_GET
             path   = "_xpack/security/_authenticate"
             params = {}
             body   = nil

@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module Security
@@ -19,9 +19,9 @@ module Elasticsearch
             arguments = arguments.clone
             realms = arguments.delete(:realms)
 
-            method = Elasticsearch::API::HTTP_POST
-            path   = Elasticsearch::API::Utils.__pathify "_xpack/security/realm/", Elasticsearch::API::Utils.__listify(realms), "_clear_cache"
-            params = Elasticsearch::API::Utils.__validate_and_extract_params arguments, valid_params
+            method = Stretchysearch::API::HTTP_POST
+            path   = Stretchysearch::API::Utils.__pathify "_xpack/security/realm/", Stretchysearch::API::Utils.__listify(realms), "_clear_cache"
+            params = Stretchysearch::API::Utils.__validate_and_extract_params arguments, valid_params
             body   = nil
 
             perform_request(method, path, params, body).body

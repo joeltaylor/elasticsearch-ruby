@@ -1,13 +1,13 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
-    class GeoAggregationIntegrationTest < ::Elasticsearch::Test::IntegrationTestCase
-      include Elasticsearch::DSL::Search
+    class GeoAggregationIntegrationTest < ::Stretchysearch::Test::IntegrationTestCase
+      include Stretchysearch::DSL::Search
 
       context "A geo aggregation" do
         startup do
-          Elasticsearch::Extensions::Test::Cluster.start(number_of_nodes: 1) if ENV['SERVER'] and not Elasticsearch::Extensions::Test::Cluster.running?(number_of_nodes: 1)
+          Stretchysearch::Extensions::Test::Cluster.start(number_of_nodes: 1) if ENV['SERVER'] and not Stretchysearch::Extensions::Test::Cluster.running?(number_of_nodes: 1)
         end
 
         setup do

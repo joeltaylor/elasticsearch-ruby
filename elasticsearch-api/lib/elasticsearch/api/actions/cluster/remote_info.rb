@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module API
     module Cluster
       module Actions
@@ -9,7 +9,7 @@ module Elasticsearch
         # @see http://www.elastic.co/guide/en/elasticsearch/reference/master/cluster-remote-info.html
         #
         def remote_info(arguments={})
-          method = Elasticsearch::API::HTTP_GET
+          method = Stretchysearch::API::HTTP_GET
           path   = "_remote/info"
           params = {}
           body   = nil

@@ -1,11 +1,11 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module MachineLearning
         module Actions
 
           def delete_expired_data(arguments={})
-            method = Elasticsearch::API::HTTP_DELETE
+            method = Stretchysearch::API::HTTP_DELETE
             path   = "_xpack/ml/_delete_expired_data"
             params = {}
             body   = nil

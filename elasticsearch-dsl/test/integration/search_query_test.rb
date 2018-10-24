@@ -1,13 +1,13 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
-    class QueryIntegrationTest < ::Elasticsearch::Test::IntegrationTestCase
-      include Elasticsearch::DSL::Search
+    class QueryIntegrationTest < ::Stretchysearch::Test::IntegrationTestCase
+      include Stretchysearch::DSL::Search
 
       context "Queries integration" do
         startup do
-          Elasticsearch::Extensions::Test::Cluster.start(number_of_nodes: 1) if ENV['SERVER'] and not Elasticsearch::Extensions::Test::Cluster.running?(number_of_nodes: 1)
+          Stretchysearch::Extensions::Test::Cluster.start(number_of_nodes: 1) if ENV['SERVER'] and not Stretchysearch::Extensions::Test::Cluster.running?(number_of_nodes: 1)
         end
 
         setup do
@@ -57,7 +57,7 @@ module Elasticsearch
           end
 
           should "find the document with a filter" do
-            skip "Not supported on this Elasticsearch version" unless @version > '2'
+            skip "Not supported on this Stretchysearch version" unless @version > '2'
 
             response = @client.search index: 'test', body: search {
                 query do

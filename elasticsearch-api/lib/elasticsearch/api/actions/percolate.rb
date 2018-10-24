@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module API
     module Actions
 
@@ -11,7 +11,7 @@ module Elasticsearch
       #             `percolate` query;
       #             see https://www.elastic.co/guide/en/elasticsearch/reference/5.5/breaking_50_percolator.html
       #
-      # See full example for Elasticsearch 5.x and higher in <https://github.com/elastic/elasticsearch-ruby/blob/master/examples/percolator/percolator_alerts.rb>
+      # See full example for Stretchysearch 5.x and higher in <https://github.com/elastic/elasticsearch-ruby/blob/master/examples/percolator/percolator_alerts.rb>
       #
       # @option arguments [String] :index The index of the document being percolated. (*Required*)
       # @option arguments [String] :type The type of the document being percolated. (*Required*)

@@ -1,8 +1,8 @@
-module Elasticsearch
+module Stretchysearch
   module Transport
     module Transport
 
-      # Wraps the response from Elasticsearch.
+      # Wraps the response from Stretchysearch.
       #
       class Response
         attr_reader :status, :body, :headers

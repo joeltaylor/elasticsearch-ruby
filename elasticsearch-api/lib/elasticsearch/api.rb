@@ -8,7 +8,7 @@ require "elasticsearch/api/utils"
 Dir[ File.expand_path('../api/actions/**/*.rb', __FILE__) ].each   { |f| require f }
 Dir[ File.expand_path('../api/namespace/**/*.rb', __FILE__) ].each { |f| require f }
 
-module Elasticsearch
+module Stretchysearch
   module API
     DEFAULT_SERIALIZER = MultiJson
 
@@ -41,16 +41,16 @@ module Elasticsearch
     #
     def self.included(base)
       base.send :include,
-                Elasticsearch::API::Common,
-                Elasticsearch::API::Actions,
-                Elasticsearch::API::Cluster,
-                Elasticsearch::API::Nodes,
-                Elasticsearch::API::Indices,
-                Elasticsearch::API::Ingest,
-                Elasticsearch::API::Snapshot,
-                Elasticsearch::API::Tasks,
-                Elasticsearch::API::Cat,
-                Elasticsearch::API::Remote
+                Stretchysearch::API::Common,
+                Stretchysearch::API::Actions,
+                Stretchysearch::API::Cluster,
+                Stretchysearch::API::Nodes,
+                Stretchysearch::API::Indices,
+                Stretchysearch::API::Ingest,
+                Stretchysearch::API::Snapshot,
+                Stretchysearch::API::Tasks,
+                Stretchysearch::API::Cat,
+                Stretchysearch::API::Remote
     end
 
     # The serializer class

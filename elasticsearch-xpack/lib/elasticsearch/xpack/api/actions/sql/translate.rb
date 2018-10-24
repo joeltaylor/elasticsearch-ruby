@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module SQL
@@ -8,11 +8,11 @@ module Elasticsearch
           #
           # @option arguments [Hash] :body Specify the query in the `query` element. (*Required*)
           #
-          # @see Translate SQL into Elasticsearch queries
+          # @see Translate SQL into Stretchysearch queries
           #
           def translate(arguments={})
             raise ArgumentError, "Required argument 'body' missing" unless arguments[:body]
-            method = Elasticsearch::API::HTTP_POST
+            method = Stretchysearch::API::HTTP_POST
             path   = "_xpack/sql/translate"
             params = {}
             body   = arguments[:body]

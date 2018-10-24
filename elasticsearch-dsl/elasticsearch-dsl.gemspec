@@ -4,11 +4,11 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'elasticsearch/dsl/version'
 
 Gem::Specification.new do |s|
-  s.name          = "elasticsearch-dsl"
-  s.version       = Elasticsearch::DSL::VERSION
+  s.name          = "stretchysearch-dsl"
+  s.version       = Stretchysearch::DSL::VERSION
   s.authors       = ["Karel Minarik"]
   s.email         = ["karel.minarik@elasticsearch.com"]
-  s.description   = %q{A Ruby DSL builder for Elasticsearch}
+  s.description   = %q{A Ruby DSL builder for Stretchysearch}
   s.summary       = s.description
   s.homepage      = "https://github.com/elasticsearch/elasticsearch-ruby/tree/master/elasticsearch-dsl"
   s.license       = "Apache 2"
@@ -26,8 +26,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "bundler", "~> 1.3"
   s.add_development_dependency "rake", "~> 11.1"
 
-  s.add_development_dependency "elasticsearch"
-  s.add_development_dependency "elasticsearch-extensions"
+  s.add_development_dependency "stretchysearch"
+  s.add_development_dependency "stretchysearch-extensions"
 
   s.add_development_dependency 'shoulda-context'
   s.add_development_dependency 'mocha'

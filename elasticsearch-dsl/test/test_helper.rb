@@ -5,7 +5,7 @@ if ENV['COVERAGE'] || ENV['CI']
   SimpleCov.start { add_filter "/test|test_" }
 end
 
-at_exit { Elasticsearch::Test::IntegrationTestCase.__run_at_exit_hooks }
+at_exit { Stretchysearch::Test::IntegrationTestCase.__run_at_exit_hooks }
 
 require 'minitest/autorun'
 require 'shoulda-context'
@@ -23,7 +23,7 @@ require 'elasticsearch/extensions/test/startup_shutdown'
 
 require 'elasticsearch/dsl'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     module Assertions
       def assert_nothing_raised(*)
@@ -42,18 +42,18 @@ module Elasticsearch
       alias_method :assert_not_nil, :refute_nil
       alias_method :assert_raise, :assert_raises
 
-      include Elasticsearch::Extensions::Test
+      include Stretchysearch::Extensions::Test
       extend  StartupShutdown
 
       startup do
         Cluster.start(number_of_nodes: 1) if ENV['SERVER'] \
-                                && ! Elasticsearch::Extensions::Test::Cluster.running?(number_of_nodes: 1)
+                                && ! Stretchysearch::Extensions::Test::Cluster.running?(number_of_nodes: 1)
       end
 
       shutdown do
         Cluster.stop if ENV['SERVER'] \
                      && started?      \
-                     && Elasticsearch::Extensions::Test::Cluster.running?
+                     && Stretchysearch::Extensions::Test::Cluster.running?
       end
 
       def setup
@@ -70,7 +70,7 @@ module Elasticsearch
           ANSI.ansi(severity[0] + ' ', color, :faint) + ANSI.ansi(msg, :white, :faint) + "\n"
         end
 
-        @client = Elasticsearch::Client.new host: "localhost:#{@port}", logger: (ENV['QUIET'] ? nil : @logger)
+        @client = Stretchysearch::Client.new host: "localhost:#{@port}", logger: (ENV['QUIET'] ? nil : @logger)
         @version = @client.info['version']['number']
       end
 

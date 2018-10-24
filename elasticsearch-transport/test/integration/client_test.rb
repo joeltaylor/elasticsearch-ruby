@@ -1,15 +1,15 @@
 require 'test_helper'
 
-class Elasticsearch::Transport::ClientIntegrationTest < Elasticsearch::Test::IntegrationTestCase
+class Stretchysearch::Transport::ClientIntegrationTest < Stretchysearch::Test::IntegrationTestCase
   startup do
-    Elasticsearch::Extensions::Test::Cluster.start(number_of_nodes: 2) if ENV['SERVER'] and not Elasticsearch::Extensions::Test::Cluster.running?(number_of_nodes: 2)
+    Stretchysearch::Extensions::Test::Cluster.start(number_of_nodes: 2) if ENV['SERVER'] and not Stretchysearch::Extensions::Test::Cluster.running?(number_of_nodes: 2)
   end
 
   shutdown do
-    Elasticsearch::Extensions::Test::Cluster.stop(number_of_nodes: 2) if ENV['SERVER'] and Elasticsearch::Extensions::Test::Cluster.running?(number_of_nodes: 2)
+    Stretchysearch::Extensions::Test::Cluster.stop(number_of_nodes: 2) if ENV['SERVER'] and Stretchysearch::Extensions::Test::Cluster.running?(number_of_nodes: 2)
   end
 
-  context "Elasticsearch client" do
+  context "Stretchysearch client" do
     teardown do
       begin; Object.send(:remove_const, :Typhoeus);                rescue NameError; end
       begin; Net::HTTP.send(:remove_const, :Persistent); rescue NameError; end
@@ -30,7 +30,7 @@ class Elasticsearch::Transport::ClientIntegrationTest < Elasticsearch::Test::Int
         ANSI.ansi(severity[0] + ' ', color, :faint) + ANSI.ansi(msg, :white, :faint) + "\n"
       end
 
-      @client = Elasticsearch::Client.new host: "127.0.0.1:#{@port}"
+      @client = Stretchysearch::Client.new host: "127.0.0.1:#{@port}"
     end
 
     should "connect to the cluster" do
@@ -48,7 +48,7 @@ class Elasticsearch::Transport::ClientIntegrationTest < Elasticsearch::Test::Int
       assert_equal 200, response.status
       assert_equal 'bar', response.body['_source']['foo']
 
-      assert_raise Elasticsearch::Transport::Transport::Errors::NotFound do
+      assert_raise Stretchysearch::Transport::Transport::Errors::NotFound do
         @client.perform_request 'GET', 'myindex/mydoc/1?routing=ABC'
       end
     end
@@ -62,7 +62,7 @@ class Elasticsearch::Transport::ClientIntegrationTest < Elasticsearch::Test::Int
     end
 
     should "pass options to the transport" do
-      @client = Elasticsearch::Client.new \
+      @client = Stretchysearch::Client.new \
         host: "127.0.0.1:#{@port}",
         logger: (ENV['QUIET'] ? nil : @logger),
         transport_options: { headers: { accept: 'application/yaml', content_type: 'application/yaml' } }
@@ -79,7 +79,7 @@ class Elasticsearch::Transport::ClientIntegrationTest < Elasticsearch::Test::Int
     end
 
     should "pass options to the Faraday::Connection with a block" do
-      @client = Elasticsearch::Client.new(
+      @client = Stretchysearch::Client.new(
         host: "127.0.0.1:#{@port}",
         logger: (ENV['QUIET'] ? nil : @logger)
       ) do |client|
@@ -95,7 +95,7 @@ class Elasticsearch::Transport::ClientIntegrationTest < Elasticsearch::Test::Int
 
     context "with round robin selector" do
       setup do
-        @client = Elasticsearch::Client.new \
+        @client = Stretchysearch::Client.new \
                     hosts:  ["127.0.0.1:#{@port}", "127.0.0.1:#{@port+1}" ],
                     logger: (ENV['QUIET'] ? nil : @logger)
       end
@@ -118,7 +118,7 @@ class Elasticsearch::Transport::ClientIntegrationTest < Elasticsearch::Test::Int
     context "with a sick node and retry on failure" do
       setup do
         @port = (ENV['TEST_CLUSTER_PORT'] || 9250).to_i
-        @client = Elasticsearch::Client.new \
+        @client = Stretchysearch::Client.new \
                     hosts: ["127.0.0.1:#{@port}", "foobar1"],
                     logger: (ENV['QUIET'] ? nil : @logger),
                     retry_on_failure: true
@@ -131,7 +131,7 @@ class Elasticsearch::Transport::ClientIntegrationTest < Elasticsearch::Test::Int
       end
 
       should "raise exception when it cannot get any healthy server" do
-        @client = Elasticsearch::Client.new \
+        @client = Stretchysearch::Client.new \
                   hosts: ["127.0.0.1:#{@port}", "foobar1", "foobar2", "foobar3"],
                   logger: (ENV['QUIET'] ? nil : @logger),
                   retry_on_failure: 1
@@ -150,7 +150,7 @@ class Elasticsearch::Transport::ClientIntegrationTest < Elasticsearch::Test::Int
 
     context "with a sick node and reloading on failure" do
       setup do
-        @client = Elasticsearch::Client.new \
+        @client = Stretchysearch::Client.new \
                   hosts: ["127.0.0.1:#{@port}", "foobar1", "foobar2"],
                   logger: (ENV['QUIET'] ? nil : @logger),
                   reload_on_failure: true
@@ -167,7 +167,7 @@ class Elasticsearch::Transport::ClientIntegrationTest < Elasticsearch::Test::Int
 
     context "with retrying on status" do
       should "retry when the status does match" do
-        @client = Elasticsearch::Client.new \
+        @client = Stretchysearch::Client.new \
                   hosts: ["127.0.0.1:#{@port}"],
                   logger: (ENV['QUIET'] ? nil : @logger),
                   retry_on_status: 400
@@ -181,7 +181,7 @@ class Elasticsearch::Transport::ClientIntegrationTest < Elasticsearch::Test::Int
           .with( regexp_matches(/Attempt \d to get response/) )
           .times(4)
 
-        assert_raise Elasticsearch::Transport::Transport::Errors::BadRequest do
+        assert_raise Stretchysearch::Transport::Transport::Errors::BadRequest do
           @client.perform_request 'PUT', '_foobar'
         end
       end
@@ -190,7 +190,7 @@ class Elasticsearch::Transport::ClientIntegrationTest < Elasticsearch::Test::Int
     context "when reloading connections" do
       should "keep existing connections" do
         require 'patron' # We need a client with keep-alive
-        client = Elasticsearch::Transport::Client.new host: "127.0.0.1:#{@port}",
+        client = Stretchysearch::Transport::Client.new host: "127.0.0.1:#{@port}",
                                                       adapter: :patron,
                                                       logger: (ENV['QUIET'] ? nil : @logger)
 
@@ -214,7 +214,7 @@ class Elasticsearch::Transport::ClientIntegrationTest < Elasticsearch::Test::Int
       should "set the adapter with a block" do
         require 'net/http/persistent'
 
-        client = Elasticsearch::Transport::Client.new url: "127.0.0.1:#{@port}" do |f|
+        client = Stretchysearch::Transport::Client.new url: "127.0.0.1:#{@port}" do |f|
           f.adapter :net_http_persistent
         end
 
@@ -229,7 +229,7 @@ class Elasticsearch::Transport::ClientIntegrationTest < Elasticsearch::Test::Int
         teardown { begin; Object.send(:remove_const, :Patron); rescue NameError; end }
 
         require 'patron'
-        client = Elasticsearch::Transport::Client.new host: "127.0.0.1:#{@port}"
+        client = Stretchysearch::Transport::Client.new host: "127.0.0.1:#{@port}"
 
         assert_equal 'Faraday::Adapter::Patron',
                       client.transport.connections.first.connection.builder.handlers.first.name

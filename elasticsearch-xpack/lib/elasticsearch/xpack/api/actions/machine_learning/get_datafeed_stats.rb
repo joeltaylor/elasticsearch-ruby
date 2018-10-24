@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module MachineLearning
@@ -15,8 +15,8 @@ module Elasticsearch
             valid_params = [
               :allow_no_datafeeds ]
 
-            method = Elasticsearch::API::HTTP_GET
-            path   = Elasticsearch::API::Utils.__pathify "_xpack/ml/datafeeds", arguments[:datafeed_id], "/_stats"
+            method = Stretchysearch::API::HTTP_GET
+            path   = Stretchysearch::API::Utils.__pathify "_xpack/ml/datafeeds", arguments[:datafeed_id], "/_stats"
             params = {}
             body   = nil
 

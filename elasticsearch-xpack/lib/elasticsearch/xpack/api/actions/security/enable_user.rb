@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module Security
@@ -19,9 +19,9 @@ module Elasticsearch
             arguments = arguments.clone
             username = arguments.delete(:username)
 
-            method = Elasticsearch::API::HTTP_PUT
+            method = Stretchysearch::API::HTTP_PUT
             path   = "_xpack/security/user/#{username}/_enable"
-            params = Elasticsearch::API::Utils.__validate_and_extract_params arguments, valid_params
+            params = Stretchysearch::API::Utils.__validate_and_extract_params arguments, valid_params
             body   = nil
 
             perform_request(method, path, params, body).body

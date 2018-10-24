@@ -1,11 +1,11 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module SQL
         module Actions; end
 
         class SQLClient
-          include Elasticsearch::API::Common::Client, Elasticsearch::API::Common::Client::Base, SQL::Actions
+          include Stretchysearch::API::Common::Client, Stretchysearch::API::Common::Client::Base, SQL::Actions
         end
 
         def sql

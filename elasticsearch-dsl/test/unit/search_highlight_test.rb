@@ -1,13 +1,13 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
-    class HighlightTest < ::Elasticsearch::Test::UnitTestCase
+    class HighlightTest < ::Stretchysearch::Test::UnitTestCase
       context "Search highlight" do
-        subject { Elasticsearch::DSL::Search::Highlight.new }
+        subject { Stretchysearch::DSL::Search::Highlight.new }
 
         should "take a Hash" do
-          subject  = Elasticsearch::DSL::Search::Highlight.new fields: { 'foo' => {} }, pre_tags: ['*'], post_tags: ['*']
+          subject  = Stretchysearch::DSL::Search::Highlight.new fields: { 'foo' => {} }, pre_tags: ['*'], post_tags: ['*']
 
           assert_equal({ fields: { 'foo' => {} }, pre_tags: ['*'], post_tags: ['*'] }, subject.to_hash)
         end

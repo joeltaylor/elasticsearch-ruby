@@ -4,11 +4,11 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'elasticsearch/transport/version'
 
 Gem::Specification.new do |s|
-  s.name          = "elasticsearch-transport"
-  s.version       = Elasticsearch::Transport::VERSION
+  s.name          = "stretchysearch-transport"
+  s.version       = Stretchysearch::Transport::VERSION
   s.authors       = ["Karel Minarik"]
   s.email         = ["karel.minarik@elasticsearch.org"]
-  s.summary       = "Ruby client for Elasticsearch."
+  s.summary       = "Ruby client for Stretchysearch."
   s.homepage      = "https://github.com/elasticsearch/elasticsearch-ruby/tree/master/elasticsearch-transport"
   s.license       = "Apache 2"
 
@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
   end
 
   if defined?(RUBY_VERSION) && RUBY_VERSION > '1.9'
-    s.add_development_dependency "elasticsearch-extensions"
+    s.add_development_dependency "stretchysearch-extensions"
   end
 
   s.add_development_dependency "ansi"
@@ -76,6 +76,6 @@ Gem::Specification.new do |s|
   end
 
   s.description = <<-DESC.gsub(/^    /, '')
-    Ruby client for Elasticsearch. See the `elasticsearch` gem for full integration.
+    Ruby client for Stretchysearch. See the `elasticsearch` gem for full integration.
   DESC
 end

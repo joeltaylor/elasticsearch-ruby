@@ -1,14 +1,14 @@
 require 'test_helper'
 
-class Elasticsearch::Transport::Transport::Connections::SelectorTest < Test::Unit::TestCase
-  include Elasticsearch::Transport::Transport::Connections::Selector
+class Stretchysearch::Transport::Transport::Connections::SelectorTest < Test::Unit::TestCase
+  include Stretchysearch::Transport::Transport::Connections::Selector
 
   class DummyStrategySelector
-    include Elasticsearch::Transport::Transport::Connections::Selector::Base
+    include Stretchysearch::Transport::Transport::Connections::Selector::Base
   end
 
   class BackupStrategySelector
-    include Elasticsearch::Transport::Transport::Connections::Selector::Base
+    include Stretchysearch::Transport::Transport::Connections::Selector::Base
 
     def select(options={})
       connections.reject do |c|

@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module MachineLearning
@@ -14,7 +14,7 @@ module Elasticsearch
           def delete_calendar_event(arguments={})
             raise ArgumentError, "Required argument 'calendar_id' missing" unless arguments[:calendar_id]
             raise ArgumentError, "Required argument 'event_id' missing" unless arguments[:event_id]
-            method = Elasticsearch::API::HTTP_DELETE
+            method = Stretchysearch::API::HTTP_DELETE
             path   = "_xpack/ml/calendars/#{arguments[:calendar_id]}/events/#{arguments[:event_id]}"
             params = {}
             body   = nil

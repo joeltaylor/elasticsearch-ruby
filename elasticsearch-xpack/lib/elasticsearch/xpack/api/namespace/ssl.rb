@@ -1,11 +1,11 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module SSL
         module Actions; end
 
         class SSLClient
-          include Elasticsearch::API::Common::Client, Elasticsearch::API::Common::Client::Base, SSL::Actions
+          include Stretchysearch::API::Common::Client, Stretchysearch::API::Common::Client::Base, SSL::Actions
         end
 
         def ssl

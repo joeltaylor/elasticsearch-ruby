@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module Rollup
@@ -11,7 +11,7 @@ module Elasticsearch
           # @see
           #
           def get_rollup_caps(arguments={})
-            method = Elasticsearch::API::HTTP_GET
+            method = Stretchysearch::API::HTTP_GET
             path   = "_xpack/rollup/data/#{arguments[:id]}"
             params = {}
             body   = nil

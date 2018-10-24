@@ -1,6 +1,6 @@
 require 'test_helper'
 
-module Elasticsearch
+module Stretchysearch
   module Test
     class IndicesPutWarmerTest < ::Test::Unit::TestCase
 

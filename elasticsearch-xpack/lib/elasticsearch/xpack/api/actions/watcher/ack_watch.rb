@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module Watcher
@@ -22,9 +22,9 @@ module Elasticsearch
             arguments = arguments.clone
             watch_id  = arguments.delete(:watch_id)
 
-            method = Elasticsearch::API::HTTP_PUT
+            method = Stretchysearch::API::HTTP_PUT
             path   = "_xpack/watcher/watch/#{watch_id}/_ack"
-            params = Elasticsearch::API::Utils.__validate_and_extract_params arguments, valid_params
+            params = Stretchysearch::API::Utils.__validate_and_extract_params arguments, valid_params
             body   = nil
 
             perform_request(method, path, params, body).body

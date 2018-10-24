@@ -1,4 +1,4 @@
-module Elasticsearch
+module Stretchysearch
   module XPack
     module API
       module MachineLearning
@@ -12,7 +12,7 @@ module Elasticsearch
           #
           def preview_datafeed(arguments={})
             raise ArgumentError, "Required argument 'datafeed_id' missing" unless arguments[:datafeed_id]
-            method = Elasticsearch::API::HTTP_GET
+            method = Stretchysearch::API::HTTP_GET
             path   = "_xpack/ml/datafeeds/#{arguments[:datafeed_id]}/_preview"
             params = {}
             body   = nil
