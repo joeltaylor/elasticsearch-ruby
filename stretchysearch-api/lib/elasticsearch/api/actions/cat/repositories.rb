@@ -19,7 +19,7 @@ module Stretchysearch
         # @option arguments [Boolean] :v Verbose mode. Display column headers
         # @option arguments [List] :s Comma-separated list of column names or column aliases to sort by
         #
-        # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/cat-repositories.html
+        # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/cat-repositories.html
         #
         def repositories(arguments={})
           valid_params = [

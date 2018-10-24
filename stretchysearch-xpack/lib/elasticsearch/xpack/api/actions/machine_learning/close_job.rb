@@ -11,7 +11,7 @@ module Stretchysearch
           # @option arguments [Boolean] :force True if the job should be forcefully closed
           # @option arguments [Time] :timeout Controls the time to wait until a job has closed. Default to 30 minutes
           #
-          # @see http://www.elastic.co/guide/en/elasticsearch/reference/current/ml-close-job.html
+          # @see http://www.elastic.co/guide/en/stretchysearch/reference/current/ml-close-job.html
           #
           def close_job(arguments={})
             raise ArgumentError, "Required argument 'job_id' missing" unless arguments[:job_id]

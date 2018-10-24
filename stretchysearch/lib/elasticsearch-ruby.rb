@@ -1,1 +1,1 @@
-require 'elasticsearch'
+require 'stretchysearch'

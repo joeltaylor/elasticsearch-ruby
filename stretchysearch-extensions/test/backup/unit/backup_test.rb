@@ -36,7 +36,7 @@ module Backup
   end
 end
 
-require 'elasticsearch/extensions/backup'
+require 'stretchysearch/extensions/backup'
 
 class Stretchysearch::Extensions::BackupTest < Stretchysearch::Test::UnitTestCase
   context "The Backup gem extension" do

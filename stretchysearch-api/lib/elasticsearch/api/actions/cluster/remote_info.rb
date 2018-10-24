@@ -6,7 +6,7 @@ module Stretchysearch
         # Returns the configured remote cluster information
         #
         #
-        # @see http://www.elastic.co/guide/en/elasticsearch/reference/master/cluster-remote-info.html
+        # @see http://www.elastic.co/guide/en/stretchysearch/reference/master/cluster-remote-info.html
         #
         def remote_info(arguments={})
           method = Stretchysearch::API::HTTP_GET

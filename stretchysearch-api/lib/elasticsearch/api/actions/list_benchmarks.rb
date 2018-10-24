@@ -12,7 +12,7 @@ module Stretchysearch
       #                                 to perform the operation on all indices
       # @option arguments [String] :type The name of the document type
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/search-benchmark.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/search-benchmark.html
       #
       def list_benchmarks(arguments={})
         method = HTTP_GET

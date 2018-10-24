@@ -7,7 +7,7 @@ module Stretchysearch
       # @option arguments [List] :scroll_id A comma-separated list of scroll IDs to clear;
       #                                     use `_all` clear all scroll search contexts
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-request-search-type.html#clear-scroll
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/search-request-search-type.html#clear-scroll
       #
       def clear_scroll(arguments={})
         raise ArgumentError, "Required argument 'scroll_id' missing" unless arguments[:scroll_id]

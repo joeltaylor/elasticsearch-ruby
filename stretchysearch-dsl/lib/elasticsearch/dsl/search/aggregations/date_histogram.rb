@@ -15,7 +15,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/reference/current/search-aggregations-bucket-datehistogram-aggregation.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/reference/current/search-aggregations-bucket-datehistogram-aggregation.html
         #
         class DateHistogram
           include BaseAggregationComponent

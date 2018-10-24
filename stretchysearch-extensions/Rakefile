@@ -36,14 +36,14 @@ namespace :test do
     desc "Start Stretchysearch nodes for tests"
     task :start do
       $LOAD_PATH << File.expand_path('../lib', __FILE__) << File.expand_path('../test', __FILE__)
-      require 'elasticsearch/extensions/test/cluster'
+      require 'stretchysearch/extensions/test/cluster'
       Stretchysearch::Extensions::Test::Cluster.start
     end
 
     desc "Stop Stretchysearch nodes for tests"
     task :stop do
       $LOAD_PATH << File.expand_path('../lib', __FILE__) << File.expand_path('../test', __FILE__)
-      require 'elasticsearch/extensions/test/cluster'
+      require 'stretchysearch/extensions/test/cluster'
       Stretchysearch::Extensions::Test::Cluster.stop
     end
   end

@@ -25,7 +25,7 @@ module Stretchysearch
         #
         # See the integration test for a working example.
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/guide/current/geohash-cell-filter.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/guide/current/geohash-cell-filter.html
         #
         class GeohashCell
           include BaseComponent

@@ -9,7 +9,7 @@ module Stretchysearch
           # @option arguments [String] :job_id The ID of the jobs to fetch
           # @option arguments [Boolean] :allow_no_jobs Whether to ignore if a wildcard expression matches no jobs. (This includes `_all` string or when no jobs have been specified)
           #
-          # @see http://www.elastic.co/guide/en/elasticsearch/reference/current/ml-get-job.html
+          # @see http://www.elastic.co/guide/en/stretchysearch/reference/current/ml-get-job.html
           #
           def get_jobs(arguments={})
             valid_params = [

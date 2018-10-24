@@ -10,7 +10,7 @@ module Stretchysearch
         # @option arguments [Boolean] :include_disk_info Return information about disk usage and shard sizes
         #                                                (default: false)
         #
-        # @see http://www.elastic.co/guide/en/elasticsearch/reference/master/cluster-allocation-explain.html
+        # @see http://www.elastic.co/guide/en/stretchysearch/reference/master/cluster-allocation-explain.html
         #
         def allocation_explain(arguments={})
           valid_params = [

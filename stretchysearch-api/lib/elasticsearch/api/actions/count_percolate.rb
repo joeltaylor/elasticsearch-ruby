@@ -46,7 +46,7 @@ module Stretchysearch
       # @option arguments [Number] :version Explicit version number for concurrency control
       # @option arguments [String] :version_type Specific version type (options: internal, external, external_gte, force)
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/search-percolate.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/search-percolate.html
       #
       def count_percolate(arguments={})
         raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

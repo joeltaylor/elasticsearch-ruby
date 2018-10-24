@@ -11,7 +11,7 @@ module Stretchysearch
           # @option arguments [String] :reset_start Optional parameter to specify the start of the bucket resetting range
           # @option arguments [String] :reset_end Optional parameter to specify the end of the bucket resetting range
           #
-          # @see http://www.elastic.co/guide/en/elasticsearch/reference/current/ml-post-data.html
+          # @see http://www.elastic.co/guide/en/stretchysearch/reference/current/ml-post-data.html
           #
           def post_data(arguments={})
             raise ArgumentError, "Required argument 'job_id' missing" unless arguments[:job_id]

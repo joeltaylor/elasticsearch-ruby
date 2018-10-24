@@ -18,7 +18,7 @@ module Stretchysearch
         end
 
         # Retrieves the node list from the Stretchysearch's
-        # [_Nodes Info API_](http://www.elasticsearch.org/guide/reference/api/admin-cluster-nodes-info/)
+        # [_Nodes Info API_](http://www.stretchysearch.org/guide/reference/api/admin-cluster-nodes-info/)
         # and returns a normalized Array of information suitable for passing to transport.
         #
         # Shuffles the collection before returning it when the `randomize_hosts` option is set for transport.

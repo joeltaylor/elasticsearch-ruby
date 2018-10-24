@@ -20,7 +20,7 @@ module Stretchysearch
         #                                    (default: false)
         # @option arguments [Number,List] :ignore The list of HTTP errors to ignore
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/modules-snapshots.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/modules-snapshots.html
         #
         def get_repository(arguments={})
           valid_params = [

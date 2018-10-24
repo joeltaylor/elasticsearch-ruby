@@ -31,7 +31,7 @@ module Stretchysearch
         # @option arguments [Boolean] :recovery Return information about shard recovery (progress, size, etc)
         # @option arguments [Boolean] :snapshot Return information about snapshots (when shared gateway is used)
         #
-        # @see http://elasticsearch.org/guide/reference/api/admin-indices-status/
+        # @see http://stretchysearch.org/guide/reference/api/admin-indices-status/
         #
         def status(arguments={})
           valid_params = [

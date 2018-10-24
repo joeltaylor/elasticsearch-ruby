@@ -17,7 +17,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-multi-match-query.html
         #
         class MultiMatch
           include BaseComponent

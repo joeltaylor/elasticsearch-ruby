@@ -10,7 +10,7 @@ module Stretchysearch
         # @option arguments [Boolean] :human Whether to return time and byte values in human-readable format.
         # @option arguments [Time] :timeout Explicit operation timeout
         #
-        # @see http://www.elastic.co/guide/en/elasticsearch/reference/master/cluster-stats.html
+        # @see http://www.elastic.co/guide/en/stretchysearch/reference/master/cluster-stats.html
         #
         def stats(arguments={})
           valid_params = [

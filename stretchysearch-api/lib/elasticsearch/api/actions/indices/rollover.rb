@@ -14,7 +14,7 @@ module Stretchysearch
         # @option arguments [Time] :master_timeout Specify timeout for connection to master
         # @option arguments [Boolean] :dry_run If set to true the rollover action will only be validated but not actually performed even if a condition matches. The default is false
         #
-        # @see http://www.elastic.co/guide/en/elasticsearch/reference/master/indices-rollover-index.html
+        # @see http://www.elastic.co/guide/en/stretchysearch/reference/master/indices-rollover-index.html
         #
         def rollover(arguments={})
           raise ArgumentError, "Required argument 'alias' missing" unless arguments[:alias]

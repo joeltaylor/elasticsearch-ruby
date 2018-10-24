@@ -4,7 +4,7 @@ module Stretchysearch
 
       # Return simple information about the cluster (name, version).
       #
-      # @see http://elasticsearch.org/guide/
+      # @see http://stretchysearch.org/guide/
       #
       def info(arguments={})
         method = HTTP_GET

@@ -6,7 +6,7 @@ require 'fileutils'
 require 'multi_json'
 require 'oj'
 
-require 'elasticsearch'
+require 'stretchysearch'
 require 'patron'
 
 module Backup
@@ -18,9 +18,9 @@ module Backup
     #
     # @example Use the Backup gem's DSL to configure the backup
     #
-    #     require 'elasticsearch/extensions/backup'
+    #     require 'stretchysearch/extensions/backup'
     #
-    #     Model.new(:elasticsearch_backup, 'Stretchysearch') do
+    #     Model.new(:stretchysearch_backup, 'Stretchysearch') do
     #
     #       database Stretchysearch do |db|
     #         db.url     = 'http://localhost:9200'
@@ -39,7 +39,7 @@ module Backup
     #
     # Perform the backup with the Backup gem's command line utility:
     #
-    #     $ backup perform -t elasticsearch_backup
+    #     $ backup perform -t stretchysearch_backup
     #
     # The Backup gem can store your backup files on S3, Dropbox and other
     # cloud providers, send notifications about the operation, and so on;
@@ -48,14 +48,14 @@ module Backup
     # @example Use the integration as a standalone script (eg. in a Rake task)
     #
     #     require 'backup'
-    #     require 'elasticsearch/extensions/backup'
+    #     require 'stretchysearch/extensions/backup'
     #
     #     Backup::Logger.configure do
     #       logfile.enabled   = true
     #       logfile.log_path  = '/tmp/backups/log'
     #     end; Backup::Logger.start!
     #
-    #     backup  = Backup::Model.new(:elasticsearch, 'Backup Stretchysearch') do
+    #     backup  = Backup::Model.new(:stretchysearch, 'Backup Stretchysearch') do
     #       database Backup::Database::Stretchysearch do |db|
     #         db.indices = 'test'
     #       end
@@ -71,7 +71,7 @@ module Backup
     #
     #     PATH = '/path/to/backup/'
     #
-    #     require 'elasticsearch'
+    #     require 'stretchysearch'
     #     client  = Stretchysearch::Client.new log: true
     #     payload = []
     #

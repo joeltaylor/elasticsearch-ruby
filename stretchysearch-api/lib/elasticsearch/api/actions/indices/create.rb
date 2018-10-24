@@ -66,7 +66,7 @@ module Stretchysearch
         # @option arguments [Time] :timeout Explicit operation timeout
         # @option arguments [Boolean] :master_timeout Timeout for connection to master
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-create-index/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-create-index/
         #
         def create(arguments={})
           raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

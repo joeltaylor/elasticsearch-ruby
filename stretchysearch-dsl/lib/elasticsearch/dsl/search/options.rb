@@ -4,7 +4,7 @@ module Stretchysearch
 
       # Wraps the "extra" options of a search definition
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-request-body.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/search-request-body.html
       #
       class Options
         DSL_METHODS = [

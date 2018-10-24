@@ -8,7 +8,7 @@ module Stretchysearch
         # The "optimize" operation merges the index segments, increasing search performance.
         # It corresponds to a Lucene "merge" operation.
         #
-        # @deprecated The "optimize" action has been deprecated in favor of forcemerge [https://github.com/elastic/elasticsearch/pull/13778]
+        # @deprecated The "optimize" action has been deprecated in favor of forcemerge [https://github.com/elastic/stretchysearch/pull/13778]
         #
         # @example Fully optimize an index (merge to one segment)
         #
@@ -43,7 +43,7 @@ module Stretchysearch
         # @option arguments [Boolean] :wait_for_merge Specify whether the request should block until the merge process
         #                                             is finished (default: true)
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-optimize/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-optimize/
         #
         def optimize(arguments={})
           valid_params = [

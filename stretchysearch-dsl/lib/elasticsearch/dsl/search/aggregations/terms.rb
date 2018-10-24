@@ -21,7 +21,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-terms-aggregation.html
+        # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/search-aggregations-bucket-terms-aggregation.html
         #
         class Terms
           include BaseAggregationComponent

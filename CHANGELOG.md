@@ -2,7 +2,7 @@
 
 ### X-Pack
 
-* Added the `elasticsearch-xpack` source code into the repository
+* Added the `stretchysearch-xpack` source code into the repository
 
 ## 6.0.3
 
@@ -16,7 +16,7 @@
 
 ## EXT:6.0.3
 
-* Add elasticsearch-extensions homepage to Gemspec
+* Add stretchysearch-extensions homepage to Gemspec
 
 ## 6.0.2
 
@@ -105,14 +105,14 @@ Stretchysearch 6.0 compatibility.
 
 ## DSL:0.1.5
 
-* Added support for the ["Exists" Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-exists-query.html)
-* Added missing `like` and `unlike` options to the ["More Like This" Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html)
-* Added missing `time_zone` option to the ["Query String" Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html)
-* Added missing `inner_hits` option to the [Nested Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-nested-query.html)
-* Allow calling the `filter` method for the [Bool Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html) multiple times
-* Added missing `minimum_should_match`, `prefix_length`, `max_expansions`, `fuzzy_rewrite`, `analyzer`, `lenient`, `zero_terms_query` and `cutoff_frequency` options to the [Match Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html)
-* Added missing `minimum_should_match` and `boost` options to the [Bool Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html)
-* Refactored the [Aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html) collection into its own `AggregationsCollection` class
+* Added support for the ["Exists" Query](https://www.elastic.co/guide/en/stretchysearch/reference/current/query-dsl-exists-query.html)
+* Added missing `like` and `unlike` options to the ["More Like This" Query](https://www.elastic.co/guide/en/stretchysearch/reference/current/query-dsl-query-string-query.html)
+* Added missing `time_zone` option to the ["Query String" Query](https://www.elastic.co/guide/en/stretchysearch/reference/current/query-dsl-query-string-query.html)
+* Added missing `inner_hits` option to the [Nested Query](https://www.elastic.co/guide/en/stretchysearch/reference/current/query-dsl-nested-query.html)
+* Allow calling the `filter` method for the [Bool Query](https://www.elastic.co/guide/en/stretchysearch/reference/current/query-dsl-bool-query.html) multiple times
+* Added missing `minimum_should_match`, `prefix_length`, `max_expansions`, `fuzzy_rewrite`, `analyzer`, `lenient`, `zero_terms_query` and `cutoff_frequency` options to the [Match Query](https://www.elastic.co/guide/en/stretchysearch/reference/current/query-dsl-match-query.html)
+* Added missing `minimum_should_match` and `boost` options to the [Bool Query](https://www.elastic.co/guide/en/stretchysearch/reference/current/query-dsl-bool-query.html)
+* Refactored the [Aggregations](https://www.elastic.co/guide/en/stretchysearch/reference/current/search-aggregations.html) collection into its own `AggregationsCollection` class
 
 ## EXT:0.0.23
 
@@ -186,7 +186,7 @@ Stretchysearch 6.0 compatibility.
 
 * Added notes about ES 2.x compatibility
 * Fixes and updates to the Travis CI configuration
-* Updated the `elasticsearch:build` Rake task
+* Updated the `stretchysearch:build` Rake task
 
 ### API
 
@@ -240,7 +240,7 @@ Stretchysearch 6.0 compatibility.
 ## 1.0.14
 
 * Clarified version support of Stretchysearch
-* Improved the `elasticsearch:build` Rake task to work with branch names
+* Improved the `stretchysearch:build` Rake task to work with branch names
 
 ### API
 
@@ -320,8 +320,8 @@ Stretchysearch 6.0 compatibility.
 
 ## 1.0.9
 
-* Improved the `elasticsearch::build` task in the main Rakefile
-* Merged the 'elasticsearch-dsl' gem into the main repository
+* Improved the `stretchysearch::build` task in the main Rakefile
+* Merged the 'stretchysearch-dsl' gem into the main repository
 
 ### Client
 
@@ -347,11 +347,11 @@ Stretchysearch 6.0 compatibility.
 
 ### DSL
 
-* Added the `elasticsearch-dsl` gem
+* Added the `stretchysearch-dsl` gem
 
 ## 1.0.8
 
-* Fixed incorrect dependency specification in the "elasticsearch" wrapper gem
+* Fixed incorrect dependency specification in the "stretchysearch" wrapper gem
 
 ## EXT:0.0.18
 
@@ -394,11 +394,11 @@ Stretchysearch 6.0 compatibility.
 
 ### Various
 
-* Changed the way elasticsearch/elasticsearch repository is embedded
+* Changed the way stretchysearch/stretchysearch repository is embedded
 * Added the `setup` Rake task
 * Added chapter about development to the READMEs
 * Added the "test-unit" gem for Ruby 2.2
-* Fixed the `elasticsearch:build` Rake task
+* Fixed the `stretchysearch:build` Rake task
 
 ## EXT:0.0.17
 
@@ -475,7 +475,7 @@ Stretchysearch 6.0 compatibility.
 
 ## 1.0.2
 
-* Improved the `elasticsearch:build` Rake task
+* Improved the `stretchysearch:build` Rake task
 
 ### API
 

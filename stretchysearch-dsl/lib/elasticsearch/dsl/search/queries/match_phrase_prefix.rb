@@ -16,7 +16,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query-phrase-prefix.html
+        # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/query-dsl-match-query-phrase-prefix.html
         #
         class MatchPhrasePrefix
           include BaseComponent

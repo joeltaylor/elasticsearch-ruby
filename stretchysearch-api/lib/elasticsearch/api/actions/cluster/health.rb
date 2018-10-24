@@ -33,7 +33,7 @@ module Stretchysearch
         # @option arguments [List] :wait_for_events Wait until all currently queued events with the given priorty
         #                                           are processed (immediate, urgent, high, normal, low, languid)
         #
-        # @see http://elasticsearch.org/guide/reference/api/admin-cluster-health/
+        # @see http://stretchysearch.org/guide/reference/api/admin-cluster-health/
         #
         def health(arguments={})
           arguments = arguments.clone

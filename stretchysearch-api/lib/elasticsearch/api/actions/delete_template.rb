@@ -6,7 +6,7 @@ module Stretchysearch
       #
       # @option arguments [String] :id Template ID
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/search-template.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/search-template.html
       #
       def delete_template(arguments={})
         method = HTTP_DELETE

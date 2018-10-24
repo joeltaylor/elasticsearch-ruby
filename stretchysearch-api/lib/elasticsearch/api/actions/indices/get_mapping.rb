@@ -31,7 +31,7 @@ module Stretchysearch
         # @option arguments [Boolean] :local Return local information, do not retrieve the state from master node
         #                                    (default: false)
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indices-get-mapping.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/indices-get-mapping.html
         #
         def get_mapping(arguments={})
           valid_params = [

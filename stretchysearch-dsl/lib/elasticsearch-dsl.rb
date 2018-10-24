@@ -1,1 +1,1 @@
-require 'elasticsearch/dsl'
+require 'stretchysearch/dsl'

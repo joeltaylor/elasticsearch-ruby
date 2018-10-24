@@ -8,7 +8,7 @@ module Stretchysearch
 
       # Wraps the `query` part of a search definition
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl.html
       #
       class Query
         def initialize(*args, &block)

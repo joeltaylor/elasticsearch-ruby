@@ -21,7 +21,7 @@ module Stretchysearch
         # @option arguments [Hash] :body The settings for the alias, such as `routing` or `filter`
         # @option arguments [Time] :timeout Explicit timestamp for the document
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-aliases/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-aliases/
         #
         def put_alias(arguments={})
           raise ArgumentError, "Required argument 'index' missing"  unless arguments[:index]

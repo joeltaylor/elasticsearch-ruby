@@ -38,7 +38,7 @@ module Stretchysearch
       # @option arguments [String] :search_type Search operation type (options: query_then_fetch, query_and_fetch,
       #                                         dfs_query_then_fetch, dfs_query_and_fetch, count, scan)
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-template.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/search-template.html
       #
       def search_template(arguments={})
         valid_params = [

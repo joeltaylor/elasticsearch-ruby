@@ -11,7 +11,7 @@ module Stretchysearch
           # @option arguments [Hash] :body Reversion options
           # @option arguments [Boolean] :delete_intervening_results Should we reset the results back to the time of the snapshot?
           #
-          # @see http://www.elastic.co/guide/en/elasticsearch/reference/current/ml-revert-snapshot.html
+          # @see http://www.elastic.co/guide/en/stretchysearch/reference/current/ml-revert-snapshot.html
           #
           def revert_model_snapshot(arguments={})
             raise ArgumentError, "Required argument 'job_id' missing" unless arguments[:job_id]

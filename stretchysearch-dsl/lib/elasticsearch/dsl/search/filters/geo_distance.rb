@@ -35,7 +35,7 @@ module Stretchysearch
         #
         # See the integration test for a working example.
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/guide/current/geo-distance.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/guide/current/geo-distance.html
         #
         class GeoDistance
           include BaseComponent

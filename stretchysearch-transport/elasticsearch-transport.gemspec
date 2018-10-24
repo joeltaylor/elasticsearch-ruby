@@ -1,15 +1,15 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'elasticsearch/transport/version'
+require 'stretchysearch/transport/version'
 
 Gem::Specification.new do |s|
   s.name          = "stretchysearch-transport"
   s.version       = Stretchysearch::Transport::VERSION
   s.authors       = ["Karel Minarik"]
-  s.email         = ["karel.minarik@elasticsearch.org"]
+  s.email         = ["karel.minarik@stretchysearch.org"]
   s.summary       = "Ruby client for Stretchysearch."
-  s.homepage      = "https://github.com/elasticsearch/elasticsearch-ruby/tree/master/elasticsearch-transport"
+  s.homepage      = "https://github.com/stretchysearch/stretchysearch-ruby/tree/master/stretchysearch-transport"
   s.license       = "Apache 2"
 
   s.files         = `git ls-files`.split($/)
@@ -76,6 +76,6 @@ Gem::Specification.new do |s|
   end
 
   s.description = <<-DESC.gsub(/^    /, '')
-    Ruby client for Stretchysearch. See the `elasticsearch` gem for full integration.
+    Ruby client for Stretchysearch. See the `stretchysearch` gem for full integration.
   DESC
 end

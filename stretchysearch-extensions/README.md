@@ -1,22 +1,22 @@
 # Stretchysearch::Extensions
 
 This library provides a set of extensions to the
-[`elasticsearch`](https://github.com/elasticsearch/elasticsearch-ruby) Rubygem.
+[`stretchysearch`](https://github.com/stretchysearch/stretchysearch-ruby) Rubygem.
 
 ## Installation
 
 Install the package from [Rubygems](https://rubygems.org):
 
-    gem install elasticsearch-extensions
+    gem install stretchysearch-extensions
 
 To use an unreleased version, either add it to your `Gemfile` for [Bundler](http://gembundler.com):
 
-    gem 'elasticsearch-extensions', git: 'git://github.com/elasticsearch/elasticsearch-ruby.git'
+    gem 'stretchysearch-extensions', git: 'git://github.com/stretchysearch/stretchysearch-ruby.git'
 
 or install it from a source code checkout:
 
-    git clone https://github.com/elasticsearch/elasticsearch-ruby.git
-    cd elasticsearch-ruby/elasticsearch-extensions
+    git clone https://github.com/stretchysearch/stretchysearch-ruby.git
+    cd stretchysearch-ruby/stretchysearch-extensions
     bundle install
     rake install
 
@@ -30,9 +30,9 @@ with the [_Backup_](http://backup.github.io/backup/v4/) gem.
 
 Use the Backup gem's DSL to configure the backup:
 
-    require 'elasticsearch/extensions/backup'
+    require 'stretchysearch/extensions/backup'
 
-    Model.new(:elasticsearch_backup, 'Stretchysearch') do
+    Model.new(:stretchysearch_backup, 'Stretchysearch') do
 
       database Stretchysearch do |db|
         db.url     = 'http://localhost:9200'
@@ -48,7 +48,7 @@ Use the Backup gem's DSL to configure the backup:
 
 Perform the backup with the Backup gem's command line utility:
 
-    $ backup perform -t elasticsearch_backup
+    $ backup perform -t stretchysearch_backup
 
 See more information in the [`Backup::Database::Stretchysearch`](lib/extensions/backup.rb)
 class documentation.
@@ -62,11 +62,11 @@ the settings and mappings of the index.
           when you need the feature on older versions.
 
 When the extension is loaded together with the
-[Ruby client for Stretchysearch](../elasticsearch/README.md),
+[Ruby client for Stretchysearch](../stretchysearch/README.md),
 a `reindex` method is added to the client:
 
-    require 'elasticsearch'
-    require 'elasticsearch/extensions/reindex'
+    require 'stretchysearch'
+    require 'stretchysearch/extensions/reindex'
 
     client = Stretchysearch::Client.new
     target_client = Stretchysearch::Client.new url: 'http://localhost:9250', log: true
@@ -83,13 +83,13 @@ a `reindex` method is added to the client:
     # => ... hits ... "title"=>"FOO"
 
 The method takes similar arguments as the core API
-[`reindex`](http://www.rubydoc.info/gems/elasticsearch-api/Stretchysearch/API/Actions#reindex-instance_method)
+[`reindex`](http://www.rubydoc.info/gems/stretchysearch-api/Stretchysearch/API/Actions#reindex-instance_method)
 method.
 
 You can also use the `Reindex` class directly:
 
-    require 'elasticsearch'
-    require 'elasticsearch/extensions/reindex'
+    require 'stretchysearch'
+    require 'stretchysearch/extensions/reindex'
 
     client = Stretchysearch::Client.new
 
@@ -108,15 +108,15 @@ Colorize and format selected  Stretchysearch response parts in terminal:
 
 Display formatted search results:
 
-    require 'elasticsearch/extensions/ansi'
+    require 'stretchysearch/extensions/ansi'
     puts Stretchysearch::Client.new.search.to_ansi
 
 Display a table with the output of the `_analyze` API:
 
-    require 'elasticsearch/extensions/ansi'
+    require 'stretchysearch/extensions/ansi'
     puts Stretchysearch::Client.new.indices.analyze(text: 'Quick Brown Fox Jumped').to_ansi
 
-[Full documentation](http://rubydoc.info/gems/elasticsearch-extensions/Stretchysearch/Extensions/ANSI)
+[Full documentation](http://rubydoc.info/gems/stretchysearch-extensions/Stretchysearch/Extensions/ANSI)
 
 ### Test::Cluster
 
@@ -126,18 +126,18 @@ The HTTP service is running on ports `9250-*` by default.
 
 Start and stop the default cluster:
 
-    require 'elasticsearch/extensions/test/cluster'
+    require 'stretchysearch/extensions/test/cluster'
 
     Stretchysearch::Extensions::Test::Cluster.start
     Stretchysearch::Extensions::Test::Cluster.stop
 
 Start the cluster on specific port, with a specific Stretchysearch version, number of nodes and cluster name:
 
-    require 'elasticsearch/extensions/test/cluster'
+    require 'stretchysearch/extensions/test/cluster'
 
     Stretchysearch::Extensions::Test::Cluster.start \
       cluster_name:    "my-testing-cluster",
-      command:         "/usr/local/Cellar/elasticsearch/0.90.10/bin/elasticsearch",
+      command:         "/usr/local/Cellar/stretchysearch/0.90.10/bin/stretchysearch",
       port:            9350,
       number_of_nodes: 3
 
@@ -153,7 +153,7 @@ Start the cluster on specific port, with a specific Stretchysearch version, numb
 
 Stop this cluster:
 
-    require 'elasticsearch/extensions/test/cluster'
+    require 'stretchysearch/extensions/test/cluster'
 
     Stretchysearch::Extensions::Test::Cluster.stop port: 9350
 
@@ -163,16 +163,16 @@ Stop this cluster:
 You can control the cluster configuration with environment variables as well:
 
     TEST_CLUSTER_NAME=my-testing-cluster \
-    TEST_CLUSTER_COMMAND=/usr/local/Cellar/elasticsearch/0.90.10/bin/elasticsearch \
+    TEST_CLUSTER_COMMAND=/usr/local/Cellar/stretchysearch/0.90.10/bin/stretchysearch \
     TEST_CLUSTER_PORT=9350 \
     TEST_CLUSTER_NODES=3 \
     TEST_CLUSTER_NAME=my_testing_cluster \
-    ruby -r elasticsearch -e "require 'elasticsearch/extensions/test/cluster'; Stretchysearch::Extensions::Test::Cluster.start"
+    ruby -r stretchysearch -e "require 'stretchysearch/extensions/test/cluster'; Stretchysearch::Extensions::Test::Cluster.start"
 
 To prevent deleting data and configurations when the cluster is started, for example in a development environment,
 use the `clear_cluster: false` option or the `TEST_CLUSTER_CLEAR=false` environment variable.
 
-[Full documentation](http://rubydoc.info/gems/elasticsearch-extensions/Stretchysearch/Extensions/Test/Cluster)
+[Full documentation](http://rubydoc.info/gems/stretchysearch-extensions/Stretchysearch/Extensions/Test/Cluster)
 
 ### Test::StartupShutdown
 
@@ -197,9 +197,9 @@ Example of handler registration:
       shutdown { puts "Suite shutting down..." }
     end
 
-[Full documentation](http://rubydoc.info/gems/elasticsearch-extensions/Stretchysearch/Extensions/Test/StartupShutdown)
+[Full documentation](http://rubydoc.info/gems/stretchysearch-extensions/Stretchysearch/Extensions/Test/StartupShutdown)
 
-Examples in the Stretchysearch gem test suite: [1](https://github.com/elasticsearch/elasticsearch-ruby/blob/master/elasticsearch-transport/test/integration/client_test.rb#L4-L6), [2](https://github.com/elasticsearch/elasticsearch-ruby/blob/master/elasticsearch-transport/test/test_helper.rb#L44)
+Examples in the Stretchysearch gem test suite: [1](https://github.com/stretchysearch/stretchysearch-ruby/blob/master/stretchysearch-transport/test/integration/client_test.rb#L4-L6), [2](https://github.com/stretchysearch/stretchysearch-ruby/blob/master/stretchysearch-transport/test/test_helper.rb#L44)
 
 ### Test::Profiling
 
@@ -210,7 +210,7 @@ Let's define a simple profiling test in a `profiling_test.rb` file:
 
     require 'test/unit'
     require 'shoulda/context'
-    require 'elasticsearch/extensions/test/profiling'
+    require 'stretchysearch/extensions/test/profiling'
 
     class ProfilingTest < Test::Unit::TestCase
       extend Stretchysearch::Extensions::Test::Profiling
@@ -240,9 +240,9 @@ Let's run it:
 When using the `QUIET` option, only the statistics on operation throughput are printed.
 When omitted, the full code profile by [RubyProf](https://github.com/ruby-prof/ruby-prof) is printed.
 
-[Full documentation](http://rubydoc.info/gems/elasticsearch-extensions/Stretchysearch/Extensions/Test/StartupShutdown)
+[Full documentation](http://rubydoc.info/gems/stretchysearch-extensions/Stretchysearch/Extensions/Test/StartupShutdown)
 
-[Example in the Stretchysearch gem](https://github.com/elasticsearch/elasticsearch-ruby/blob/master/elasticsearch-transport/test/profile/client_benchmark_test.rb)
+[Example in the Stretchysearch gem](https://github.com/stretchysearch/stretchysearch-ruby/blob/master/stretchysearch-transport/test/profile/client_benchmark_test.rb)
 
 
 ## Development
@@ -265,7 +265,7 @@ can use Ruby 2.x syntax and features.
 
 This software is licensed under the Apache 2 license, quoted below.
 
-    Copyright (c) 2013 Stretchysearch <http://www.elasticsearch.org>
+    Copyright (c) 2013 Stretchysearch <http://www.stretchysearch.org>
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

@@ -31,7 +31,7 @@ module Stretchysearch
         # @option arguments [Boolean] :ignore_unavailable Whether specified concrete indices should be ignored when
         #                                                 unavailable (missing, closed, etc)
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indices-get-field-mapping.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/indices-get-field-mapping.html
         #
         def get_field_mapping(arguments={})
           arguments = arguments.clone

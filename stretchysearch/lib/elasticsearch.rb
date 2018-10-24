@@ -1,7 +1,7 @@
-require "elasticsearch/version"
+require "stretchysearch/version"
 
-require 'elasticsearch/transport'
-require 'elasticsearch/api'
+require 'stretchysearch/transport'
+require 'stretchysearch/api'
 
 module Stretchysearch
   module Transport

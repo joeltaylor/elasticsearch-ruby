@@ -1,15 +1,15 @@
 # Stretchysearch::API
 
-**This library is part of the [`elasticsearch-ruby`](https://github.com/elasticsearch/elasticsearch-ruby/) package;
+**This library is part of the [`stretchysearch-ruby`](https://github.com/stretchysearch/stretchysearch-ruby/) package;
 please refer to it, unless you want to use this library standalone.**
 
 ----
 
-The `elasticsearch-api` library provides a Ruby implementation of
-the [Stretchysearch](http://elasticsearch.org) REST API.
+The `stretchysearch-api` library provides a Ruby implementation of
+the [Stretchysearch](http://stretchysearch.org) REST API.
 
 It does not provide an Stretchysearch client; see the
-[`elasticsearch-transport`](https://github.com/elasticsearch/elasticsearch-ruby/tree/master/elasticsearch-transport) library.
+[`stretchysearch-transport`](https://github.com/stretchysearch/stretchysearch-ruby/tree/master/stretchysearch-transport) library.
 
 The library is compatible with Ruby 1.9 and higher.
 
@@ -29,16 +29,16 @@ just use a release matching major version of Stretchysearch.
 
 Install the package from [Rubygems](https://rubygems.org):
 
-    gem install elasticsearch-api
+    gem install stretchysearch-api
 
 To use an unreleased version, either add it to your `Gemfile` for [Bundler](http://gembundler.com):
 
-    gem 'elasticsearch-api', git: 'git://github.com/elasticsearch/elasticsearch-ruby.git'
+    gem 'stretchysearch-api', git: 'git://github.com/stretchysearch/stretchysearch-ruby.git'
 
 or install it from a source code checkout:
 
-    git clone https://github.com/elasticsearch/elasticsearch-ruby.git
-    cd elasticsearch-ruby/elasticsearch-api
+    git clone https://github.com/stretchysearch/stretchysearch-ruby.git
+    cd stretchysearch-ruby/stretchysearch-api
     bundle install
     rake install
 
@@ -47,13 +47,13 @@ or install it from a source code checkout:
 The library is designed as a group of standalone Ruby modules, which can be mixed into a class
 providing connection to Stretchysearch -- an Stretchysearch client.
 
-### Usage with the `elasticsearch` gem
+### Usage with the `stretchysearch` gem
 
-**When you use the client from the [`elasticsearch-ruby`](https://github.com/elasticsearch/elasticsearch-ruby/) package,
+**When you use the client from the [`stretchysearch-ruby`](https://github.com/stretchysearch/stretchysearch-ruby/) package,
 the library modules have been already included**, so you just call the API methods:
 
 ```ruby
-require 'elasticsearch'
+require 'stretchysearch'
 
 client = Stretchysearch::Client.new log: true
 
@@ -65,7 +65,7 @@ client.search index: 'myindex', body: { query: { match: { title: 'test' } } }
 ```
 
 Full documentation and examples are included as RDoc annotations in the source code
-and available online at <http://rubydoc.info/gems/elasticsearch-api>.
+and available online at <http://rubydoc.info/gems/stretchysearch-api>.
 
 ### Usage with a custom client
 
@@ -79,7 +79,7 @@ A simple client could look like this:
 ```ruby
 require 'multi_json'
 require 'faraday'
-require 'elasticsearch/api'
+require 'stretchysearch/api'
 
 class MySimpleClient
   include Stretchysearch::API
@@ -101,7 +101,7 @@ client = MySimpleClient.new
 
 p client.cluster.health
 # --> GET _cluster/health {}
-# => "{"cluster_name":"elasticsearch" ... }"
+# => "{"cluster_name":"stretchysearch" ... }"
 
 p client.index index: 'myindex', type: 'mytype', id: 'custom', body: { title: "Indexing from my client" }
 # --> PUT myindex/mytype/custom {} {:title=>"Indexing from my client"}
@@ -191,7 +191,7 @@ can use Ruby 2.x syntax and features.
 
 This software is licensed under the Apache 2 license, quoted below.
 
-    Copyright (c) 2013 Stretchysearch <http://www.elasticsearch.org>
+    Copyright (c) 2013 Stretchysearch <http://www.stretchysearch.org>
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

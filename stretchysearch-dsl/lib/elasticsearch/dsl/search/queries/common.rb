@@ -18,7 +18,7 @@ module Stretchysearch
         #
         # This query is frequently used when a stopwords-based approach loses too much recall and/or precision.
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-common-terms-query.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-common-terms-query.html
         #
         class Common
           include BaseComponent

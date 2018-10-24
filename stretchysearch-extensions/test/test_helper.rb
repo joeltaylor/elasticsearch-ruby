@@ -15,9 +15,9 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 require 'ansi/code'
 require 'logger'
 
-require 'elasticsearch/extensions'
-require 'elasticsearch/extensions/test/startup_shutdown'
-require 'elasticsearch/extensions/test/cluster'
+require 'stretchysearch/extensions'
+require 'stretchysearch/extensions/test/startup_shutdown'
+require 'stretchysearch/extensions/test/cluster'
 
 module Stretchysearch
   module Test

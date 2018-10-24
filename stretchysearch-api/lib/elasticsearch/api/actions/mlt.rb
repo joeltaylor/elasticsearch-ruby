@@ -79,7 +79,7 @@ module Stretchysearch
       #                                        (default: the same type as the document)
       # @option arguments [List] :stop_words A list of stop words to be ignored
       #
-      # @see http://elasticsearch.org/guide/reference/api/more-like-this/
+      # @see http://stretchysearch.org/guide/reference/api/more-like-this/
       #
       def mlt(arguments={})
         raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

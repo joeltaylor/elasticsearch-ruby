@@ -9,7 +9,7 @@ module Stretchysearch
         # @option arguments [Time] :master_timeout Explicit operation timeout for connection to master node
         # @option arguments [Time] :timeout Explicit operation timeout
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/modules-snapshots.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/modules-snapshots.html
         #
         def verify_repository(arguments={})
           raise ArgumentError, "Required argument 'repository' missing" unless arguments[:repository]

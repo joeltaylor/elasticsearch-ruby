@@ -10,7 +10,7 @@ module Stretchysearch
     # @see Reindex::Reindex.initialize
     # @see Reindex::Reindex#perform
     #
-    # @see http://www.rubydoc.info/gems/elasticsearch-api/Stretchysearch/API/Actions#reindex-instance_method
+    # @see http://www.rubydoc.info/gems/stretchysearch-api/Stretchysearch/API/Actions#reindex-instance_method
     #
     module Reindex
 
@@ -89,7 +89,7 @@ module Stretchysearch
       # Note, that there is a native "Reindex" API in Stretchysearch 2.3.x and higer versions,
       # which will be more performant than the Ruby version.
       #
-      # @see http://www.rubydoc.info/gems/elasticsearch-api/Stretchysearch/API/Actions#reindex-instance_method
+      # @see http://www.rubydoc.info/gems/stretchysearch-api/Stretchysearch/API/Actions#reindex-instance_method
       #
       class Reindex
         attr_reader :arguments

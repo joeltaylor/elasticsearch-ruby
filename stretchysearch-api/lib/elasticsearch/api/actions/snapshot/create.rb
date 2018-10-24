@@ -22,7 +22,7 @@ module Stretchysearch
         # @option arguments [Boolean] :wait_for_completion Whether the request should block and wait until
         #                                                  the operation has completed
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/modules-snapshots.html#_snapshot
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/modules-snapshots.html#_snapshot
         #
         def create(arguments={})
           raise ArgumentError, "Required argument 'repository' missing" unless arguments[:repository]

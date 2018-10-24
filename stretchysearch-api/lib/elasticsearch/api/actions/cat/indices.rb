@@ -49,7 +49,7 @@ module Stretchysearch
         #                                    (default: false)
         # @option arguments [Time] :master_timeout Explicit operation timeout for connection to master node
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/cat-indices.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/cat-indices.html
         #
         def indices(arguments={})
           valid_params = [

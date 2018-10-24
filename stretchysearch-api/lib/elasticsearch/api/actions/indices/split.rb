@@ -13,7 +13,7 @@ module Stretchysearch
         # @option arguments [Time] :master_timeout Specify timeout for connection to master
         # @option arguments [String] :wait_for_active_shards Set the number of active shards to wait for on the shrunken index before the operation returns.
         #
-        # @see http://www.elastic.co/guide/en/elasticsearch/reference/master/indices-split-index.html
+        # @see http://www.elastic.co/guide/en/stretchysearch/reference/master/indices-split-index.html
         #
         def split(arguments={})
           raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

@@ -16,7 +16,7 @@ module Stretchysearch
           # @option arguments [String] :end Returns overall buckets with timestamps earlier than this time
           # @option arguments [Boolean] :allow_no_jobs Whether to ignore if a wildcard expression matches no jobs. (This includes `_all` string or when no jobs have been specified)
           #
-          # @see http://www.elastic.co/guide/en/elasticsearch/reference/current/ml-get-overall-buckets.html
+          # @see http://www.elastic.co/guide/en/stretchysearch/reference/current/ml-get-overall-buckets.html
           #
           def get_overall_buckets(arguments={})
             raise ArgumentError, "Required argument 'job_id' missing" unless arguments[:job_id]

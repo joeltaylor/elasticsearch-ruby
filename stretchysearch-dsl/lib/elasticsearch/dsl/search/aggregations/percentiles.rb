@@ -15,7 +15,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/reference/current/search-aggregations-metrics-percentile-aggregation.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/reference/current/search-aggregations-metrics-percentile-aggregation.html
         #
         class Percentiles
           include BaseComponent

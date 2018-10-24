@@ -45,8 +45,8 @@ module Stretchysearch
       # @option arguments [Duration] :scroll Specify how long a consistent view of the index
       #                                      should be maintained for scrolled search
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/scan-scroll.html#scan-scroll
-      # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-scroll.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/guide/current/scan-scroll.html#scan-scroll
+      # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/search-request-scroll.html
       #
       def scroll(arguments={})
         method = HTTP_GET

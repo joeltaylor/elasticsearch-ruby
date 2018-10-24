@@ -13,7 +13,7 @@ class Stretchysearch::Transport::Transport::SnifferTest < Test::Unit::TestCase
 
   DEFAULT_NODES_INFO_RESPONSE = <<-JSON
     {
-      "cluster_name" : "elasticsearch_test",
+      "cluster_name" : "stretchysearch_test",
       "nodes" : {
         "N1" : {
           "name" : "Node 1",
@@ -143,7 +143,7 @@ class Stretchysearch::Transport::Transport::SnifferTest < Test::Unit::TestCase
       @transport.expects(:perform_request).returns __nodes_info <<-JSON
         {
           "ok" : true,
-          "cluster_name" : "elasticsearch_test",
+          "cluster_name" : "stretchysearch_test",
           "nodes" : {
             "N1" : {
               "name" : "Node 1",

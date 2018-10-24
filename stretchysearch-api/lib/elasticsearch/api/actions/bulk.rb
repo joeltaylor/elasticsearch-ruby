@@ -61,7 +61,7 @@ module Stretchysearch
       #
       # @return [Hash] Deserialized Stretchysearch response
       #
-      # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html
+      # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/docs-bulk.html
       #
       def bulk(arguments={})
         arguments = arguments.clone

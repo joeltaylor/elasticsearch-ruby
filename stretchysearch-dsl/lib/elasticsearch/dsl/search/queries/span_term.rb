@@ -13,7 +13,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-span-term-query.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-span-term-query.html
         # @see https://lucene.apache.org/core/5_0_0/core/org/apache/lucene/search/spans/package-summary.html
         #
         class SpanTerm

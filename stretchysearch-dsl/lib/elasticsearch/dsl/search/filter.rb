@@ -8,7 +8,7 @@ module Stretchysearch
 
       # Wraps the `filter` part of a search definition, aggregation, etc
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-filters.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-filters.html
       #
       class Filter
         def initialize(*args, &block)

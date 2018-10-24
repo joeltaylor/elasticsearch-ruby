@@ -15,7 +15,7 @@ module Stretchysearch
         # @option arguments [Boolean] :local Return local information,
         #                                    do not retrieve the state from master node (default: false)
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indices-aliases.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/indices-aliases.html
         #
         def get_aliases(arguments={})
           valid_params = [ :timeout, :local ]

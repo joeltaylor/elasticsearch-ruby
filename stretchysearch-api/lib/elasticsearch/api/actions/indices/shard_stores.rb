@@ -12,7 +12,7 @@ module Stretchysearch
         # @option arguments [String] :expand_wildcards Whether to expand wildcard expression to concrete indices that are open, closed or both. (options: open, closed, none, all)
         # @option arguments [String] :operation_threading
         #
-        # @see http://www.elastic.co/guide/en/elasticsearch/reference/master/indices-shards-stores.html
+        # @see http://www.elastic.co/guide/en/stretchysearch/reference/master/indices-shards-stores.html
         #
         def shard_stores(arguments={})
           valid_params = [

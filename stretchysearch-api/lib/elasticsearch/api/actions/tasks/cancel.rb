@@ -15,7 +15,7 @@ module Stretchysearch
         # @option arguments [Number] :parent_task Cancel tasks with specified parent task id.
         #                                         Set to -1 to cancel all.
         #
-        # @see http://www.elastic.co/guide/en/elasticsearch/reference/master/tasks-cancel.html
+        # @see http://www.elastic.co/guide/en/stretchysearch/reference/master/tasks-cancel.html
         #
         def cancel(arguments={})
           valid_params = [

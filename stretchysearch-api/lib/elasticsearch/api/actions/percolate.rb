@@ -9,9 +9,9 @@ module Stretchysearch
       #
       # @deprecated The `_percolate` API has been deprecated in favour of a special field mapping and the
       #             `percolate` query;
-      #             see https://www.elastic.co/guide/en/elasticsearch/reference/5.5/breaking_50_percolator.html
+      #             see https://www.elastic.co/guide/en/stretchysearch/reference/5.5/breaking_50_percolator.html
       #
-      # See full example for Stretchysearch 5.x and higher in <https://github.com/elastic/elasticsearch-ruby/blob/master/examples/percolator/percolator_alerts.rb>
+      # See full example for Stretchysearch 5.x and higher in <https://github.com/elastic/stretchysearch-ruby/blob/master/examples/percolator/percolator_alerts.rb>
       #
       # @option arguments [String] :index The index of the document being percolated. (*Required*)
       # @option arguments [String] :type The type of the document being percolated. (*Required*)
@@ -35,7 +35,7 @@ module Stretchysearch
       # @option arguments [Number] :version Explicit version number for concurrency control
       # @option arguments [String] :version_type Specific version type (options: internal, external, external_gte, force)
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/search-percolate.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/search-percolate.html
       #
       def percolate(arguments={})
         Utils.__report_unsupported_method :percolate

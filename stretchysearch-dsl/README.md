@@ -1,7 +1,7 @@
 # Stretchysearch::DSL
 
-The `elasticsearch-dsl` library provides a Ruby API for
-the [Stretchysearch Query DSL](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl.html).
+The `stretchysearch-dsl` library provides a Ruby API for
+the [Stretchysearch Query DSL](http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl.html).
 
 The library is compatible with Ruby 1.9 or higher and Stretchysearch 1.0 and higher.
 
@@ -9,16 +9,16 @@ The library is compatible with Ruby 1.9 or higher and Stretchysearch 1.0 and hig
 
 Install the package from [Rubygems](https://rubygems.org):
 
-    gem install elasticsearch-dsl
+    gem install stretchysearch-dsl
 
 To use an unreleased version, either add it to your `Gemfile` for [Bundler](http://gembundler.com):
 
-    gem 'elasticsearch-dsl', git: 'git://github.com/elasticsearch/elasticsearch-ruby.git'
+    gem 'stretchysearch-dsl', git: 'git://github.com/stretchysearch/stretchysearch-ruby.git'
 
 or install it from a source code checkout:
 
-    git clone https://github.com/elasticsearch/elasticsearch-ruby.git
-    cd elasticsearch-ruby/elasticsearch-dsl
+    git clone https://github.com/stretchysearch/stretchysearch-ruby.git
+    cd stretchysearch-ruby/stretchysearch-dsl
     bundle install
     rake install
 
@@ -26,12 +26,12 @@ or install it from a source code checkout:
 
 The library is designed as a group of standalone Ruby modules, classes and DSL methods,
 which provide an idiomatic way to build complex
-[search definitions](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-request-body.html).
+[search definitions](http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/search-request-body.html).
 
 Let's have a simple example using the declarative variant:
 
 ```ruby
-require 'elasticsearch/dsl'
+require 'stretchysearch/dsl'
 include Stretchysearch::DSL
 
 definition = search do
@@ -43,7 +43,7 @@ end
 definition.to_hash
 # => { query: { match: { title: "test"} } }
 
-require 'elasticsearch'
+require 'stretchysearch'
 client = Stretchysearch::Client.new trace: true
 
 client.search body: definition
@@ -61,7 +61,7 @@ client.search body: definition
 Let's build the same definition in a more imperative fashion:
 
 ```ruby
-require 'elasticsearch/dsl'
+require 'stretchysearch/dsl'
 include Stretchysearch::DSL
 
 definition = Search::Search.new
@@ -75,7 +75,7 @@ The library doesn't depend on an Stretchysearch client -- its sole purpose is to
 building search definitions in Ruby. This makes it possible to use it with any Stretchysearch client:
 
 ```ruby
-require 'elasticsearch/dsl'
+require 'stretchysearch/dsl'
 include Stretchysearch::DSL
 
 definition = search { query { match title: 'test' } }
@@ -100,27 +100,27 @@ which are translated to Hashes, and ultimately, JSON, the language of Stretchyse
 
 All Stretchysearch DSL features are supported, namely:
 
-* [Queries](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-queries.html)
-* [Filters](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-filters.html)
-* [Aggregations](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-aggregations.html)
-* [Suggestions](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-suggesters.html)
-* [Sorting](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-request-sort.html)
-* [Pagination](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-request-from-size.html)
-* [Options](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-request-body.html) (source filtering, highlighting, etc)
+* [Queries](http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-queries.html)
+* [Filters](http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-filters.html)
+* [Aggregations](http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/search-aggregations.html)
+* [Suggestions](http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/search-suggesters.html)
+* [Sorting](http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/search-request-sort.html)
+* [Pagination](http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/search-request-from-size.html)
+* [Options](http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/search-request-body.html) (source filtering, highlighting, etc)
 
 An example of a complex search definition is below.
 
-**NOTE:** In order to run the example, you have to allow restoring from the `data.elasticsearch.org` repository by adding the following configuration line to your `elasticsearch.yml`:
+**NOTE:** In order to run the example, you have to allow restoring from the `data.stretchysearch.org` repository by adding the following configuration line to your `stretchysearch.yml`:
 
 ```yaml
-repositories.url.allowed_urls: ["https://s3.amazonaws.com/data.elasticsearch.org/*"]
+repositories.url.allowed_urls: ["https://s3.amazonaws.com/data.stretchysearch.org/*"]
 ```
 
 ```ruby
 require 'awesome_print'
 
-require 'elasticsearch'
-require 'elasticsearch/dsl'
+require 'stretchysearch'
+require 'stretchysearch/dsl'
 
 include Stretchysearch::DSL
 
@@ -130,8 +130,8 @@ puts "Recovering the 'bicycles.stackexchange.com' index...".yellow
 
 client.indices.delete index: 'bicycles.stackexchange.com', ignore: 404
 
-client.snapshot.create_repository repository: 'data.elasticsearch.org', body: { type: 'url', settings: { url: 'https://s3.amazonaws.com/data.elasticsearch.org/bicycles.stackexchange.com/' } }
-client.snapshot.restore repository: 'data.elasticsearch.org', snapshot: 'bicycles.stackexchange.com', body: { indices: 'bicycles.stackexchange.com' }
+client.snapshot.create_repository repository: 'data.stretchysearch.org', body: { type: 'url', settings: { url: 'https://s3.amazonaws.com/data.stretchysearch.org/bicycles.stackexchange.com/' } }
+client.snapshot.restore repository: 'data.stretchysearch.org', snapshot: 'bicycles.stackexchange.com', body: { indices: 'bicycles.stackexchange.com' }
 until client.cluster.health(level: 'indices')['indices']['bicycles.stackexchange.com']['status'] == 'green'
   r = client.indices.recovery(index: 'bicycles.stackexchange.com', human: true)['bicycles.stackexchange.com']['shards'][0] rescue nil
   print "\r#{r['index']['size']['recovered'] rescue '0b'} of #{r['index']['size']['total'] rescue 'N/A'}".ljust(52).gray
@@ -235,7 +235,7 @@ ap   response
 ```
 
 NOTE: You have to enable dynamic scripting to be able to execute the `function_score` query, either
-      by adding `script.disable_dynamic: false` to your elasticsearch.yml or command line parameters.
+      by adding `script.disable_dynamic: false` to your stretchysearch.yml or command line parameters.
 
 **Please see the extensive RDoc examples in the source code and the integration tests.**
 
@@ -244,8 +244,8 @@ NOTE: You have to enable dynamic scripting to be able to execute the `function_s
 To work on the code, clone the repository and install the dependencies:
 
 ```
-git clone https://github.com/elasticsearch/elasticsearch-ruby.git
-cd elasticsearch-ruby/elasticsearch-dsl/
+git clone https://github.com/stretchysearch/stretchysearch-ruby.git
+cd stretchysearch-ruby/stretchysearch-dsl/
 bundle install
 ```
 
@@ -263,7 +263,7 @@ see instructions in the main [README](../README.md#development).
 
 This software is licensed under the Apache 2 license, quoted below.
 
-    Copyright (c) 2015 Stretchysearch <http://www.elasticsearch.org>
+    Copyright (c) 2015 Stretchysearch <http://www.stretchysearch.org>
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

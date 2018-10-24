@@ -10,7 +10,7 @@ require 'mocha/setup'
 require 'turn' unless ENV["TM_FILEPATH"] || ENV["NOTURN"] || RUBY_1_8
 
 require 'require-prof' if ENV["REQUIRE_PROF"]
-Dir[ File.expand_path('../../lib/elasticsearch/api/**/*.rb', __FILE__) ].each do |f|
+Dir[ File.expand_path('../../lib/stretchysearch/api/**/*.rb', __FILE__) ].each do |f|
   puts 'Loading: ' + f.to_s if ENV['DEBUG']
   require f
 end

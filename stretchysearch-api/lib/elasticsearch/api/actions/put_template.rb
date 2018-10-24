@@ -8,7 +8,7 @@ module Stretchysearch
       # @option arguments [String] :id Template ID (*Required*)
       # @option arguments [Hash] :body The document (*Required*)
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/search-template.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/search-template.html
       #
       def put_template(arguments={})
         raise ArgumentError, "Required argument 'id' missing"   unless arguments[:id]

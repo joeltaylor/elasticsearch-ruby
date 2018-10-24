@@ -16,7 +16,7 @@ module Stretchysearch
       # @option arguments [Hash] :body The request definitions (metadata-search request definition pairs), separated by newlines (*Required*)
       # @option arguments [String] :search_type Search operation type (options: query_then_fetch, query_and_fetch, dfs_query_then_fetch, dfs_query_and_fetch)
       #
-      # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/multi-search-template.html
+      # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/multi-search-template.html
       #
       def msearch_template(arguments={})
         raise ArgumentError, "Required argument 'body' missing" unless arguments[:body]

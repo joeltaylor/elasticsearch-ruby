@@ -18,7 +18,7 @@ module Stretchysearch
         #
         # See the integration test for a full example.
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/guide/current/geohash-grid-agg.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/guide/current/geohash-grid-agg.html
         #
         class GeohashGrid
           include BaseAggregationComponent

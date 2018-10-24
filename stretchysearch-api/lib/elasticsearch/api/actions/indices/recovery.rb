@@ -22,7 +22,7 @@ module Stretchysearch
         # @option arguments [Boolean] :active_only Display only those recoveries that are currently on-going
         # @option arguments [Boolean] :human Whether to return time and byte values in human readable format
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/indices-recovery.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/indices-recovery.html
         #
         def recovery(arguments={})
           valid_params = [

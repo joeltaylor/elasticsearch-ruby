@@ -12,7 +12,7 @@ module Stretchysearch
         # @option arguments [Boolean] :v Verbose mode. Display column headers
         # @option arguments [List] :s Comma-separated list of column names or column aliases to sort by
         #
-        # @see http://www.elastic.co/guide/en/elasticsearch/reference/master/cat-nodeattrs.html
+        # @see http://www.elastic.co/guide/en/stretchysearch/reference/master/cat-nodeattrs.html
         #
         def nodeattrs(arguments={})
           valid_params = [

@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'elasticsearch/xpack/version'
+require 'stretchysearch/xpack/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "stretchysearch-xpack"
@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Ruby integrations for the X-Pack extensions for Stretchysearch"
   spec.description   = "Ruby integrations for the X-Pack extensions for Stretchysearch"
-  spec.homepage      = "https://github.com/elastic/elasticsearch-xpack-ruby"
+  spec.homepage      = "https://github.com/elastic/stretchysearch-xpack-ruby"
   spec.license       = "Apache 2"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

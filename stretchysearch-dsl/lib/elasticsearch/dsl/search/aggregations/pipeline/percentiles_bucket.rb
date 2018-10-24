@@ -20,7 +20,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-percentiles-bucket-aggregation.html
+        # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/search-aggregations-pipeline-percentiles-bucket-aggregation.html
         #
         class PercentilesBucket
           include BaseAggregationComponent

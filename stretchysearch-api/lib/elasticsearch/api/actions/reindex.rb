@@ -49,7 +49,7 @@ module Stretchysearch
       # @option arguments [Integer] :slices The number of slices this request should be divided into.
       #                                     Defaults to 1 meaning the request isn't sliced into sub-requests.
       #
-      # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-reindex.html
+      # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/docs-reindex.html
       #
       def reindex(arguments={})
         raise ArgumentError, "Required argument 'body' missing" unless arguments[:body]

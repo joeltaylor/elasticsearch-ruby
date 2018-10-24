@@ -30,7 +30,7 @@ module Stretchysearch
           should "have option methods" do
             subject = Bool.new do
               should   { term tag: 'wow' }
-              should   { term tag: 'elasticsearch' }
+              should   { term tag: 'stretchysearch' }
 
               minimum_should_match 1
               boost 1.0
@@ -40,7 +40,7 @@ module Stretchysearch
                             {
                               minimum_should_match: 1,
                               boost: 1.0,
-                              should:     [ {term: { tag: 'wow' }}, {term: { tag: 'elasticsearch' }} ]
+                              should:     [ {term: { tag: 'wow' }}, {term: { tag: 'stretchysearch' }} ]
                             }
                           },
                           subject.to_hash )

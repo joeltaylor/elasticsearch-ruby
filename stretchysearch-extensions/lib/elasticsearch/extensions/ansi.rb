@@ -1,17 +1,17 @@
 # encoding: utf-8
 
-require 'elasticsearch/extensions'
+require 'stretchysearch/extensions'
 
 require 'ansi'
 require 'ansi/table'
 require 'ansi/terminal'
 
 require 'delegate'
-require 'elasticsearch/transport/transport/response'
+require 'stretchysearch/transport/transport/response'
 
-require 'elasticsearch/extensions/ansi/helpers'
-require 'elasticsearch/extensions/ansi/actions'
-require 'elasticsearch/extensions/ansi/response'
+require 'stretchysearch/extensions/ansi/helpers'
+require 'stretchysearch/extensions/ansi/actions'
+require 'stretchysearch/extensions/ansi/response'
 
 module Stretchysearch
   module Extensions
@@ -21,12 +21,12 @@ module Stretchysearch
     #
     # @example Display formatted search results
     #
-    #     require 'elasticsearch/extensions/ansi'
+    #     require 'stretchysearch/extensions/ansi'
     #     puts Stretchysearch::Client.new.search.to_ansi
     #
     # @example Display a table with the output of the `_analyze` API
     #
-    #     require 'elasticsearch/extensions/ansi'
+    #     require 'stretchysearch/extensions/ansi'
     #     puts Stretchysearch::Client.new.indices.analyze(text: 'Quick Brown Fox Jumped').to_ansi
     #
     module ANSI

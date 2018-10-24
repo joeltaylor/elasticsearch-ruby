@@ -15,7 +15,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-term-query.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-term-query.html
         #
         class Term
           include BaseComponent

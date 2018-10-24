@@ -45,7 +45,7 @@ module Stretchysearch
       # @option arguments [Boolean] :terminate_after Specify the maximum count for each shard, upon reaching
       #                                              which the query execution will terminate early.
       #
-      # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html
+      # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/search-count.html
       #
       def count(arguments={})
         valid_params = [

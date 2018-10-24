@@ -63,7 +63,7 @@ module Stretchysearch
         #                                      text to a numeric field) should be ignored
         # @option arguments [Boolean] :lowercase_expanded_terms Specify whether query terms should be lowercased
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/validate/
+        # @see http://www.stretchysearch.org/guide/reference/api/validate/
         #
         def validate_query(arguments={})
           valid_params = [

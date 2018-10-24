@@ -1,9 +1,9 @@
 require "cgi"
 require "multi_json"
 
-require "elasticsearch/api/version"
-require "elasticsearch/api/namespace/common"
-require "elasticsearch/api/utils"
+require "stretchysearch/api/version"
+require "stretchysearch/api/namespace/common"
+require "stretchysearch/api/utils"
 
 Dir[ File.expand_path('../api/actions/**/*.rb', __FILE__) ].each   { |f| require f }
 Dir[ File.expand_path('../api/namespace/**/*.rb', __FILE__) ].each { |f| require f }

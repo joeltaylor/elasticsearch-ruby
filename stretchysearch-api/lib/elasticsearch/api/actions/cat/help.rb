@@ -7,7 +7,7 @@ module Stretchysearch
         #
         # @option arguments [Boolean] :help Return help information
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/cat.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/cat.html
         #
         def help(arguments={})
           valid_params = [

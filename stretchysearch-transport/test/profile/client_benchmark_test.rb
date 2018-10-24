@@ -59,7 +59,7 @@ class Stretchysearch::Transport::ClientProfilingTest < Stretchysearch::Test::Pro
     context "with a single-node cluster and the Curb client" do
       setup do
         require 'curb'
-        require 'elasticsearch/transport/transport/http/curb'
+        require 'stretchysearch/transport/transport/http/curb'
         @client = Stretchysearch::Client.new host: "localhost:#{@port}",
                                             transport_class: Stretchysearch::Transport::Transport::HTTP::Curb
       end

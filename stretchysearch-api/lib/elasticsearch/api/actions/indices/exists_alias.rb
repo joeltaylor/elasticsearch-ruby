@@ -23,7 +23,7 @@ module Stretchysearch
         # @option arguments [Boolean] :local Return local information, do not retrieve the state from master node
         #                                    (default: false)
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-aliases/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-aliases/
         #
         def exists_alias(arguments={})
           valid_params = [

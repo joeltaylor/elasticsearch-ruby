@@ -32,13 +32,13 @@ unless ENV["NOTURN"] || RUBY_1_8
 end
 
 require 'require-prof' if ENV["REQUIRE_PROF"]
-require 'elasticsearch/api'
+require 'stretchysearch/api'
 RequireProf.print_timing_infos if ENV["REQUIRE_PROF"]
 
 if defined?(RUBY_VERSION) && RUBY_VERSION > '1.9'
-  require 'elasticsearch/extensions/test/cluster'
-  require 'elasticsearch/extensions/test/startup_shutdown'
-  require 'elasticsearch/extensions/test/profiling' unless JRUBY
+  require 'stretchysearch/extensions/test/cluster'
+  require 'stretchysearch/extensions/test/startup_shutdown'
+  require 'stretchysearch/extensions/test/profiling' unless JRUBY
 end
 
 module Stretchysearch

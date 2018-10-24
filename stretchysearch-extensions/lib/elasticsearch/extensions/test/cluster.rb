@@ -26,19 +26,19 @@ module Stretchysearch
       # eg. for integration tests
       #
       # @example Start a cluster with default configuration,
-      #          assuming `elasticsearch` is on $PATH.
+      #          assuming `stretchysearch` is on $PATH.
       #
-      #      require 'elasticsearch/extensions/test/cluster'
+      #      require 'stretchysearch/extensions/test/cluster'
       #      Stretchysearch::Extensions::Test::Cluster.start
       #
       # @example Start a cluster with a specific Stretchysearch launch script,
       #          eg. from a downloaded `.tar.gz` distribution
       #
-      #      system 'wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.1.1.tar.gz'
-      #      system 'tar -xvf elasticsearch-5.1.1.tar.gz'
+      #      system 'wget https://artifacts.elastic.co/downloads/stretchysearch/stretchysearch-5.1.1.tar.gz'
+      #      system 'tar -xvf stretchysearch-5.1.1.tar.gz'
       #
-      #      require 'elasticsearch/extensions/test/cluster'
-      #      Stretchysearch::Extensions::Test::Cluster.start command: 'elasticsearch-5.1.1/bin/elasticsearch'
+      #      require 'stretchysearch/extensions/test/cluster'
+      #      Stretchysearch::Extensions::Test::Cluster.start command: 'stretchysearch-5.1.1/bin/stretchysearch'
       #
       # @see Cluster#initialize
       #
@@ -201,9 +201,9 @@ module Stretchysearch
 
           # Create a new instance of the Cluster class
           #
-          # @option arguments [String]  :cluster_name Cluster name (default: `elasticsearch_test`)
+          # @option arguments [String]  :cluster_name Cluster name (default: `stretchysearch_test`)
           # @option arguments [Integer] :number_of_nodes Number of desired nodes (default: 2)
-          # @option arguments [String]  :command      Stretchysearch command (default: `elasticsearch`)
+          # @option arguments [String]  :command      Stretchysearch command (default: `stretchysearch`)
           # @option arguments [String]  :port         Starting port number; will be auto-incremented (default: 9250)
           # @option arguments [String]  :node_name    The node name (will be appended with a number)
           # @option arguments [String]  :path_data    Path to the directory to store data in
@@ -211,7 +211,7 @@ module Stretchysearch
           # @option arguments [String]  :path_logs    Path to the directory with log files
           # @option arguments [Boolean] :multicast_enabled Whether multicast is enabled (default: true)
           # @option arguments [Integer] :timeout      Timeout when starting the cluster (default: 60)
-          # @option arguments [Integer] :timeout_version Timeout when waiting for `elasticsearch --version` (default: 15)
+          # @option arguments [Integer] :timeout_version Timeout when waiting for `stretchysearch --version` (default: 15)
           # @option arguments [String]  :network_host The host that nodes will bind on and publish to
           # @option arguments [Boolean] :clear_cluster Wipe out cluster content on startup (default: true)
           # @option arguments [Boolean] :quiet         Disable printing to STDERR (default: false)
@@ -223,13 +223,13 @@ module Stretchysearch
           def initialize(arguments={})
             @arguments = arguments.dup
 
-            @arguments[:command]           ||= ENV.fetch('TEST_CLUSTER_COMMAND',   'elasticsearch')
+            @arguments[:command]           ||= ENV.fetch('TEST_CLUSTER_COMMAND',   'stretchysearch')
             @arguments[:port]              ||= ENV.fetch('TEST_CLUSTER_PORT',      9250).to_i
             @arguments[:cluster_name]      ||= ENV.fetch('TEST_CLUSTER_NAME',      __default_cluster_name).chomp
             @arguments[:node_name]         ||= ENV.fetch('TEST_CLUSTER_NODE_NAME', 'node')
-            @arguments[:path_data]         ||= ENV.fetch('TEST_CLUSTER_DATA',      '/tmp/elasticsearch_test')
+            @arguments[:path_data]         ||= ENV.fetch('TEST_CLUSTER_DATA',      '/tmp/stretchysearch_test')
             @arguments[:path_work]         ||= ENV.fetch('TEST_CLUSTER_TMP',       '/tmp')
-            @arguments[:path_logs]         ||= ENV.fetch('TEST_CLUSTER_LOGS',      '/tmp/log/elasticsearch')
+            @arguments[:path_logs]         ||= ENV.fetch('TEST_CLUSTER_LOGS',      '/tmp/log/stretchysearch')
             @arguments[:es_params]         ||= ENV.fetch('TEST_CLUSTER_PARAMS',    '')
             @arguments[:multicast_enabled] ||= ENV.fetch('TEST_CLUSTER_MULTICAST', 'true')
             @arguments[:timeout]           ||= ENV.fetch('TEST_CLUSTER_TIMEOUT',   60).to_i
@@ -263,7 +263,7 @@ module Stretchysearch
           #
           # @example Start a cluster with a different Stretchysearch version
           #      Stretchysearch::Extensions::Test::Cluster::Cluster.new(
-          #        command: "/usr/local/Cellar/elasticsearch/1.0.0.Beta2/bin/elasticsearch"
+          #        command: "/usr/local/Cellar/stretchysearch/1.0.0.Beta2/bin/stretchysearch"
           #      ).start
           #
           # @return Boolean,Array
@@ -422,7 +422,7 @@ module Stretchysearch
           # @return String
           #
           def __default_cluster_name
-            "elasticsearch-test-#{Socket.gethostname.downcase}"
+            "stretchysearch-test-#{Socket.gethostname.downcase}"
           end
 
           # Returns the HTTP URL for the cluster based on `:network_host` setting
@@ -442,8 +442,8 @@ module Stretchysearch
           # Determine Stretchysearch version to be launched
           #
           # Tries to get the version from the arguments passed,
-          # if not available, it parses the version number from the `lib/elasticsearch-X.Y.Z.jar` file,
-          # if that is not available, uses `elasticsearch --version` or `elasticsearch -v`
+          # if not available, it parses the version number from the `lib/stretchysearch-X.Y.Z.jar` file,
+          # if that is not available, uses `stretchysearch --version` or `stretchysearch -v`
           #
           # @api private
           #
@@ -453,9 +453,9 @@ module Stretchysearch
             path_to_lib = File.dirname(arguments[:command]) + '/../lib/'
             version = if arguments[:version]
               arguments[:version]
-            elsif File.exist?(path_to_lib) && !(jar = Dir.entries(path_to_lib).select { |f| f.start_with? 'elasticsearch' }.first).nil?
+            elsif File.exist?(path_to_lib) && !(jar = Dir.entries(path_to_lib).select { |f| f.start_with? 'stretchysearch' }.first).nil?
               __log "Determining version from [#{jar}]" if ENV['DEBUG']
-              if m = jar.match(/elasticsearch\-(\d+\.\d+\.\d+).*/)
+              if m = jar.match(/stretchysearch\-(\d+\.\d+\.\d+).*/)
                 m[1]
               else
                 raise RuntimeError, "Cannot determine Stretchysearch version from jar [#{jar}]"
@@ -513,7 +513,7 @@ module Stretchysearch
               if m = output.match(/Version: (\d\.\d.\d).*,/)
                 m[1]
               else
-                raise RuntimeError, "Cannot determine Stretchysearch version from elasticsearch --version output [#{output}]"
+                raise RuntimeError, "Cannot determine Stretchysearch version from stretchysearch --version output [#{output}]"
               end
             end
 

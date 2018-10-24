@@ -11,7 +11,7 @@ module Stretchysearch
           # @option arguments [String] :expand_wildcards Whether to expand wildcard expression to concrete indices that are open, closed or both. (options: open, closed, none, all)
           # @option arguments [Boolean] :ignore_unavailable Whether specified concrete indices should be ignored when unavailable (missing or closed)
           #
-          # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/migration-api-assistance.html
+          # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/migration-api-assistance.html
           #
           def get_assistance(arguments={})
             valid_params = [

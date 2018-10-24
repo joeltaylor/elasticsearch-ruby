@@ -25,7 +25,7 @@ module Stretchysearch
         #
         # See the integration test for a full example.
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/guide/current/nested-aggregation.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/guide/current/nested-aggregation.html
         #
         class ReverseNested
           include BaseAggregationComponent

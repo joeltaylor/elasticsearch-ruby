@@ -1,6 +1,6 @@
 require 'test_helper'
 
-require 'elasticsearch/extensions/test/cluster'
+require 'stretchysearch/extensions/test/cluster'
 
 class Stretchysearch::Extensions::TestClusterTest < Stretchysearch::Test::UnitTestCase
   include Stretchysearch::Extensions::Test
@@ -74,7 +74,7 @@ class Stretchysearch::Extensions::TestClusterTest < Stretchysearch::Test::UnitTe
       should "have a default cluster name" do
         Socket.stubs(:gethostname).returns('FOOBAR')
 
-        assert_equal 'elasticsearch-test-foobar', Cluster::Cluster.new.__default_cluster_name
+        assert_equal 'stretchysearch-test-foobar', Cluster::Cluster.new.__default_cluster_name
       end
 
       should "have a cluster URL for new versions" do
@@ -97,7 +97,7 @@ class Stretchysearch::Extensions::TestClusterTest < Stretchysearch::Test::UnitTe
 
       should "remove cluster data" do
         @subject.unstub(:__remove_cluster_data)
-        FileUtils.expects(:rm_rf).with("/tmp/elasticsearch_test")
+        FileUtils.expects(:rm_rf).with("/tmp/stretchysearch_test")
 
         @subject.__remove_cluster_data
       end
@@ -247,19 +247,19 @@ class Stretchysearch::Extensions::TestClusterTest < Stretchysearch::Test::UnitTe
 
       context "when determining a version" do
         setup do
-          @subject = Stretchysearch::Extensions::Test::Cluster::Cluster.new command: '/foo/bar/bin/elasticsearch'
+          @subject = Stretchysearch::Extensions::Test::Cluster::Cluster.new command: '/foo/bar/bin/stretchysearch'
         end
 
-        should "return version from lib/elasticsearch.X.Y.Z.jar" do
+        should "return version from lib/stretchysearch.X.Y.Z.jar" do
           File.expects(:exist?).with('/foo/bar/bin/../lib/').returns(true)
-          Dir.expects(:entries).with('/foo/bar/bin/../lib/').returns(['foo.jar', 'elasticsearch-2.3.0.jar'])
+          Dir.expects(:entries).with('/foo/bar/bin/../lib/').returns(['foo.jar', 'stretchysearch-2.3.0.jar'])
 
           assert_equal '2.0', @subject.__determine_version
         end
 
-        should "return version from `elasticsearch --version`" do
+        should "return version from `stretchysearch --version`" do
           File.expects(:exist?).with('/foo/bar/bin/../lib/').returns(false)
-          File.expects(:exist?).with('/foo/bar/bin/elasticsearch').returns(true)
+          File.expects(:exist?).with('/foo/bar/bin/stretchysearch').returns(true)
 
           Process.stubs(:wait)
           Process.expects(:spawn).returns(123)
@@ -272,21 +272,21 @@ class Stretchysearch::Extensions::TestClusterTest < Stretchysearch::Test::UnitTe
         end
 
         should "return version from arguments" do
-          cluster = Stretchysearch::Extensions::Test::Cluster::Cluster.new command: '/foo/bar/bin/elasticsearch', version: '5.2'
+          cluster = Stretchysearch::Extensions::Test::Cluster::Cluster.new command: '/foo/bar/bin/stretchysearch', version: '5.2'
           assert_equal '5.0', cluster.__determine_version
         end
 
         should "raise an exception when the version cannot be parsed from .jar" do
           # Incorrect jar version (no dots)
           File.expects(:exist?).with('/foo/bar/bin/../lib/').returns(true)
-          Dir.expects(:entries).with('/foo/bar/bin/../lib/').returns(['elasticsearch-100.jar'])
+          Dir.expects(:entries).with('/foo/bar/bin/../lib/').returns(['stretchysearch-100.jar'])
 
           assert_raise(RuntimeError) { @subject.__determine_version }
         end
 
         should "raise an exception when the version cannot be parsed from command output" do
           File.expects(:exist?).with('/foo/bar/bin/../lib/').returns(false)
-          File.expects(:exist?).with('/foo/bar/bin/elasticsearch').returns(true)
+          File.expects(:exist?).with('/foo/bar/bin/stretchysearch').returns(true)
 
           Process.stubs(:wait)
           Process.expects(:spawn).returns(123)
@@ -300,7 +300,7 @@ class Stretchysearch::Extensions::TestClusterTest < Stretchysearch::Test::UnitTe
         should "raise an exception when the version cannot be converted to short version" do
           # There's no Stretchysearch version 3...
           File.expects(:exist?).with('/foo/bar/bin/../lib/').returns(true)
-          Dir.expects(:entries).with('/foo/bar/bin/../lib/').returns(['elasticsearch-3.2.1.jar'])
+          Dir.expects(:entries).with('/foo/bar/bin/../lib/').returns(['stretchysearch-3.2.1.jar'])
 
           assert_raise(RuntimeError) { @subject.__determine_version }
         end
@@ -309,7 +309,7 @@ class Stretchysearch::Extensions::TestClusterTest < Stretchysearch::Test::UnitTe
           @subject = Stretchysearch::Extensions::Test::Cluster::Cluster.new
 
           File.expects(:exist?).with('./../lib/').returns(false)
-          File.expects(:exist?).with('elasticsearch').returns(false)
+          File.expects(:exist?).with('stretchysearch').returns(false)
           @subject.expects(:`).returns('')
 
           assert_raise(Errno::ENOENT) { @subject.__determine_version }

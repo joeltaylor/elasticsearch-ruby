@@ -39,7 +39,7 @@ module Stretchysearch
         # @option arguments [Boolean] :local Return local information, do not retrieve the state from master node
         #                                    (default: false)
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-get-settings/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-get-settings/
         #
         def get_settings(arguments={})
           valid_params = [

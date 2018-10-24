@@ -8,7 +8,7 @@ module Stretchysearch
         # @option arguments [List] :index A comma-separated list of index names;
         #                                 use `_all` or empty string for all indices
         #
-        # @see http://www.elastic.co/guide/en/elasticsearch/reference/master/indices-seal.html
+        # @see http://www.elastic.co/guide/en/stretchysearch/reference/master/indices-seal.html
         #
         def seal(arguments={})
           method = 'POST'

@@ -9,7 +9,7 @@ module Stretchysearch
           # @option arguments [String] :datafeed_id The ID of the datafeed to update (*Required*)
           # @option arguments [Hash] :body The datafeed update settings (*Required*)
           #
-          # @see http://www.elastic.co/guide/en/elasticsearch/reference/current/ml-update-datafeed.html
+          # @see http://www.elastic.co/guide/en/stretchysearch/reference/current/ml-update-datafeed.html
           #
           def update_datafeed(arguments={})
             raise ArgumentError, "Required argument 'datafeed_id' missing" unless arguments[:datafeed_id]

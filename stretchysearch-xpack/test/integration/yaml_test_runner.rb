@@ -7,10 +7,10 @@ require 'yaml'
 require 'active_support/inflector'
 require 'ansi'
 
-require 'elasticsearch'
-require 'elasticsearch/extensions/test/cluster'
-require 'elasticsearch/extensions/test/startup_shutdown'
-require 'elasticsearch/extensions/test/profiling' unless JRUBY
+require 'stretchysearch'
+require 'stretchysearch/extensions/test/cluster'
+require 'stretchysearch/extensions/test/startup_shutdown'
+require 'stretchysearch/extensions/test/profiling' unless JRUBY
 
 require 'test_helper'
 
@@ -56,7 +56,7 @@ end
 Logger.__send__ :include, CapturedLogger if ENV['CI']
 
 $logger = Logger.new($stderr)
-$logger.progname = 'elasticsearch'
+$logger.progname = 'stretchysearch'
 $logger.formatter = proc do |severity, datetime, progname, msg|
   color = case severity
     when /INFO/ then :green
@@ -68,15 +68,15 @@ $logger.formatter = proc do |severity, datetime, progname, msg|
 end
 
 $tracer = Logger.new($stdout)
-$tracer.progname = 'elasticsearch.tracer'
+$tracer.progname = 'stretchysearch.tracer'
 $tracer.formatter = proc { |severity, datetime, progname, msg| "#{msg}\n" }
 
 if ENV['ELASTIC_PASSWORD']
   password = ENV['ELASTIC_PASSWORD']
 else
   password = begin
-    puts "The ELASTIC_PASSWORD environment variable is not set, getting password by running `bin/elasticsearch-setup-passwords`...".ansi(:faint)
-    out = `docker exec -it elasticsearch-xpack bin/elasticsearch-setup-passwords auto --batch`
+    puts "The ELASTIC_PASSWORD environment variable is not set, getting password by running `bin/stretchysearch-setup-passwords`...".ansi(:faint)
+    out = `docker exec -it stretchysearch-xpack bin/stretchysearch-setup-passwords auto --batch`
     matches = out.match(/PASSWORD elastic = (\S+)/)
     if matches && matches.captures.first
       matches.captures.first
@@ -278,7 +278,7 @@ end
 
 include Stretchysearch::YamlTestSuite
 
-rest_api_test_source = '../../../../tmp/elasticsearch/x-pack/plugin/src/test/resources/rest-api-spec/test'
+rest_api_test_source = '../../../../tmp/stretchysearch/x-pack/plugin/src/test/resources/rest-api-spec/test'
 PATH = Pathname(ENV.fetch('TEST_REST_API_SPEC', File.expand_path(rest_api_test_source, __FILE__)))
 raise Errno::ENOENT, "#{PATH}" unless PATH.exist?
 

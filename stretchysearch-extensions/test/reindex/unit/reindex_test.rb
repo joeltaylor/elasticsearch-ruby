@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'elasticsearch/extensions/reindex'
+require 'stretchysearch/extensions/reindex'
 
 class Stretchysearch::Extensions::ReindexTest < Stretchysearch::Test::UnitTestCase
   context "The Reindex extension module" do

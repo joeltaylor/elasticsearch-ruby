@@ -17,7 +17,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/guide/current/ignoring-tfidf.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/guide/current/ignoring-tfidf.html
         #
         class ConstantScore
           include BaseComponent

@@ -5,10 +5,10 @@ module Stretchysearch
       # Return documents matching a query, as well as aggregations (facets), highlighted snippets, suggestions, etc.
       #
       # The search API is used to query one or more indices either using simple
-      # [query string queries](http://www.elasticsearch.org/guide/reference/api/search/uri-request/)
+      # [query string queries](http://www.stretchysearch.org/guide/reference/api/search/uri-request/)
       # as the `:q` argument , or by passing the
-      # [full request definition](http://www.elasticsearch.org/guide/reference/api/search/request-body/)
-      # in the [Query DSL](http://www.elasticsearch.org/guide/reference/query-dsl/) as the `:body` argument.
+      # [full request definition](http://www.stretchysearch.org/guide/reference/api/search/request-body/)
+      # in the [Query DSL](http://www.stretchysearch.org/guide/reference/query-dsl/) as the `:body` argument.
       #
       # @example Search with a simple query string query
       #
@@ -121,8 +121,8 @@ module Stretchysearch
       #
       # @return [Hash]
       #
-      # @see http://www.elasticsearch.org/guide/reference/api/search/
-      # @see http://www.elasticsearch.org/guide/reference/api/search/request-body/
+      # @see http://www.stretchysearch.org/guide/reference/api/search/
+      # @see http://www.stretchysearch.org/guide/reference/api/search/request-body/
       #
       def search(arguments={})
         arguments[:index] = UNDERSCORE_ALL if ! arguments[:index] && arguments[:type]

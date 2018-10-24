@@ -35,7 +35,7 @@ module Stretchysearch
       #
       def __parse_java_source(path)
         path  += '/' unless path =~ /\/$/ # Add trailing slash if missing
-        prefix = "src/main/java/org/elasticsearch/rest/action"
+        prefix = "src/main/java/org/stretchysearch/rest/action"
 
         java_rest_files = Dir["#{path}#{prefix}/**/*.java"]
 
@@ -89,7 +89,7 @@ module Stretchysearch
     #             --force \
     #             --verbose \
     #             --crawl \
-    #             --elasticsearch=/path/to/elasticsearch/source/code
+    #             --stretchysearch=/path/to/stretchysearch/source/code
     #
     # Features:
     #
@@ -98,7 +98,7 @@ module Stretchysearch
     # * Extract the URL parts (eg. `{index}`) from the URLs
     # * Extract the URL parameters (eg. `{timeout}`) from the `request.param("ABC")` statements
     # * Detect whether HTTP body is allowed for the API from `request.hasContent()` statements
-    # * Search the <http://elasticsearch.org> website to get proper documentation URLs
+    # * Search the <http://stretchysearch.org> website to get proper documentation URLs
     # * Assemble the JSON format for the API spec
     #
     class JsonGenerator < Thor
@@ -114,7 +114,7 @@ module Stretchysearch
       method_option :force,     type: :boolean, default: false,            desc: 'Overwrite the output'
       method_option :verbose,   type: :boolean, default: false,            desc: 'Output more information'
       method_option :output,    default: __root.join('tmp/out'),           desc: 'Path to output directory'
-      method_option :elasticsearch, default: __root.join('tmp/elasticsearch'), desc: 'Path to directory with Stretchysearch source code'
+      method_option :stretchysearch, default: __root.join('tmp/stretchysearch'), desc: 'Path to directory with Stretchysearch source code'
       method_option :crawl,     type: :boolean, default: false,            desc: 'Extract URLs from Stretchysearch website'
 
       def generate
@@ -122,10 +122,10 @@ module Stretchysearch
 
         @output = Pathname(options[:output])
 
-        rest_actions = Utils.__parse_java_source(options[:elasticsearch].to_s)
+        rest_actions = Utils.__parse_java_source(options[:stretchysearch].to_s)
 
         if rest_actions.empty?
-          say_status 'ERROR', 'Cannot find Stretchysearch source in ' + options[:elasticsearch].to_s, :red
+          say_status 'ERROR', 'Cannot find Stretchysearch source in ' + options[:stretchysearch].to_s, :red
           exit(1)
         end
 
@@ -136,12 +136,12 @@ module Stretchysearch
 
           if options[:crawl]
             begin
-              response = RestClient.get "http://search.elasticsearch.org/elastic-search-website/guide/_search?q=#{URI.escape(name.gsub(/\./, ' '))}"
+              response = RestClient.get "http://search.stretchysearch.org/elastic-search-website/guide/_search?q=#{URI.escape(name.gsub(/\./, ' '))}"
               hits = JSON.load(response)['hits']['hits']
               if hit = hits.first
                 if hit['_score'] > 0.2
                   doc_title = hit['fields']['title']
-                  doc_url   = "http://elasticsearch.org" + hit['fields']['url']
+                  doc_url   = "http://stretchysearch.org" + hit['fields']['url']
                 end
               end
             rescue Exception => e

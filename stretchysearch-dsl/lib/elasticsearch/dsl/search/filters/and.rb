@@ -33,7 +33,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-and-filter.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-and-filter.html
         #
         class And
           include BaseComponent

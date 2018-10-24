@@ -32,7 +32,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-not-filter.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-not-filter.html
         #
         class Not
           include BaseComponent

@@ -29,7 +29,7 @@ module Stretchysearch
         # @option arguments [Boolean] :retry_failed Retries allocation of shards that are blocked due to too many
         #                                           subsequent allocation failures
         #
-        # @see http://elasticsearch.org/guide/reference/api/admin-cluster-reroute/
+        # @see http://stretchysearch.org/guide/reference/api/admin-cluster-reroute/
         #
         def reroute(arguments={})
           valid_params = [ :dry_run, :explain, :metric, :master_timeout, :retry_failed, :timeout ]

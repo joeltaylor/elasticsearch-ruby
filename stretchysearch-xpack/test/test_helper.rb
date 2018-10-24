@@ -9,7 +9,7 @@ require 'mocha/minitest'
 
 require 'ansi'
 
-require 'elasticsearch/xpack'
+require 'stretchysearch/xpack'
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 

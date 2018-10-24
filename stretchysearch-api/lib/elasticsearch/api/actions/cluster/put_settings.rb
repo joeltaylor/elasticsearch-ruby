@@ -12,7 +12,7 @@ module Stretchysearch
         # @option arguments [Hash] :body The settings to be updated. Can be either `transient` or `persistent`
         #                                (survives cluster restart).
         #
-        # @see http://elasticsearch.org/guide/reference/api/admin-cluster-update-settings/
+        # @see http://stretchysearch.org/guide/reference/api/admin-cluster-update-settings/
         #
         def put_settings(arguments={})
           valid_params = [ :flat_settings ]

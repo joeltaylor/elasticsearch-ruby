@@ -25,7 +25,7 @@ module Stretchysearch
         #
         # See the integration test for a full example.
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/reference/current/search-aggregations-bucket-children-aggregation.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/reference/current/search-aggregations-bucket-children-aggregation.html
         #
         class Children
           include BaseAggregationComponent

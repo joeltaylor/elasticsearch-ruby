@@ -40,7 +40,7 @@ module Stretchysearch
         # @option arguments [List] :types A comma-separated list of document types for the `indexing` index metric
         # @option arguments [Time] :timeout Explicit operation timeout
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/cluster-nodes-stats.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/cluster-nodes-stats.html
         #
         def stats(arguments={})
           arguments = arguments.clone

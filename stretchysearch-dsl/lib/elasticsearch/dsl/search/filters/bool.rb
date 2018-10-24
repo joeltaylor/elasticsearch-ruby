@@ -35,7 +35,7 @@ module Stretchysearch
         #
         # See the integration test for a working example.
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-bool-filter.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-bool-filter.html
         #
         class Bool
           include BaseComponent

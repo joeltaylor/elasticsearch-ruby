@@ -10,7 +10,7 @@ module Stretchysearch
         # @option arguments [Boolean] :verbose Verbose mode. Display data output for each processor
         #                                                    in executed pipeline
         #
-        # @see https://www.elastic.co/guide/en/elasticsearch/reference/master/simulate-pipeline-api.html
+        # @see https://www.elastic.co/guide/en/stretchysearch/reference/master/simulate-pipeline-api.html
         #
         def simulate(arguments={})
           raise ArgumentError, "Required argument 'body' missing" unless arguments[:body]

@@ -8,7 +8,7 @@ module Stretchysearch
         # @option arguments [List] :index A comma-separated list of index names; use `_all` for all indices (*Required*)
         # @option arguments [String] :type The name of the document type to delete (*Required*)
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-delete-mapping/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-delete-mapping/
         #
         def delete_mapping(arguments={})
           raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

@@ -18,7 +18,7 @@ module Stretchysearch
         #     end
         #
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-top-children-query.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-top-children-query.html
         #
         class TopChildren
           include BaseComponent

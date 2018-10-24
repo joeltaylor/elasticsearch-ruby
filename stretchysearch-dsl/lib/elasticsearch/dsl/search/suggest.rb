@@ -4,7 +4,7 @@ module Stretchysearch
 
       # Wraps the `suggest` part of a search definition
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-suggesters.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/search-suggesters.html
       #
       class Suggest
         include BaseComponent

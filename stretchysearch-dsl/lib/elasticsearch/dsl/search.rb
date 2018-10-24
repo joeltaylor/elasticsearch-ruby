@@ -24,7 +24,7 @@ module Stretchysearch
       #     definition.to_hash
       #     # => => {:query=>{:match=>{:title=>"Test"}}}
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/search.html
       #
       def search(*args, &block)
         Search.new(*args, &block)

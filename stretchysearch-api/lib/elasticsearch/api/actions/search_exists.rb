@@ -30,7 +30,7 @@ module Stretchysearch
       #                                      (such as providing text to a numeric field) should be ignored
       # @option arguments [Boolean] :lowercase_expanded_terms Specify whether query terms should be lowercased
       #
-      # @see http://www.elastic.co/guide/en/elasticsearch/reference/master/search-exists.html
+      # @see http://www.elastic.co/guide/en/stretchysearch/reference/master/search-exists.html
       #
       def search_exists(arguments={})
         valid_params = [

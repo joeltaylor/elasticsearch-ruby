@@ -31,7 +31,7 @@ module Stretchysearch
       # @option arguments [Boolean] :_source_transform Retransform the source before returning it
       # @option arguments [List] :stored_fields A comma-separated list of stored fields to return in the response
       #
-      # @see http://elasticsearch.org/guide/reference/api/get/
+      # @see http://stretchysearch.org/guide/reference/api/get/
       #
       def get(arguments={})
         raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

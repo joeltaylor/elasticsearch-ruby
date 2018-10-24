@@ -63,7 +63,7 @@ module Stretchysearch
       # @option arguments [Float] :requests_per_second The throttle for this request in sub-requests per second. 0 means set no throttle.
       # @option arguments [Integer] :slices The number of slices this task should be divided into. Defaults to 1 meaning the task isn't sliced into subtasks.
       #
-      # @see https://www.elastic.co/guide/en/elasticsearch/reference/master/docs-update-by-query.html
+      # @see https://www.elastic.co/guide/en/stretchysearch/reference/master/docs-update-by-query.html
       #
       def update_by_query(arguments={})
         raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

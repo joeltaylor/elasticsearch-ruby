@@ -9,7 +9,7 @@ module Stretchysearch
           # @option arguments [String] :datafeed_id The ID of the datafeeds stats to fetch
           # @option arguments [Boolean] :allow_no_datafeeds Whether to ignore if a wildcard expression matches no datafeeds. (This includes `_all` string or when no datafeeds have been specified)
           #
-          # @see http://www.elastic.co/guide/en/elasticsearch/reference/current/ml-get-datafeed.html
+          # @see http://www.elastic.co/guide/en/stretchysearch/reference/current/ml-get-datafeed.html
           #
           def get_datafeeds(arguments={})
             valid_params = [

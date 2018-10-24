@@ -3,7 +3,7 @@ require 'test_helper'
 if JRUBY
   puts "'#{File.basename(__FILE__)}' not supported on JRuby #{RUBY_VERSION}"
 else
-  require 'elasticsearch/transport/transport/http/curb'
+  require 'stretchysearch/transport/transport/http/curb'
   require 'curb'
 
   class Stretchysearch::Transport::Transport::HTTP::FaradayTest < Test::Unit::TestCase

@@ -24,7 +24,7 @@ module Stretchysearch
         #
         # @return [String]
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-cluster-nodes-hot-threads/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-cluster-nodes-hot-threads/
         #
         def hot_threads(arguments={})
           valid_params = [

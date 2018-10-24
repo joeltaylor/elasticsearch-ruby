@@ -18,7 +18,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-has-child-query.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-has-child-query.html
         #
         class HasChild
           include BaseComponent

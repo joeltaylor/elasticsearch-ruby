@@ -20,7 +20,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-geo-shape-filter.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-geo-shape-filter.html
         #
         class GeoShape
           include BaseComponent

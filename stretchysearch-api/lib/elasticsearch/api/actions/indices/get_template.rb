@@ -21,7 +21,7 @@ module Stretchysearch
         #                                    (default: false)
         # @option arguments [Time] :master_timeout Explicit operation timeout for connection to master node
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-templates/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-templates/
         #
         def get_template(arguments={})
           valid_params = [ :flat_settings, :local, :master_timeout ]

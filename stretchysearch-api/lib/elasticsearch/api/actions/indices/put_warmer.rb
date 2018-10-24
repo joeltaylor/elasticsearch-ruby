@@ -35,7 +35,7 @@ module Stretchysearch
         # @option arguments [Boolean] :ignore_unavailable Whether specified concrete indices should be ignored when
         #                                                 unavailable (missing, closed, etc)
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-warmers/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-warmers/
         #
         def put_warmer(arguments={})
           raise ArgumentError, "Required argument 'name' missing"  unless arguments[:name]

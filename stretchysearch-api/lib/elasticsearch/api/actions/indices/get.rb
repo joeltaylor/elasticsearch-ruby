@@ -21,7 +21,7 @@ module Stretchysearch
         # @option arguments [Boolean] :include_defaults Whether to return all default setting
         #                                               for each of the indices (default:false)
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/indices-get-index.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/indices-get-index.html
         #
         def get(arguments={})
           raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

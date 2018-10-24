@@ -8,7 +8,7 @@ module Stretchysearch
       #
       #     client.ping
       #
-      # @see http://elasticsearch.org/guide/
+      # @see http://stretchysearch.org/guide/
       #
       def ping(arguments={})
         method = HTTP_HEAD

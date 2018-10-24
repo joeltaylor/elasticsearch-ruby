@@ -9,7 +9,7 @@ module Stretchysearch
       # @option arguments [Number] :version Explicit version number for concurrency control
       # @option arguments [String] :version_type Specific version type (options: internal, external, external_gte, force)
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/modules-scripting.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/modules-scripting.html
       #
       def delete_script(arguments={})
         raise ArgumentError, "Required argument 'id' missing"   unless arguments[:id]

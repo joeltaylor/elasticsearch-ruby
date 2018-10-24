@@ -9,7 +9,7 @@
 require 'multi_json'
 require 'oj'
 
-require 'elasticsearch'
+require 'stretchysearch'
 
 require 'bunny'
 
@@ -18,16 +18,16 @@ connection = Bunny.new
 connection.start
 
 channel  = connection.create_channel
-queue    = channel.queue 'examples.elasticsearch', auto_delete: true
+queue    = channel.queue 'examples.stretchysearch', auto_delete: true
 exchange = channel.default_exchange
 
-elasticsearch = Stretchysearch::Client.new log:true
+stretchysearch = Stretchysearch::Client.new log:true
 
-elasticsearch.indices.delete index: 'rabbit' rescue nil
+stretchysearch.indices.delete index: 'rabbit' rescue nil
 
 queue.subscribe do |delivery_info, metadata, payload|
   hash = MultiJson.load(payload)
-  elasticsearch.index index: 'rabbit', type: 'event', id: hash.delete(:id), body: hash
+  stretchysearch.index index: 'rabbit', type: 'event', id: hash.delete(:id), body: hash
 end
 
 (1..10).each do |i|

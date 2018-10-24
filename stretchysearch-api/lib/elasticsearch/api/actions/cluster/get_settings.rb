@@ -13,7 +13,7 @@ module Stretchysearch
         # @option arguments [Boolean] :include_defaults Whether to return all default clusters setting
         #                                               (default: false)
         #
-        # @see http://elasticsearch.org/guide/reference/api/admin-cluster-update-settings/
+        # @see http://stretchysearch.org/guide/reference/api/admin-cluster-update-settings/
         #
         def get_settings(arguments={})
           valid_params = [

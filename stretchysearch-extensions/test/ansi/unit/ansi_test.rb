@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'elasticsearch/extensions/ansi'
+require 'stretchysearch/extensions/ansi'
 
 class Stretchysearch::Extensions::AnsiTest < Stretchysearch::Test::UnitTestCase
   context "The ANSI extension" do

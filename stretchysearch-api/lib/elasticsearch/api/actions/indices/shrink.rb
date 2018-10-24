@@ -14,7 +14,7 @@ module Stretchysearch
         # @option arguments [Time] :timeout Explicit operation timeout
         # @option arguments [Time] :master_timeout Specify timeout for connection to master
         #
-        # @see http://www.elastic.co/guide/en/elasticsearch/reference/master/indices-shrink-index.html
+        # @see http://www.elastic.co/guide/en/stretchysearch/reference/master/indices-shrink-index.html
         #
         def shrink(arguments={})
           raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

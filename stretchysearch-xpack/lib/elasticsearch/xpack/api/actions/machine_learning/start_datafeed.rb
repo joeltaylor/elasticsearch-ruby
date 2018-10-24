@@ -12,7 +12,7 @@ module Stretchysearch
           # @option arguments [String] :end The end time when the datafeed should stop. When not set, the datafeed continues in real time
           # @option arguments [Time] :timeout Controls the time to wait until a datafeed has started. Default to 20 seconds
           #
-          # @see http://www.elastic.co/guide/en/elasticsearch/reference/current/ml-start-datafeed.html
+          # @see http://www.elastic.co/guide/en/stretchysearch/reference/current/ml-start-datafeed.html
           #
           def start_datafeed(arguments={})
             raise ArgumentError, "Required argument 'datafeed_id' missing" unless arguments[:datafeed_id]

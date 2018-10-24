@@ -16,7 +16,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query-phrase.html
+        # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/query-dsl-match-query-phrase.html
         #
         class MatchPhrase
           include BaseComponent

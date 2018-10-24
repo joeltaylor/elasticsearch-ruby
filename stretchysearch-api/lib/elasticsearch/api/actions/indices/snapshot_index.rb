@@ -5,7 +5,7 @@ module Stretchysearch
 
         # When using the shared storage gateway, manually trigger the snapshot operation.
         #
-        # @deprecated The shared gateway has been deprecated [https://github.com/elasticsearch/elasticsearch/issues/2458]
+        # @deprecated The shared gateway has been deprecated [https://github.com/stretchysearch/stretchysearch/issues/2458]
         #
         # @option arguments [List] :index A comma-separated list of index names; use `_all` or empty string
         #                                to perform the operation on all indices
@@ -19,7 +19,7 @@ module Stretchysearch
         # @option arguments [Boolean] :ignore_unavailable Whether specified concrete indices should be ignored when
         #                                                 unavailable (missing, closed, etc)
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-gateway-snapshot/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-gateway-snapshot/
         #
         def snapshot_index(arguments={})
           valid_params = [

@@ -23,7 +23,7 @@ module Stretchysearch
         # @option arguments [Time] :timeout Explicit operation timeout
         # @option arguments [Number] :wait_for_active_shards Wait until the specified number of shards is active
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-open-close/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-open-close/
         #
         def open(arguments={})
           raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

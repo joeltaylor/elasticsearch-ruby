@@ -1,7 +1,7 @@
 # encoding: utf-8
 
-require 'elasticsearch'
-require 'elasticsearch/extensions/version'
+require 'stretchysearch'
+require 'stretchysearch/extensions/version'
 
 module Stretchysearch
   module Extensions

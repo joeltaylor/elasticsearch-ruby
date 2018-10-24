@@ -16,7 +16,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-template-query.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-template-query.html
         #
         class Template
           include BaseComponent

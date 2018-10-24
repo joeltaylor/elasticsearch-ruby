@@ -46,7 +46,7 @@ module Stretchysearch
         # @option arguments [String] :tokenizer The name of the tokenizer to use for the analysis
         # @option arguments [String] :format Format of the output (options: detailed, text)
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-analyze/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-analyze/
         #
         def analyze(arguments={})
           valid_params = [

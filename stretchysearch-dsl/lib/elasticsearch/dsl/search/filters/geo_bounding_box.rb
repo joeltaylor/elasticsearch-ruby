@@ -24,7 +24,7 @@ module Stretchysearch
         #
         # Use eg. <http://boundingbox.klokantech.com> to visually define the bounding box.
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/guide/current/geo-bounding-box.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/guide/current/geo-bounding-box.html
         #
         class GeoBoundingBox
           include BaseComponent

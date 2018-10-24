@@ -19,7 +19,7 @@ module Stretchysearch
         #
         # @example Display formatted search results
         #
-        #     require 'elasticsearch/extensions/ansi'
+        #     require 'stretchysearch/extensions/ansi'
         #     puts Stretchysearch::Client.new.search.to_ansi
         #
         # @todo Add all facets and handlers for remaining response parts / types

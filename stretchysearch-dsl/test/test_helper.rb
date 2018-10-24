@@ -17,11 +17,11 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 #                            Minitest::Reporters::JUnitReporter.new,
 #                            Minitest::Reporters::HtmlReporter.new ]
 
-require 'elasticsearch'
-require 'elasticsearch/extensions/test/cluster'
-require 'elasticsearch/extensions/test/startup_shutdown'
+require 'stretchysearch'
+require 'stretchysearch/extensions/test/cluster'
+require 'stretchysearch/extensions/test/startup_shutdown'
 
-require 'elasticsearch/dsl'
+require 'stretchysearch/dsl'
 
 module Stretchysearch
   module Test

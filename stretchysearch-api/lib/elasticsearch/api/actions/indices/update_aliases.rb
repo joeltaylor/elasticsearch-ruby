@@ -28,7 +28,7 @@ module Stretchysearch
         # @option arguments [Hash] :body The operations definition and other configuration (*Required*)
         # @option arguments [Time] :timeout Explicit operation timeout
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-aliases/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-aliases/
         #
         def update_aliases(arguments={})
           raise ArgumentError, "Required argument 'body' missing" unless arguments[:body]

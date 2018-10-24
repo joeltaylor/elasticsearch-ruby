@@ -28,7 +28,7 @@ module Stretchysearch
       #
       # @option (see Actions#index)
       #
-      # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-index_.html#_automatic_id_generation
+      # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/docs-index_.html#_automatic_id_generation
       #
       def create(arguments={})
         if arguments[:id]

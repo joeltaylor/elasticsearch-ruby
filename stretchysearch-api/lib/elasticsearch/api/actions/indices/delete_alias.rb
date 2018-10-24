@@ -15,7 +15,7 @@ module Stretchysearch
         # @option arguments [String] :name The name of the alias to be deleted (*Required*)
         # @option arguments [Time] :timeout Explicit timestamp for the document
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-aliases/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-aliases/
         #
         def delete_alias(arguments={})
           raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

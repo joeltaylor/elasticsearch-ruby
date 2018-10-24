@@ -36,7 +36,7 @@ module Stretchysearch
         #                                    (default: false)
         # @option arguments [Time] :master_timeout Explicit operation timeout for connection to master node
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/cat-thread-pool.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/cat-thread-pool.html
         #
         def thread_pool(arguments={})
           valid_params = [

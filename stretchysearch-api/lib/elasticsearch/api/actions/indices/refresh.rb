@@ -30,7 +30,7 @@ module Stretchysearch
         # @option arguments [Boolean] :ignore_unavailable Whether specified concrete indices should be ignored when
         #                                                 unavailable (missing, closed, etc)
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-refresh/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-refresh/
         #
         def refresh(arguments={})
           valid_params = [

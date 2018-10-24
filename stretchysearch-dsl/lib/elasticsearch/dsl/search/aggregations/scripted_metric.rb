@@ -18,7 +18,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/reference/current/search-aggregations-metrics-scripted-metric-aggregation.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/reference/current/search-aggregations-metrics-scripted-metric-aggregation.html
         #
         # See the integration test for a full example.
         #

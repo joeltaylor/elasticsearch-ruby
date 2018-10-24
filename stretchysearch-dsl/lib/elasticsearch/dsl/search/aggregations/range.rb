@@ -30,7 +30,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-aggregations-bucket-range-aggregation.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/search-aggregations-bucket-range-aggregation.html
         class Range
           include BaseAggregationComponent
 

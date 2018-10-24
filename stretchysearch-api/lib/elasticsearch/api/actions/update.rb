@@ -63,7 +63,7 @@ module Stretchysearch
       #
       # @since 0.20
       #
-      # @see http://elasticsearch.org/guide/reference/api/update/
+      # @see http://stretchysearch.org/guide/reference/api/update/
       #
       def update(arguments={})
         raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

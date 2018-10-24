@@ -45,7 +45,7 @@ class Stretchysearch::Transport::ClientIntegrationTest < Stretchysearch::Test::I
 
     should "use the Curb client" do
       require 'curb'
-      require 'elasticsearch/transport/transport/http/curb'
+      require 'stretchysearch/transport/transport/http/curb'
 
       transport = Stretchysearch::Transport::Transport::HTTP::Curb.new \
         :hosts => [ { :host => 'localhost', :port => @port } ] do |curl|
@@ -58,7 +58,7 @@ class Stretchysearch::Transport::ClientIntegrationTest < Stretchysearch::Test::I
 
     should "deserialize JSON responses in the Curb client" do
       require 'curb'
-      require 'elasticsearch/transport/transport/http/curb'
+      require 'stretchysearch/transport/transport/http/curb'
 
       transport = Stretchysearch::Transport::Transport::HTTP::Curb.new \
         :hosts => [ { :host => 'localhost', :port => @port } ] do |curl|

@@ -19,7 +19,7 @@ module Stretchysearch
         # @option arguments [Boolean] :v Verbose mode. Display column headers
         # @option arguments [List] :s Comma-separated list of column names or column aliases to sort by
         #
-        # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/cat-snapshots.html
+        # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/cat-snapshots.html
         #
         def snapshots(arguments={})
           raise ArgumentError, "Required argument 'repository' missing" if !arguments[:repository] && !arguments[:help]

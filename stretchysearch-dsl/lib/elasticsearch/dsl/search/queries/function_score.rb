@@ -21,7 +21,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/guide/current/function-score-query.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/guide/current/function-score-query.html
         #
         class FunctionScore
           include BaseComponent

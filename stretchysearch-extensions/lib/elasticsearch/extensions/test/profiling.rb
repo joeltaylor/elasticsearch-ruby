@@ -16,7 +16,7 @@ module Stretchysearch
       #
       #     require 'test/unit'
       #     require 'shoulda/context'
-      #     require 'elasticsearch/extensions/test/profiling'
+      #     require 'stretchysearch/extensions/test/profiling'
       #
       #     class ProfilingTest < Test::Unit::TestCase
       #       extend Stretchysearch::Extensions::Test::Profiling

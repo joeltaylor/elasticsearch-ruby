@@ -4,7 +4,7 @@ unless JRUBY
   version = ( defined?(RUBY_ENGINE) ? RUBY_ENGINE : 'Ruby' ) + ' ' + RUBY_VERSION
   puts "SKIP: '#{File.basename(__FILE__)}' only supported on JRuby (you're running #{version})"
 else
-  require 'elasticsearch/transport/transport/http/manticore'
+  require 'stretchysearch/transport/transport/http/manticore'
   require 'manticore'
 
   class Stretchysearch::Transport::Transport::HTTP::ManticoreTest < Test::Unit::TestCase

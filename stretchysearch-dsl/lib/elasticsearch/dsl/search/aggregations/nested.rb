@@ -20,7 +20,7 @@ module Stretchysearch
         #
         # See the integration test for a full example.
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-aggregations-bucket-nested-aggregation.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/search-aggregations-bucket-nested-aggregation.html
         #
         class Nested
           include BaseAggregationComponent

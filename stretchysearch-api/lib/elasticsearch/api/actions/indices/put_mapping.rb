@@ -45,7 +45,7 @@ module Stretchysearch
         # @option arguments [Time] :timeout Explicit operation timeout
         # @option arguments [Boolean] :master_timeout Timeout for connection to master
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-put-mapping/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-put-mapping/
         #
         def put_mapping(arguments={})
           raise ArgumentError, "Required argument 'type' missing"  unless arguments[:type]

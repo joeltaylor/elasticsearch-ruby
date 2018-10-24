@@ -1,6 +1,6 @@
 require 'pathname'
 
-subprojects = %w| elasticsearch elasticsearch-transport elasticsearch-api elasticsearch-extensions |
+subprojects = %w| stretchysearch stretchysearch-transport stretchysearch-api stretchysearch-extensions |
 __current__ = Pathname( File.expand_path('..', __FILE__) )
 
 # TODO: Figure out "bundle exec or not"
@@ -23,8 +23,8 @@ end
 
 desc "Setup the project"
 task :setup do
-  unless File.exist?('./tmp/elasticsearch')
-    sh "git clone https://github.com/elasticsearch/elasticsearch.git tmp/elasticsearch"
+  unless File.exist?('./tmp/stretchysearch')
+    sh "git clone https://github.com/stretchysearch/stretchysearch.git tmp/stretchysearch"
   end
 end
 
@@ -49,12 +49,12 @@ namespace :bundle do
   end
 end
 
-namespace :elasticsearch do
+namespace :stretchysearch do
   desc "Update the submodule with Stretchysearch core repository"
   task :update do
-    sh "git --git-dir=#{__current__.join('tmp/elasticsearch/.git')} --work-tree=#{__current__.join('tmp/elasticsearch')} fetch origin --quiet"
+    sh "git --git-dir=#{__current__.join('tmp/stretchysearch/.git')} --work-tree=#{__current__.join('tmp/stretchysearch')} fetch origin --quiet"
     begin
-      puts %x[git --git-dir=#{__current__.join('tmp/elasticsearch/.git')} --work-tree=#{__current__.join('tmp/elasticsearch')} pull]
+      puts %x[git --git-dir=#{__current__.join('tmp/stretchysearch/.git')} --work-tree=#{__current__.join('tmp/stretchysearch')} pull]
     rescue Exception => @exception
       @failed = true
     end
@@ -64,7 +64,7 @@ namespace :elasticsearch do
     end
 
     puts "\n", "CHANGES:", '-'*80
-    sh "git --git-dir=#{__current__.join('tmp/elasticsearch/.git')} --work-tree=#{__current__.join('tmp/elasticsearch')} log --oneline ORIG_HEAD..HEAD | cat", :verbose => false
+    sh "git --git-dir=#{__current__.join('tmp/stretchysearch/.git')} --work-tree=#{__current__.join('tmp/stretchysearch')} log --oneline ORIG_HEAD..HEAD | cat", :verbose => false
   end
 
   desc <<-DESC
@@ -72,25 +72,25 @@ namespace :elasticsearch do
 
     Build a specific branch:
 
-        $ rake elasticsearch:build[origin/1.x]
+        $ rake stretchysearch:build[origin/1.x]
 
     The task will execute `git fetch` to synchronize remote branches.
   DESC
   task :build, :branch do |task, args|
-    Rake::Task['elasticsearch:status'].invoke
+    Rake::Task['stretchysearch:status'].invoke
     puts '-'*80
 
     gitref = args[:branch] || 'origin/master'
     es_version = gitref.gsub(/^v|origin\/(\d\.+)/, '\1').to_f
 
-    current_branch = `git --git-dir=#{__current__.join('tmp/elasticsearch/.git')} --work-tree=#{__current__.join('tmp/elasticsearch')} branch --no-color`.split("\n").select { |b| b =~ /^\*/ }.first.gsub(/^\*\s*/, '')
+    current_branch = `git --git-dir=#{__current__.join('tmp/stretchysearch/.git')} --work-tree=#{__current__.join('tmp/stretchysearch')} branch --no-color`.split("\n").select { |b| b =~ /^\*/ }.first.gsub(/^\*\s*/, '')
 
     STDOUT.puts "Building version [#{es_version}] from [#{gitref}]:", ""
 
     case es_version
       when 0.0, 5..1000
-        path_to_build   = __current__.join('tmp/elasticsearch/distribution/tar/build/distributions/elasticsearch-*.tar.gz')
-        build_command   = "cd #{__current__.join('tmp/elasticsearch/distribution/tar')} && gradle clean assemble;"
+        path_to_build   = __current__.join('tmp/stretchysearch/distribution/tar/build/distributions/stretchysearch-*.tar.gz')
+        build_command   = "cd #{__current__.join('tmp/stretchysearch/distribution/tar')} && gradle clean assemble;"
         extract_command = <<-CODE.gsub(/          /, '')
           build=`ls #{path_to_build} | xargs -0 basename | sed s/\.tar\.gz//`
           if [[ $build ]]; then
@@ -102,8 +102,8 @@ namespace :elasticsearch do
           tar xvf #{path_to_build} -C #{__current__.join('tmp/builds')};
         CODE
       when 1.8..4
-        path_to_build   = __current__.join('tmp/elasticsearch/distribution/tar/target/releases/elasticsearch-*.tar.gz')
-        build_command = "cd #{__current__.join('tmp/elasticsearch')} && MAVEN_OPTS=-Xmx1g mvn --projects core,distribution/tar clean package -DskipTests -Dskip.integ.tests;"
+        path_to_build   = __current__.join('tmp/stretchysearch/distribution/tar/target/releases/stretchysearch-*.tar.gz')
+        build_command = "cd #{__current__.join('tmp/stretchysearch')} && MAVEN_OPTS=-Xmx1g mvn --projects core,distribution/tar clean package -DskipTests -Dskip.integ.tests;"
         extract_command = <<-CODE.gsub(/          /, '')
           build=`ls #{path_to_build} | xargs -0 basename | sed s/\.tar\.gz//`
           if [[ $build ]]; then
@@ -115,8 +115,8 @@ namespace :elasticsearch do
           tar xvf #{path_to_build} -C #{__current__.join('tmp/builds')};
         CODE
       when 0.1..1.7
-        path_to_build   = __current__.join('tmp/elasticsearch/target/releases/elasticsearch-*.tar.gz')
-        build_command = "cd #{__current__.join('tmp/elasticsearch')} && MAVEN_OPTS=-Xmx1g mvn clean package -DskipTests"
+        path_to_build   = __current__.join('tmp/stretchysearch/target/releases/stretchysearch-*.tar.gz')
+        build_command = "cd #{__current__.join('tmp/stretchysearch')} && MAVEN_OPTS=-Xmx1g mvn clean package -DskipTests"
         extract_command = <<-CODE.gsub(/          /, '')
           build=`ls #{path_to_build} | xargs -0 basename | sed s/\.tar\.gz//`
           if [[ $build ]]; then
@@ -134,21 +134,21 @@ namespace :elasticsearch do
 
     sh <<-CODE.gsub(/      /, '')
       mkdir -p #{__current__.join('tmp/builds')};
-      rm -rf '#{__current__.join('tmp/elasticsearch/distribution/tar/target/')}';
-      cd #{__current__.join('tmp/elasticsearch')} && git fetch origin --quiet;
-      cd #{__current__.join('tmp/elasticsearch')} && git checkout #{gitref};
+      rm -rf '#{__current__.join('tmp/stretchysearch/distribution/tar/target/')}';
+      cd #{__current__.join('tmp/stretchysearch')} && git fetch origin --quiet;
+      cd #{__current__.join('tmp/stretchysearch')} && git checkout #{gitref};
       #{build_command}
       #{extract_command}
       echo; echo; echo "Built: $build"
     CODE
 
     puts "", '-'*80, ""
-    Rake::Task['elasticsearch:builds'].invoke
+    Rake::Task['stretchysearch:builds'].invoke
   end
 
   desc "Display the info for all branches in the Stretchysearch submodule"
   task :status do
-    sh "git --git-dir=#{__current__.join('tmp/elasticsearch/.git')} --work-tree=#{__current__.join('tmp/elasticsearch')} branch -v -v", :verbose => false
+    sh "git --git-dir=#{__current__.join('tmp/stretchysearch/.git')} --work-tree=#{__current__.join('tmp/stretchysearch')} branch -v -v", :verbose => false
   end
 
   desc "Display the list of builds"
@@ -162,8 +162,8 @@ namespace :elasticsearch do
 
   desc "Display the history of the 'rest-api-spec' repo"
   task :changes do
-    STDERR.puts "Log: #{__current__.join('tmp/elasticsearch')}/rest-api-spec", ""
-    sh "git --git-dir=#{__current__.join('tmp/elasticsearch/.git')} --work-tree=#{__current__.join('tmp/elasticsearch')} log --pretty=format:'%C(yellow)%h%Creset %s \e[2m[%ar by %an]\e[0m' -- rest-api-spec", :verbose => false
+    STDERR.puts "Log: #{__current__.join('tmp/stretchysearch')}/rest-api-spec", ""
+    sh "git --git-dir=#{__current__.join('tmp/stretchysearch/.git')} --work-tree=#{__current__.join('tmp/stretchysearch')} log --pretty=format:'%C(yellow)%h%Creset %s \e[2m[%ar by %an]\e[0m' -- rest-api-spec", :verbose => false
   end
 end
 
@@ -182,7 +182,7 @@ namespace :test do
 
   desc "Run integration tests in all subprojects"
   task :integration do
-    Rake::Task['elasticsearch:update'].invoke
+    Rake::Task['stretchysearch:update'].invoke
     subprojects.each do |project|
       puts '-'*80
       sh "cd #{__current__.join(project)} && unset BUNDLE_GEMFILE && bundle exec rake test:integration"
@@ -202,18 +202,18 @@ namespace :test do
   namespace :cluster do
     desc "Start Stretchysearch nodes for tests"
     task :start do
-      require 'elasticsearch/extensions/test/cluster'
+      require 'stretchysearch/extensions/test/cluster'
       Stretchysearch::Extensions::Test::Cluster.start
     end
 
     desc "Stop Stretchysearch nodes for tests"
     task :stop do
-      require 'elasticsearch/extensions/test/cluster'
+      require 'stretchysearch/extensions/test/cluster'
       Stretchysearch::Extensions::Test::Cluster.stop
     end
 
     task :status do
-      require 'elasticsearch/extensions/test/cluster'
+      require 'stretchysearch/extensions/test/cluster'
       (puts "\e[31m[!] Test cluster not running\e[0m"; exit(1)) unless Stretchysearch::Extensions::Test::Cluster.running?
       Stretchysearch::Extensions::Test::Cluster.__print_cluster_info(ENV['TEST_CLUSTER_PORT'] || 9250)
     end
@@ -231,7 +231,7 @@ end
 desc "Release all subprojects to Rubygems"
 task :release do
   subprojects.each do |project|
-    next if project == 'elasticsearch-extensions'
+    next if project == 'stretchysearch-extensions'
     sh "cd #{__current__.join(project)} && rake release"
     puts '-'*80
   end
@@ -277,7 +277,7 @@ task :update_version, :old, :new do |task, args|
 
   puts "\n\n", "= CHANGELOG ".ansi(:faint) + ('='*88).ansi(:faint), "\n"
 
-  log = `git --no-pager log --reverse --no-color --pretty='* %s' HEAD --not v#{args[:old]} elasticsearch*`.split("\n")
+  log = `git --no-pager log --reverse --no-color --pretty='* %s' HEAD --not v#{args[:old]} stretchysearch*`.split("\n")
 
   puts log.join("\n")
 
@@ -335,7 +335,7 @@ task :update_version, :old, :new do |task, args|
 
   puts "\n\n", "= DIFF ".ansi(:faint) + ('='*93).ansi(:faint)
 
-  diff = `git --no-pager diff --patch --word-diff=color --minimal elasticsearch*`.split("\n")
+  diff = `git --no-pager diff --patch --word-diff=color --minimal stretchysearch*`.split("\n")
 
   puts diff
           .reject { |l| l =~ /^\e\[1mdiff \-\-git/ }
@@ -347,7 +347,7 @@ task :update_version, :old, :new do |task, args|
 
   puts "\n\n", "= COMMIT ".ansi(:faint) + ('='*91).ansi(:faint), "\n"
 
-  puts  "git add CHANGELOG.md elasticsearch*",
+  puts  "git add CHANGELOG.md stretchysearch*",
         "git commit --verbose --message='Release #{args[:new]}' --edit",
         "rake release"
         "\n"

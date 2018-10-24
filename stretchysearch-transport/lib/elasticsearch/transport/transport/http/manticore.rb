@@ -9,7 +9,7 @@ module Stretchysearch
         #
         # @example HTTP
         #
-        #     require 'elasticsearch/transport/transport/http/manticore'
+        #     require 'stretchysearch/transport/transport/http/manticore'
         #
         #     client = Stretchysearch::Client.new transport_class: Stretchysearch::Transport::Transport::HTTP::Manticore
         #
@@ -22,10 +22,10 @@ module Stretchysearch
         #  @example HTTPS (All SSL settings are optional,
         #                  see http://www.rubydoc.info/gems/manticore/Manticore/Client:initialize)
         #
-        #     require 'elasticsearch/transport/transport/http/manticore'
+        #     require 'stretchysearch/transport/transport/http/manticore'
         #
         #     client = Stretchysearch::Client.new \
-        #       url: 'https://elasticsearch.example.com',
+        #       url: 'https://stretchysearch.example.com',
         #       transport_class: Stretchysearch::Transport::Transport::HTTP::Manticore,
         #       ssl: {
         #         truststore: '/tmp/truststore.jks',

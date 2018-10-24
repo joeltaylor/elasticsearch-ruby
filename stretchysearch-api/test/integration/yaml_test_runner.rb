@@ -8,10 +8,10 @@ require 'active_support/inflector'
 require 'ansi'
 require 'turn'
 
-require 'elasticsearch'
-require 'elasticsearch/extensions/test/cluster'
-require 'elasticsearch/extensions/test/startup_shutdown'
-require 'elasticsearch/extensions/test/profiling' unless JRUBY
+require 'stretchysearch'
+require 'stretchysearch/extensions/test/cluster'
+require 'stretchysearch/extensions/test/startup_shutdown'
+require 'stretchysearch/extensions/test/profiling' unless JRUBY
 
 # Skip features
 skip_features = 'stash_in_path,requires_replica,headers,warnings'
@@ -57,7 +57,7 @@ end
 Logger.__send__ :include, CapturedLogger if ENV['CI']
 
 logger = Logger.new($stderr)
-logger.progname = 'elasticsearch'
+logger.progname = 'stretchysearch'
 logger.formatter = proc do |severity, datetime, progname, msg|
   color = case severity
     when /INFO/ then :green
@@ -69,7 +69,7 @@ logger.formatter = proc do |severity, datetime, progname, msg|
 end
 
 tracer = Logger.new($stdout)
-tracer.progname = 'elasticsearch.tracer'
+tracer.progname = 'stretchysearch.tracer'
 tracer.formatter = proc { |severity, datetime, progname, msg| "#{msg}\n" }
 
 # Set up the client for the test
@@ -281,7 +281,7 @@ end
 
 include Stretchysearch::YamlTestSuite
 
-rest_api_test_source = $client.info['version']['number'] < '2' ? '../../../../tmp/elasticsearch/rest-api-spec/test' : '../../../../tmp/elasticsearch/rest-api-spec/src/main/resources/rest-api-spec/test'
+rest_api_test_source = $client.info['version']['number'] < '2' ? '../../../../tmp/stretchysearch/rest-api-spec/test' : '../../../../tmp/stretchysearch/rest-api-spec/src/main/resources/rest-api-spec/test'
 PATH    = Pathname(ENV.fetch('TEST_REST_API_SPEC', File.expand_path(rest_api_test_source, __FILE__)))
 
 suites  = Dir.glob(PATH.join('*')).map { |d| Pathname(d) }
@@ -406,7 +406,7 @@ suites.each do |suite|
           should test_name do
             if ENV['CI']
               ref = ENV['TEST_BUILD_REF'].to_s.gsub(/origin\//, '') || 'master'
-              $stderr.puts "https://github.com/elasticsearch/elasticsearch/blob/#{ref}/rest-api-spec/test/" \
+              $stderr.puts "https://github.com/stretchysearch/stretchysearch/blob/#{ref}/rest-api-spec/test/" \
                           + file.gsub(PATH.to_s, ''), ""
               $stderr.puts YAML.dump(test) if ENV['DEBUG']
             end
@@ -414,7 +414,7 @@ suites.each do |suite|
               $stderr.puts "ACTION: #{action.inspect}" if ENV['DEBUG']
 
               # This check verifies that the YAML has correct indentation.
-              # See https://github.com/elastic/elasticsearch/issues/21980
+              # See https://github.com/elastic/stretchysearch/issues/21980
               raise "INVALID YAML: #{action.inspect}" if action.keys.size != 1
 
               case

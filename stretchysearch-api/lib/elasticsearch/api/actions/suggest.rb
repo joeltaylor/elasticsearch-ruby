@@ -24,7 +24,7 @@ module Stretchysearch
       #
       # @since 0.90
       #
-      # @see http://elasticsearch.org/guide/reference/api/search/suggest/
+      # @see http://stretchysearch.org/guide/reference/api/search/suggest/
       #
       def suggest(arguments={})
         valid_params = [

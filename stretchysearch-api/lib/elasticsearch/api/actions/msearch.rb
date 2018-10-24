@@ -33,7 +33,7 @@ module Stretchysearch
       # @option arguments [Number] :max_concurrent_searches Controls the maximum number of concurrent searches the multi search api will execute
       # @option arguments [Boolean] :typed_keys Specify whether aggregation and suggester names should be prefixed by their respective types in the response
       #
-      # @see https://www.elastic.co/guide/en/elasticsearch/reference/5.x/search-multi-search.html
+      # @see https://www.elastic.co/guide/en/stretchysearch/reference/5.x/search-multi-search.html
       #
       def msearch(arguments={})
         raise ArgumentError, "Required argument 'body' missing" unless arguments[:body]

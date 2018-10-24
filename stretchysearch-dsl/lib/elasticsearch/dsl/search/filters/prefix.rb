@@ -17,7 +17,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-prefix-filter.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-prefix-filter.html
         #
         class Prefix
           include BaseComponent

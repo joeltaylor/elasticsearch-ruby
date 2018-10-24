@@ -55,7 +55,7 @@ module Stretchysearch
       # @option arguments [String] :routing Specific routing value
       # @option arguments [String] :parent Parent ID of the documents
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/docs-termvectors.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/docs-termvectors.html
       #
       def termvectors(arguments={})
         raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

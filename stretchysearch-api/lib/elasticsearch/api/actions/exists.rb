@@ -24,7 +24,7 @@ module Stretchysearch
       # @option arguments [String] :version_type Specific version type (options: internal, external, external_gte, force)
 
       #
-      # @see http://elasticsearch.org/guide/reference/api/get/
+      # @see http://stretchysearch.org/guide/reference/api/get/
       #
       def exists(arguments={})
         raise ArgumentError, "Required argument 'id' missing"    unless arguments[:id]

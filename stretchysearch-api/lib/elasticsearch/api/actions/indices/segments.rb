@@ -21,7 +21,7 @@ module Stretchysearch
         #                                                 unavailable (missing, closed, etc)
         # @option arguments [Boolean] :verbose Whether to include detailed memory usage by Lucene (default: false)
         #
-        # @see http://elasticsearch.org/guide/reference/api/admin-indices-segments/
+        # @see http://stretchysearch.org/guide/reference/api/admin-indices-segments/
         #
         def segments(arguments={})
           valid_params = [

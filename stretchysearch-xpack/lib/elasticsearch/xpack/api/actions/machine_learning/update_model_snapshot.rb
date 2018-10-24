@@ -10,7 +10,7 @@ module Stretchysearch
           # @option arguments [String] :snapshot_id The ID of the snapshot to update (*Required*)
           # @option arguments [Hash] :body The model snapshot properties to update (*Required*)
           #
-          # @see http://www.elastic.co/guide/en/elasticsearch/reference/current/ml-update-snapshot.html
+          # @see http://www.elastic.co/guide/en/stretchysearch/reference/current/ml-update-snapshot.html
           #
           def update_model_snapshot(arguments={})
             raise ArgumentError, "Required argument 'job_id' missing" unless arguments[:job_id]

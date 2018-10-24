@@ -1,15 +1,15 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'elasticsearch/version'
+require 'stretchysearch/version'
 
 Gem::Specification.new do |s|
   s.name          = "stretchysearch"
   s.version       = Stretchysearch::VERSION
   s.authors       = ["Karel Minarik"]
-  s.email         = ["karel.minarik@elasticsearch.org"]
+  s.email         = ["karel.minarik@stretchysearch.org"]
   s.summary       = "Ruby integrations for Stretchysearch"
-  s.homepage      = "http://github.com/elasticsearch/elasticsearch-ruby"
+  s.homepage      = "http://github.com/stretchysearch/stretchysearch-ruby"
   s.license       = "Apache 2"
 
   s.files         = `git ls-files`.split($/)

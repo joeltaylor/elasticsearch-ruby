@@ -1,1 +1,1 @@
-require 'elasticsearch/transport'
+require 'stretchysearch/transport'

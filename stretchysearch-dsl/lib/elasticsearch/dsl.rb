@@ -1,22 +1,22 @@
-require 'elasticsearch/dsl/version'
+require 'stretchysearch/dsl/version'
 
-require 'elasticsearch/dsl/utils'
-require 'elasticsearch/dsl/search/base_component'
-require 'elasticsearch/dsl/search/base_compound_filter_component'
-require 'elasticsearch/dsl/search/base_aggregation_component'
-require 'elasticsearch/dsl/search/query'
-require 'elasticsearch/dsl/search/filter'
-require 'elasticsearch/dsl/search/aggregation'
-require 'elasticsearch/dsl/search/highlight'
-require 'elasticsearch/dsl/search/sort'
-require 'elasticsearch/dsl/search/options'
-require 'elasticsearch/dsl/search/suggest'
+require 'stretchysearch/dsl/utils'
+require 'stretchysearch/dsl/search/base_component'
+require 'stretchysearch/dsl/search/base_compound_filter_component'
+require 'stretchysearch/dsl/search/base_aggregation_component'
+require 'stretchysearch/dsl/search/query'
+require 'stretchysearch/dsl/search/filter'
+require 'stretchysearch/dsl/search/aggregation'
+require 'stretchysearch/dsl/search/highlight'
+require 'stretchysearch/dsl/search/sort'
+require 'stretchysearch/dsl/search/options'
+require 'stretchysearch/dsl/search/suggest'
 
 Dir[ File.expand_path('../dsl/search/queries/**/*.rb', __FILE__) ].each        { |f| require f }
 Dir[ File.expand_path('../dsl/search/filters/**/*.rb', __FILE__) ].each        { |f| require f }
 Dir[ File.expand_path('../dsl/search/aggregations/**/*.rb', __FILE__) ].each   { |f| require f }
 
-require 'elasticsearch/dsl/search'
+require 'stretchysearch/dsl/search'
 
 module Stretchysearch
 
@@ -37,7 +37,7 @@ module Stretchysearch
   #     # => { query: { match: { title: "test"} } }
   #
   # @see Search
-  # @see http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/query-dsl-intro.html
+  # @see http://www.stretchysearch.org/guide/en/stretchysearch/guide/current/query-dsl-intro.html
   #
   module DSL
     def self.included(base)

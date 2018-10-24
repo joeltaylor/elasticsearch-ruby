@@ -43,7 +43,7 @@ module Stretchysearch
         # @option arguments [Time] :master_timeout Specify timeout for connection to master
         # @option arguments [Boolean] :flat_settings Return settings in flat format (default: false)
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-update-settings/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-update-settings/
         #
         def put_settings(arguments={})
           raise ArgumentError, "Required argument 'body' missing" unless arguments[:body]

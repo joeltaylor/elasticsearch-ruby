@@ -39,7 +39,7 @@ module Stretchysearch
         # @option arguments [Boolean] :flush Specify whether the index should be flushed after performing the operation
         #                                    (default: true)
         #
-        # @see http://www.elastic.co/guide/en/elasticsearch/reference/master/indices-forcemerge.html
+        # @see http://www.elastic.co/guide/en/stretchysearch/reference/master/indices-forcemerge.html
         #
         def forcemerge(arguments={})
           valid_params = [

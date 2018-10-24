@@ -19,7 +19,7 @@ module Stretchysearch
         #                                      Options: nodes, parents
         # @option arguments [Boolean] :wait_for_completion Wait for the matching tasks to complete (default: false)
         #
-        # @see http://www.elastic.co/guide/en/elasticsearch/reference/master/tasks-list.html
+        # @see http://www.elastic.co/guide/en/stretchysearch/reference/master/tasks-list.html
         #
         def list(arguments={})
           valid_params = [

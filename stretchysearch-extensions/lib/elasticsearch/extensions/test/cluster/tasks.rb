@@ -1,6 +1,6 @@
-require 'elasticsearch/extensions/test/cluster'
+require 'stretchysearch/extensions/test/cluster'
 
-namespace :elasticsearch do
+namespace :stretchysearch do
   desc "Start Stretchysearch cluster for tests"
   task :start do
     Stretchysearch::Extensions::Test::Cluster.start

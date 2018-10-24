@@ -17,7 +17,7 @@ module Stretchysearch
           # @option arguments [String] :sort Sort records by a particular field
           # @option arguments [Boolean] :desc Set the sort direction
           #
-          # @see http://www.elastic.co/guide/en/elasticsearch/reference/current/ml-get-record.html
+          # @see http://www.elastic.co/guide/en/stretchysearch/reference/current/ml-get-record.html
           #
           def get_records(arguments={})
             raise ArgumentError, "Required argument 'job_id' missing" unless arguments[:job_id]

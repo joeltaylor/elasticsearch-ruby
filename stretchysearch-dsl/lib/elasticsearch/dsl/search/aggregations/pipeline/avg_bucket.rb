@@ -19,7 +19,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-avg-bucket-aggregation.html
+        # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/search-aggregations-pipeline-avg-bucket-aggregation.html
         #
         class AvgBucket
           include BaseAggregationComponent

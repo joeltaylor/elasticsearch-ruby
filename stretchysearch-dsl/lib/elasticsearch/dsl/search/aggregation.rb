@@ -14,7 +14,7 @@ module Stretchysearch
 
       # Wraps the `aggregations` part of a search definition
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-aggregations.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/search-aggregations.html
       #
       class Aggregation
         def initialize(*args, &block)

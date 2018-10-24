@@ -9,7 +9,7 @@ module Stretchysearch
           # @option arguments [String] :index The name of the index (*Required*)
           # @option arguments [Boolean] :wait_for_completion Should the request block until the upgrade operation is completed
           #
-          # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/migration-api-upgrade.html
+          # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/migration-api-upgrade.html
           #
           def upgrade(arguments={})
             raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

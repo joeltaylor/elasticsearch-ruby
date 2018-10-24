@@ -35,7 +35,7 @@ module Stretchysearch
         # @option arguments [Boolean] :request_cache Clear request cache
         # @option arguments [Boolean] :request Clear request cache
         #
-        # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-clearcache.html
+        # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/indices-clearcache.html
         #
         def clear_cache(arguments={})
           valid_params = [

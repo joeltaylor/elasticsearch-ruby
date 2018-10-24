@@ -16,7 +16,7 @@ module Stretchysearch
         # @option arguments [Boolean] :v Verbose mode. Display column headers
         # @option arguments [List] :s Comma-separated list of column names or column aliases to sort by
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/cat-segments.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/cat-segments.html
         #
         def segments(arguments={})
           valid_params = [

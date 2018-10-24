@@ -1,12 +1,12 @@
 # Stretchysearch::Transport
 
-**This library is part of the [`elasticsearch-ruby`](https://github.com/elasticsearch/elasticsearch-ruby/) package;
+**This library is part of the [`stretchysearch-ruby`](https://github.com/stretchysearch/stretchysearch-ruby/) package;
 please refer to it, unless you want to use this library standalone.**
 
 ----
 
-The `elasticsearch-transport` library provides a low-level Ruby client for connecting
-to an [Stretchysearch](http://elasticsearch.org) cluster.
+The `stretchysearch-transport` library provides a low-level Ruby client for connecting
+to an [Stretchysearch](http://stretchysearch.org) cluster.
 
 It handles connecting to multiple nodes in the cluster, rotating across connections,
 logging and tracing requests and responses, maintaining failed connections,
@@ -14,7 +14,7 @@ discovering nodes in the cluster, and provides an abstraction for
 data serialization and transport.
 
 It does not handle calling the Stretchysearch API;
-see the [`elasticsearch-api`](https://github.com/elasticsearch/elasticsearch-ruby/tree/master/elasticsearch-api) library.
+see the [`stretchysearch-api`](https://github.com/stretchysearch/stretchysearch-ruby/tree/master/stretchysearch-api) library.
 
 The library is compatible with Ruby 1.9 or higher and with all versions of Stretchysearch since 0.90.
 
@@ -41,16 +41,16 @@ For detailed information, see example configurations [below](#transport-implemen
 
 Install the package from [Rubygems](https://rubygems.org):
 
-    gem install elasticsearch-transport
+    gem install stretchysearch-transport
 
 To use an unreleased version, either add it to your `Gemfile` for [Bundler](http://gembundler.com):
 
-    gem 'elasticsearch-transport', git: 'git://github.com/elasticsearch/elasticsearch-ruby.git'
+    gem 'stretchysearch-transport', git: 'git://github.com/stretchysearch/stretchysearch-ruby.git'
 
 or install it from a source code checkout:
 
-    git clone https://github.com/elasticsearch/elasticsearch-ruby.git
-    cd elasticsearch-ruby/elasticsearch-transport
+    git clone https://github.com/stretchysearch/stretchysearch-ruby.git
+    cd stretchysearch-ruby/stretchysearch-transport
     bundle install
     rake install
 
@@ -59,13 +59,13 @@ or install it from a source code checkout:
 In the simplest form, connect to Stretchysearch running on <http://localhost:9200>
 without any configuration:
 
-    require 'elasticsearch/transport'
+    require 'stretchysearch/transport'
 
     client = Stretchysearch::Client.new
     response = client.perform_request 'GET', '_cluster/health'
     # => #<Stretchysearch::Transport::Transport::Response:0x007fc5d506ce38 @status=200, @body={ ... } >
 
-Full documentation is available at <http://rubydoc.info/gems/elasticsearch-transport>.
+Full documentation is available at <http://rubydoc.info/gems/stretchysearch-transport>.
 
 ## Configuration
 
@@ -152,7 +152,7 @@ You can pass the client any conforming logger implementation:
 
     require 'logging' # https://github.com/TwP/logging/
 
-    log = Logging.logger['elasticsearch']
+    log = Logging.logger['stretchysearch']
     log.add_appenders Logging.appenders.stdout
     log.level = :info
 
@@ -194,7 +194,7 @@ Stretchysearch by default dynamically discovers new nodes in the cluster. You ca
 in the client, and periodically check for new nodes to spread the load.
 
 To retrieve and use the information from the
-[_Nodes Info API_](http://www.elasticsearch.org/guide/reference/api/admin-cluster-nodes-info/)
+[_Nodes Info API_](http://www.stretchysearch.org/guide/reference/api/admin-cluster-nodes-info/)
 on every 10,000th request:
 
     Stretchysearch::Client.new hosts: ['localhost:9200', 'localhost:9201'], reload_connections: true
@@ -226,7 +226,7 @@ By default, the client will rotate the connections in a round-robin fashion, usi
 
 You can implement your own strategy to customize the behaviour. For example,
 let's have a "rack aware" strategy, which will prefer the nodes with a specific
-[attribute](https://github.com/elasticsearch/elasticsearch/blob/1.0/config/elasticsearch.yml#L81-L85).
+[attribute](https://github.com/stretchysearch/stretchysearch/blob/1.0/config/stretchysearch.yml#L81-L85).
 Only when these would be unavailable, the strategy will use the other nodes:
 
     class RackIdSelector
@@ -301,7 +301,7 @@ To configure the _Faraday_ instance directly, use a block:
     end
 
 You can use any standard Faraday middleware and plugins in the configuration block,
-for example sign the requests for the [AWS Stretchysearch service](https://aws.amazon.com/elasticsearch-service/):
+for example sign the requests for the [AWS Stretchysearch service](https://aws.amazon.com/stretchysearch-service/):
 
     require 'faraday_middleware/aws_signers_v4'
 
@@ -360,7 +360,7 @@ Instead of passing the transport to the constructor, you can inject it at run ti
 You can also use a bundled [_Curb_](https://rubygems.org/gems/curb) based transport implementation:
 
     require 'curb'
-    require 'elasticsearch/transport/transport/http/curb'
+    require 'stretchysearch/transport/transport/http/curb'
 
     client = Stretchysearch::Client.new transport_class: Stretchysearch::Transport::Transport::HTTP::Curb
 
@@ -391,7 +391,7 @@ and passing it to the client as the `serializer_class` or `serializer` parameter
 
 ### Exception Handling
 
-The library defines a [number of exception classes](https://github.com/elasticsearch/elasticsearch-ruby/blob/master/elasticsearch-transport/lib/elasticsearch/transport/transport/errors.rb)
+The library defines a [number of exception classes](https://github.com/stretchysearch/stretchysearch-ruby/blob/master/stretchysearch-transport/lib/stretchysearch/transport/transport/errors.rb)
 for various client and server errors, as well as unsuccessful HTTP responses,
 making it possible to `rescue` specific exceptions with desired granularity.
 
@@ -460,7 +460,7 @@ can use Ruby 2.x syntax and features.
 
 This software is licensed under the Apache 2 license, quoted below.
 
-    Copyright (c) 2013 Stretchysearch <http://www.elasticsearch.org>
+    Copyright (c) 2013 Stretchysearch <http://www.stretchysearch.org>
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

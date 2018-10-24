@@ -17,7 +17,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/guide/current/geo-distance.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/guide/current/geo-distance.html
         #
         class GeoDistanceRange
           include BaseComponent

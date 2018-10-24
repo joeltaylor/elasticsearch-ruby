@@ -25,7 +25,7 @@ module Stretchysearch
       # @option arguments [String] :version_type Specific version type (options: internal, external, external_gte, force)
       # @option arguments [String] :op_type Explicit operation type (options: index, create)
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/modules-scripting.html#_indexed_scripts
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/modules-scripting.html#_indexed_scripts
       #
       def put_script(arguments={})
         raise ArgumentError, "Required argument 'id' missing"   unless arguments[:id]

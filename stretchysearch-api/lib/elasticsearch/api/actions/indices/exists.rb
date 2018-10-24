@@ -24,7 +24,7 @@ module Stretchysearch
         #
         # @return [true,false]
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-indices-exists/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-indices-exists/
         #
         def exists(arguments={})
           raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

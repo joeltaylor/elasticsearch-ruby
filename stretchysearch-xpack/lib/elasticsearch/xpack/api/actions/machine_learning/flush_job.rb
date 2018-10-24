@@ -15,7 +15,7 @@ module Stretchysearch
           # @option arguments [String] :skip_time Skips time to the given value without generating results or updating the model for the skipped interval
           #
           #
-          # @see http://www.elastic.co/guide/en/elasticsearch/reference/current/ml-flush-job.html
+          # @see http://www.elastic.co/guide/en/stretchysearch/reference/current/ml-flush-job.html
           #
           def flush_job(arguments={})
             raise ArgumentError, "Required argument 'job_id' missing" unless arguments[:job_id]

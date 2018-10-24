@@ -1,1 +1,1 @@
-require 'elasticsearch/extensions'
+require 'stretchysearch/extensions'

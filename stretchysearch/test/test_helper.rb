@@ -30,13 +30,13 @@ require 'mocha/setup'
 require 'turn' unless ENV["TM_FILEPATH"] || ENV["NOTURN"] || RUBY_1_8
 
 require 'require-prof' if ENV["REQUIRE_PROF"]
-require 'elasticsearch'
+require 'stretchysearch'
 RequireProf.print_timing_infos if ENV["REQUIRE_PROF"]
 
 if defined?(RUBY_VERSION) && RUBY_VERSION > '1.9'
-  require 'elasticsearch/extensions/test/cluster'
-  require 'elasticsearch/extensions/test/startup_shutdown'
-  require 'elasticsearch/extensions/test/profiling' unless JRUBY
+  require 'stretchysearch/extensions/test/cluster'
+  require 'stretchysearch/extensions/test/startup_shutdown'
+  require 'stretchysearch/extensions/test/profiling' unless JRUBY
 end
 
 module Stretchysearch

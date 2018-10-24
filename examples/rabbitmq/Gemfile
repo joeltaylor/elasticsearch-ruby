@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'elasticsearch'
+gem 'stretchysearch'
 
 gem 'bunny'
 

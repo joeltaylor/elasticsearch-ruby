@@ -20,7 +20,7 @@ module Stretchysearch
         #     end
         #
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-type-filter.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-type-filter.html
         #
         class Type
           include BaseComponent

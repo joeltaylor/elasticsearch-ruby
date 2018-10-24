@@ -5,7 +5,7 @@ module Stretchysearch
       # Delete documents which match specified query.
       #
       # Provide the query either as a "query string" query in the `:q` argument, or using the Stretchysearch's
-      # [Query DSL](http://www.elasticsearch.org/guide/reference/query-dsl/) in the `:body` argument.
+      # [Query DSL](http://www.stretchysearch.org/guide/reference/query-dsl/) in the `:body` argument.
       #
       # @example Deleting documents with a simple query
       #
@@ -51,7 +51,7 @@ module Stretchysearch
       # @option arguments [Number] :requests_per_second The throttle for this request in sub-requests per second. -1 means no throttle.
       # @option arguments [Integer] :slices The number of slices this task should be divided into. Defaults to 1 meaning the task isn't sliced into subtasks.
       #
-      # @see https://www.elastic.co/guide/en/elasticsearch/reference/master/docs-delete-by-query.html
+      # @see https://www.elastic.co/guide/en/stretchysearch/reference/master/docs-delete-by-query.html
       #
       def delete_by_query(arguments={})
         raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

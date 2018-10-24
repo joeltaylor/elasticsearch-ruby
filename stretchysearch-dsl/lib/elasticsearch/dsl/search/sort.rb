@@ -4,7 +4,7 @@ module Stretchysearch
 
       # Wraps the `sort` part of a search definition
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-request-sort.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/search-request-sort.html
       #
       class Sort
         include BaseComponent

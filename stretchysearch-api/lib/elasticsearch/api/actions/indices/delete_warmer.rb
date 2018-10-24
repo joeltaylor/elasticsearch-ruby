@@ -15,7 +15,7 @@ module Stretchysearch
         # @option arguments [List] :type A comma-separated list of document types to register warmer for; use `_all`
         #                                or empty string to perform the operation on all types
         #
-        # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-warmers/
+        # @see http://www.stretchysearch.org/guide/reference/api/admin-indices-warmers/
         #
         def delete_warmer(arguments={})
           raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

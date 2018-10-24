@@ -11,7 +11,7 @@ module Stretchysearch
           # @option arguments [Boolean] :force True if the datafeed should be forcefully stopped.
           # @option arguments [Time] :timeout Controls the time to wait until a datafeed has stopped. Default to 20 seconds
           #
-          # @see http://www.elastic.co/guide/en/elasticsearch/reference/current/ml-stop-datafeed.html
+          # @see http://www.elastic.co/guide/en/stretchysearch/reference/current/ml-stop-datafeed.html
           #
           def stop_datafeed(arguments={})
             raise ArgumentError, "Required argument 'datafeed_id' missing" unless arguments[:datafeed_id]

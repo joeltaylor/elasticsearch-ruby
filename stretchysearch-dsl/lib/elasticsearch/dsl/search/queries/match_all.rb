@@ -13,7 +13,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-match-all-query.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-match-all-query.html
         #
         class MatchAll
           include BaseComponent

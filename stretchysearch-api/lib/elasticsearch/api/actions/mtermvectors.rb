@@ -29,7 +29,7 @@ module Stretchysearch
       # @option arguments [String] :routing Specific routing value
       # @option arguments [String] :parent Parent ID of documents
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/docs-multi-termvectors.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/docs-multi-termvectors.html
       #
       # @see #mget
       # @see #termvector

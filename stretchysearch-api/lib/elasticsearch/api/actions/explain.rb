@@ -41,7 +41,7 @@ module Stretchysearch
       # @option arguments [String] :_source_include A list of fields to extract and return from the _source field
       # @option arguments [List] :stored_fields A comma-separated list of stored fields to return in the response
       #
-      # @see http://elasticsearch.org/guide/reference/api/explain/
+      # @see http://stretchysearch.org/guide/reference/api/explain/
       #
       def explain(arguments={})
         raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

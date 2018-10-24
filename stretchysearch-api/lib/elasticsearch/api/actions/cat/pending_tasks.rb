@@ -26,7 +26,7 @@ module Stretchysearch
         #                                    (default: false)
         # @option arguments [Time] :master_timeout Explicit operation timeout for connection to master node
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/cat-pending-tasks.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/cat-pending-tasks.html
         #
         def pending_tasks(arguments={})
           valid_params = [

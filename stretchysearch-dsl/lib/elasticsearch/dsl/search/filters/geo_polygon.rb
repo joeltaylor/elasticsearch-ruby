@@ -27,7 +27,7 @@ module Stretchysearch
         #
         # See the integration test for a working example.
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-geo-polygon-filter.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/reference/current/query-dsl-geo-polygon-filter.html
         #
         class GeoPolygon
           include BaseComponent

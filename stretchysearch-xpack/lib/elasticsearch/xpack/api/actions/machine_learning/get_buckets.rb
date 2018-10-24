@@ -19,7 +19,7 @@ module Stretchysearch
           # @option arguments [String] :sort Sort buckets by a particular field
           # @option arguments [Boolean] :desc Set the sort direction
           #
-          # @see http://www.elastic.co/guide/en/elasticsearch/reference/current/ml-get-bucket.html
+          # @see http://www.elastic.co/guide/en/stretchysearch/reference/current/ml-get-bucket.html
           #
           def get_buckets(arguments={})
             raise ArgumentError, "Required argument 'job_id' missing" unless arguments[:job_id]

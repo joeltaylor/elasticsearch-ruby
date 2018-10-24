@@ -13,7 +13,7 @@ module Stretchysearch
         # @option arguments [Boolean] :help Return help information
         # @option arguments [Boolean] :v Verbose mode. Display column headers
         #
-        # @see http://www.elastic.co/guide/en/elasticsearch/reference/master/cat-plugins.html
+        # @see http://www.elastic.co/guide/en/stretchysearch/reference/master/cat-plugins.html
         #
         def plugins(arguments={})
           valid_params = [

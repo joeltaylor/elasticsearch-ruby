@@ -31,7 +31,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see https://www.elastic.co/guide/en/elasticsearch/reference/5.1/query-dsl-exists-query.html
+        # @see https://www.elastic.co/guide/en/stretchysearch/reference/5.1/query-dsl-exists-query.html
         #
         class Exists
           include BaseComponent

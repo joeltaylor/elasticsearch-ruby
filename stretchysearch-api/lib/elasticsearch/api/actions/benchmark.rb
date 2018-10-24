@@ -45,7 +45,7 @@ module Stretchysearch
       # @option arguments [Boolean] :verbose Specify whether to return verbose statistics about each iteration
       #                                      (default: false)
       #
-      # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/search-benchmark.html
+      # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/search-benchmark.html
       #
       def benchmark(arguments={})
         valid_params = [

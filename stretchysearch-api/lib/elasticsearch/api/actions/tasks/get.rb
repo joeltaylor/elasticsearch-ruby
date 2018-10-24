@@ -8,7 +8,7 @@ module Stretchysearch
         # @option arguments [String] :task_id Return the task with specified id (node_id:task_number)
         # @option arguments [Boolean] :wait_for_completion Wait for the matching tasks to complete (default: false)
         #
-        # @see http://www.elastic.co/guide/en/elasticsearch/reference/master/tasks.html
+        # @see http://www.elastic.co/guide/en/stretchysearch/reference/master/tasks.html
         #
         def get(arguments={})
           valid_params = [ :wait_for_completion ]

@@ -29,7 +29,7 @@ module Stretchysearch
         #       end
         #     end
         #
-        # @see http://elasticsearch.org/guide/en/elasticsearch/guide/current/geo-bounds-agg.html
+        # @see http://stretchysearch.org/guide/en/stretchysearch/guide/current/geo-bounds-agg.html
         #
         class GeoBounds
           include BaseComponent

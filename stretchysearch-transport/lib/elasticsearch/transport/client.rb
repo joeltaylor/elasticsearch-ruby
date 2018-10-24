@@ -11,7 +11,7 @@ module Stretchysearch
       DEFAULT_LOGGER = lambda do
         require 'logger'
         logger = Logger.new(STDERR)
-        logger.progname = 'elasticsearch'
+        logger.progname = 'stretchysearch'
         logger.formatter = proc { |severity, datetime, progname, msg| "#{datetime}: #{msg}\n" }
         logger
       end
@@ -19,7 +19,7 @@ module Stretchysearch
       DEFAULT_TRACER = lambda do
         require 'logger'
         logger = Logger.new(STDERR)
-        logger.progname = 'elasticsearch.tracer'
+        logger.progname = 'stretchysearch.tracer'
         logger.formatter = proc { |severity, datetime, progname, msg| "#{msg}\n" }
         logger
       end

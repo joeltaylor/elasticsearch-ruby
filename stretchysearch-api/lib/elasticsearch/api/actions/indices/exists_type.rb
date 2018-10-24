@@ -22,7 +22,7 @@ module Stretchysearch
         # @option arguments [Boolean] :local Return local information, do not retrieve the state from master node
         #                                    (default: false)
         #
-        # @see https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-types-exists.html
+        # @see https://www.elastic.co/guide/en/stretchysearch/reference/current/indices-types-exists.html
         #
         def exists_type(arguments={})
           raise ArgumentError, "Required argument 'index' missing" unless arguments[:index]

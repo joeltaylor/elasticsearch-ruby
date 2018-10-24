@@ -9,7 +9,7 @@ module Stretchysearch
         # @option arguments [Time] :master_timeout Explicit operation timeout for connection to master node
         # @option arguments [Time] :timeout Explicit operation timeout
         #
-        # @see https://www.elastic.co/guide/en/elasticsearch/plugins/master/ingest.html
+        # @see https://www.elastic.co/guide/en/stretchysearch/plugins/master/ingest.html
         #
         def delete_pipeline(arguments={})
           raise ArgumentError, "Required argument 'id' missing" unless arguments[:id]

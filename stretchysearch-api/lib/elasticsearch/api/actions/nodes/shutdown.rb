@@ -15,7 +15,7 @@ module Stretchysearch
         # @option arguments [Time] :delay Set the delay for the operation (default: 1s)
         # @option arguments [Boolean] :exit Exit the JVM as well (default: true)
         #
-        # @see http://elasticsearch.org/guide/reference/api/admin-cluster-nodes-shutdown/
+        # @see http://stretchysearch.org/guide/reference/api/admin-cluster-nodes-shutdown/
         #
         def shutdown(arguments={})
           valid_params = [

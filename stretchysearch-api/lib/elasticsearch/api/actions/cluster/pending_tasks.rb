@@ -14,7 +14,7 @@ module Stretchysearch
         #                                    (default: false)
         # @option arguments [Time] :master_timeout Specify timeout for connection to master
         #
-        # @see http://www.elasticsearch.org/guide/en/elasticsearch/reference/master/cluster-pending.html
+        # @see http://www.stretchysearch.org/guide/en/stretchysearch/reference/master/cluster-pending.html
         #
         def pending_tasks(arguments={})
           valid_params = [
